@@ -7,43 +7,43 @@ pageextension 52602 "HMX CustomerCardExt" extends "Customer Card"
             group("HMX CreateInteraction")
             {
                 Caption = 'Create Interaction';
-                field("HMX Interaction Template Code"; Rec."Interaction Template Code")
+                field("HMX Interaction Template Code"; Rec."HMX Interaction Template Code")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Description"; Rec.Description)
+                field("HMX Description"; Rec."HMX Description")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Salesperson"; Rec.Salesperson)
+                field("HMX Salesperson"; Rec."HMX Salesperson")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Interaction Language Code"; Rec."Interaction Language Code")
+                field("HMX Interaction Language Code"; Rec."HMX Interaction Language Code")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Date of Interaction"; Rec."Date of Interaction")
+                field("HMX Date of Interaction"; Rec."HMX Date of Interaction")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Time of Interaction"; Rec."Time of Interaction")
+                field("HMX Time of Interaction"; Rec."HMX Time of Interaction")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Correspondence Type"; Rec."Correspondence Type")
+                field("HMX Correspondence Type"; Rec."HMX Correspondence Type")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Information Flow"; Rec."Information Flow")
+                field("HMX Information Flow"; Rec."HMX Information Flow")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Initiated By"; Rec."Initiated By")
+                field("HMX Initiated By"; Rec."HMX Initiated By")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Comments"; Rec.Comments)
+                field("HMX Comments"; Rec."HMX Comments")
                 {
                     ApplicationArea = all;
                     LookupPageId = "Inter. Log Entry Comment Sheet";
@@ -53,19 +53,19 @@ pageextension 52602 "HMX CustomerCardExt" extends "Customer Card"
                     ApplicationArea = all;
                     Style = Strong;
                 }
-                field("HMX Evaluation"; Rec.Evaluation)
+                field("HMX Evaluation"; Rec."HMX Evaluation")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Was Successful"; Rec."Was Successful")
+                field("HMX Was Successful"; Rec."HMX Was Successful")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Cost"; Rec.Cost)
+                field("HMX Cost"; Rec."HMX Cost")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Duration"; Rec.Duration)
+                field("HMX Duration"; Rec."HMX Duration")
                 {
                     ApplicationArea = all;
                 }
@@ -79,5 +79,11 @@ pageextension 52602 "HMX CustomerCardExt" extends "Customer Card"
         // Add changes to page actions here
     }
 
+
+    trigger OnQueryClosePage(closeAction: Action): Boolean
+    begin
+        Rec.InitSegmentLine();
+        Rec.ClearIntercationDetails();
+    end;
 
 }

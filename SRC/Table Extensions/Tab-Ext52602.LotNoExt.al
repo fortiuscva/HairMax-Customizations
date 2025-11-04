@@ -5,6 +5,7 @@ tableextension 52602 "HMX LotNoExt" extends "Lot No. Information"
         field(50000; "HMX Customer No."; Code[20])
         {
             TableRelation = Customer."No.";
+            Caption = 'Customer No.';
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the Customer No.';
             trigger OnValidate()
@@ -12,11 +13,13 @@ tableextension 52602 "HMX LotNoExt" extends "Lot No. Information"
                 Customer_Lrec: Record Customer;
                 LotNoInfo_Lrec: Record "Lot No. Information";
             begin
+                if Rec."HMX Customer No." = '' then
+                    exit;
                 LotNoInfo_Lrec.Reset();
                 LotNoInfo_Lrec.SetRange("Lot No.", Rec."Lot No.");
-                LotNoInfo_Lrec.SetFilter("HMX Customer No.", '<>%1&<>%2', '', Rec."HMX Customer No.");
+                LotNoInfo_Lrec.SetRange("HMX Customer No.", Rec."HMX Customer No.");
                 if not LotNoInfo_Lrec.IsEmpty then
-                    Error('This Lot No. is already registered with another customer');
+                    Message('This Lot No. is already registered with another customer');
                 if Customer_Lrec.Get(Rec."HMX Customer No.") then
                     Rec."HMX CustomerName" := Customer_Lrec.Name;
             end;

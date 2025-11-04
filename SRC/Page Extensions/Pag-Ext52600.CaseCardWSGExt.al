@@ -1,30 +1,30 @@
-pageextension 52600 CaseCardWSGExt extends "Case Card WSG"
+pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
 {
     layout
     {
         addafter("Assigned User ID")
         {
-            field("case Origin"; Rec."HMX case Origin")
+            field("HMX case Origin"; Rec."HMX case Origin")
             {
                 ApplicationArea = all;
 
             }
-            field("case Type"; Rec."HMX case Type")
+            field("HMX case Type"; Rec."HMX case Type")
             {
                 ApplicationArea = all;
 
             }
-            field("case Priority"; Rec."HMX case Priority")
+            field("HMX case Priority"; Rec."HMX case Priority")
             {
                 ApplicationArea = all;
 
             }
-            field("case Issue"; Rec."HMX case Issue")
+            field("HMX case Issue"; Rec."HMX case Issue")
             {
                 ApplicationArea = all;
 
             }
-            field(KMBSCaseStatus; Rec."HMX CaseStatus")
+            field("HMX KMBSCaseStatus"; Rec."HMX CaseStatus")
             {
                 ApplicationArea = all;
                 ToolTip = 'Specifies the Case status';
@@ -40,78 +40,78 @@ pageextension 52600 CaseCardWSGExt extends "Case Card WSG"
         }
         addlast(Reason)
         {
-            field(Address; Rec."HMX Address")
+            field("HMX Address"; Rec."HMX Address")
             {
                 ApplicationArea = all;
             }
-            field("Address 2"; Rec."HMX Address 2")
+            field("HMX Address 2"; Rec."HMX Address 2")
             {
                 ApplicationArea = all;
             }
-            field(City; Rec."HMX City")
+            field("HMX City"; Rec."HMX City")
             {
                 ApplicationArea = all;
             }
-            field("Post Code"; Rec."HMX Post Code")
+            field("HMX Post Code"; Rec."HMX Post Code")
             {
                 ApplicationArea = all;
             }
-            field("Country/Region Code"; Rec."HMX Country/Region Code")
+            field("HMX Country/Region Code"; Rec."HMX Country/Region Code")
             {
                 ApplicationArea = all;
             }
         }
         addlast(Content)
         {
-            group(Qualityreview)
+            group("HMX Qualityreview")
             {
                 Caption = 'Quality Review';
 
-                field(ReportableEvent; Rec."HMX ReportableEvent")
+                field("HMX ReportableEvent"; Rec."HMX ReportableEvent")
                 {
                     ApplicationArea = all;
                 }
-                field(NonRequiredEvent; Rec."HMX NonRequiredEvent")
+                field("HMX NonRequiredEvent"; Rec."HMX NonRequiredEvent")
                 {
                     ApplicationArea = all;
                 }
-                field(ComplaintInvestReq; Rec."HMX ComplaintInvestReq")
+                field("HMX ComplaintInvestReq"; Rec."HMX ComplaintInvestReq")
                 {
                     ApplicationArea = all;
                 }
-                field(CorrectiveActionReq; Rec."HMX CorrectiveActionReq")
+                field("HMX CorrectiveActionReq"; Rec."HMX CorrectiveActionReq")
                 {
                     ApplicationArea = all;
                 }
-                field(Complaintcategory; Rec."HMX Complaintcategory")
+                field("HMX Complaintcategory"; Rec."HMX Complaintcategory")
                 {
                     ApplicationArea = all;
                 }
-                field(Justification; Rec."HMX Justification")
+                field("HMX Justification"; Rec."HMX Justification")
                 {
                     ApplicationArea = all;
                 }
-                field(ExistingCaseTracking; Rec."HMX ExistingCaseTracking")
+                field("HMX ExistingCaseTracking"; Rec."HMX ExistingCaseTracking")
                 {
                     ApplicationArea = all;
                 }
-                field(JustificationNoCAPA; Rec."HMX JustificationNoCAPA")
+                field("HMX JustificationNoCAPA"; Rec."HMX JustificationNoCAPA")
                 {
                     ApplicationArea = all;
                 }
-                field(CorrectiveAction; Rec."HMX CorrectiveAction")
+                field("HMX CorrectiveAction"; Rec."HMX CorrectiveAction")
                 {
                     ApplicationArea = all;
                 }
             }
-            group(Technicalreview)
+            group("HMX Technicalreview")
             {
                 Caption = 'Technical Review';
-                field(FaultCategory; Rec."HMX FaultCategory")
+                field("HMX FaultCategory"; Rec."HMX FaultCategory")
                 {
                     ApplicationArea = all;
                 }
-                field(Faultdescription; Rec."HMX Faultdescription")
+                field("HMX Faultdescription"; Rec."HMX Faultdescription")
                 {
                     ApplicationArea = all;
                 }

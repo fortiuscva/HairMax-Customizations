@@ -97,4 +97,11 @@ table 52601 "HMX ExistingCaseTracking"
             Clustered = true;
         }
     }
+    fieldgroups
+    {
+        fieldgroup(DropDown; "Internal ID", Number, "Incident Date", Company, Subject, Item, Priority, Stage, Status, Type, "Warranty Status", "Fault category", "Assigned To", Country)
+        {
+
+        }
+    }
 }

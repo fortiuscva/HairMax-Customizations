@@ -1,4 +1,4 @@
-page 52601 ExistingCaseTrackingList
+page 52601 "HMX ExistingCaseTrackingList"
 {
     ApplicationArea = All;
     Caption = 'ExistingCaseTrackingList';
