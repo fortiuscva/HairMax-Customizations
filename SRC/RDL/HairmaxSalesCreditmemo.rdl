@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="SalesOrderLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SalesOrderLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SalesOrderLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DateLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DateLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DateLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OrderLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>OrderLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>OrderLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AnticipatedShipdateLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AnticipatedShipdateLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AnticipatedShipdateLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PaymentTermsLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PaymentTermsLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PaymentTermsLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BillToLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BillToLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BillToLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipToLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ShipToLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ShipToLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NotestoShipperLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NotestoShipperLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NotestoShipperLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="QuantityLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QuantityLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QuantityLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DescriptionLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DescriptionLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DescriptionLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SerialLotLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SerialLotLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SerialLotLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RateLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RateLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RateLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AmountLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AmountLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AmountLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SubtotalLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SubtotalLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SubtotalLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShippingCostLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ShippingCostLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ShippingCostLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotalLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TotalLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TotalLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CustomerShpSpecLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CustomerShpSpecLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CustomerShpSpecLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PaymentMtdLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PaymentMtdLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PaymentMtdLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CreditCardNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CreditCardNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CreditCardNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TrackingLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TrackingLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TrackingLbl</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="Payment_Terms_Code">
+          <DataField>Payment_Terms_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Bill_to_Name">
+          <DataField>Bill_to_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address_2">
+          <DataField>Bill_to_Address_2</DataField>
+        </Field>
+        <Field Name="Bill_to_City">
+          <DataField>Bill_to_City</DataField>
+        </Field>
+        <Field Name="Bill_to_County">
+          <DataField>Bill_to_County</DataField>
+        </Field>
+        <Field Name="Bill_to_Post_Code">
+          <DataField>Bill_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Bill_to_Country_Region_Code">
+          <DataField>Bill_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="WorkDescriptionLine_Grec">
+          <DataField>WorkDescriptionLine_Grec</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount_GRec">
+          <DataField>Amount_GRec</DataField>
+        </Field>
+        <Field Name="Amount_GRecFormat">
+          <DataField>Amount_GRecFormat</DataField>
+        </Field>
+        <Field Name="Rate_GRec">
+          <DataField>Rate_GRec</DataField>
+        </Field>
+        <Field Name="Rate_GRecFormat">
+          <DataField>Rate_GRecFormat</DataField>
+        </Field>
+        <Field Name="ShippingAmount_GRec">
+          <DataField>ShippingAmount_GRec</DataField>
+        </Field>
+        <Field Name="ShippingAmount_GRecFormat">
+          <DataField>ShippingAmount_GRecFormat</DataField>
+        </Field>
+        <Field Name="SubTotalAmount_GRec">
+          <DataField>SubTotalAmount_GRec</DataField>
+        </Field>
+        <Field Name="SubTotalAmount_GRecFormat">
+          <DataField>SubTotalAmount_GRecFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount_Grec">
+          <DataField>TotalAmount_Grec</DataField>
+        </Field>
+        <Field Name="TotalAmount_GrecFormat">
+          <DataField>TotalAmount_GrecFormat</DataField>
+        </Field>
+        <Field Name="PaymentMethodCode">
+          <DataField>PaymentMethodCode</DataField>
+        </Field>
+        <Field Name="Package_Tracking_No_">
+          <DataField>Package_Tracking_No_</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="PrintLine">
+          <DataField>PrintLine</DataField>
+        </Field>
+        <Field Name="PrintLineFormat">
+          <DataField>PrintLineFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
