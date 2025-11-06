@@ -180,13 +180,16 @@ report 52600 "HMX Sales Order"
                         this.ReservationEntry_GRec.SetRange("Source Subtype", 1);
                         this.ReservationEntry_GRec.SetRange("Source ID", "Sales Line"."Document No.");
                         this.ReservationEntry_GRec.SetRange("Source Ref. No.", "Sales Line"."Line No.");
-                        if this.ReservationEntry_GRec.FindFirst() then
-                            if this.ReservationEntry_GRec."Serial No." <> '' then
-                                this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Serial No."
-                            else
-                                this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Lot No.";
-
-
+                        if this.ReservationEntry_GRec.FindSet() then
+                            repeat
+                                if this.ReservationEntry_GRec."Serial No." <> '' then
+                                    if Serial_LotNo_GRec <> '' then
+                                        Serial_LotNo_GRec := Serial_LotNo_GRec + ', ' + this.ReservationEntry_GRec."Serial No."
+                                    else
+                                        this.Serial_LotNo_GRec += this.ReservationEntry_GRec."Serial No."
+                                else
+                                    this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Lot No.";
+                            until this.ReservationEntry_GRec.Next() = 0;
                     end;
                     if ("Sales Line".Type = "Sales Line".Type::"G/L Account") and ("Sales Line"."No." = '40391') then
                         this.ShippingAmount_GRec += "Sales Line".Amount;
