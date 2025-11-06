@@ -11,6 +11,157 @@
       <rd:DataSourceID>dac5b8e5-0752-4104-b549-57e19ca992ee</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="Payment_Terms_Code">
+          <DataField>Payment_Terms_Code</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Bill_to_Name">
+          <DataField>Bill_to_Name</DataField>
+        </Field>
+        <Field Name="Bill_to_Address">
+          <DataField>Bill_to_Address</DataField>
+        </Field>
+        <Field Name="Bill_to_Address_2">
+          <DataField>Bill_to_Address_2</DataField>
+        </Field>
+        <Field Name="Bill_to_City">
+          <DataField>Bill_to_City</DataField>
+        </Field>
+        <Field Name="Bill_to_County">
+          <DataField>Bill_to_County</DataField>
+        </Field>
+        <Field Name="Bill_to_Post_Code">
+          <DataField>Bill_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Bill_to_Country_Region_Code">
+          <DataField>Bill_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="WorkDescriptionLine_Grec">
+          <DataField>WorkDescriptionLine_Grec</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Amount_GRec">
+          <DataField>Amount_GRec</DataField>
+        </Field>
+        <Field Name="Amount_GRecFormat">
+          <DataField>Amount_GRecFormat</DataField>
+        </Field>
+        <Field Name="Rate_GRec">
+          <DataField>Rate_GRec</DataField>
+        </Field>
+        <Field Name="Rate_GRecFormat">
+          <DataField>Rate_GRecFormat</DataField>
+        </Field>
+        <Field Name="ShippingAmount_GRec">
+          <DataField>ShippingAmount_GRec</DataField>
+        </Field>
+        <Field Name="ShippingAmount_GRecFormat">
+          <DataField>ShippingAmount_GRecFormat</DataField>
+        </Field>
+        <Field Name="SubTotalAmount_GRec">
+          <DataField>SubTotalAmount_GRec</DataField>
+        </Field>
+        <Field Name="SubTotalAmount_GRecFormat">
+          <DataField>SubTotalAmount_GRecFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount_Grec">
+          <DataField>TotalAmount_Grec</DataField>
+        </Field>
+        <Field Name="TotalAmount_GrecFormat">
+          <DataField>TotalAmount_GrecFormat</DataField>
+        </Field>
+        <Field Name="PaymentMethodCode">
+          <DataField>PaymentMethodCode</DataField>
+        </Field>
+        <Field Name="Package_Tracking_No_">
+          <DataField>Package_Tracking_No_</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="PrintLine">
+          <DataField>PrintLine</DataField>
+        </Field>
+        <Field Name="PrintLineFormat">
+          <DataField>PrintLineFormat</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1463,12 +1614,14 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
               <Top>0.10583cm</Top>
-              <Left>12.12977cm</Left>
+              <Left>12.60602cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36784cm</Width>
               <Style>
@@ -1495,12 +1648,14 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
               <Top>0.70583cm</Top>
-              <Left>12.12977cm</Left>
+              <Left>12.60602cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36784cm</Width>
               <ZIndex>1</ZIndex>
@@ -1528,12 +1683,14 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
               <Top>1.31289cm</Top>
-              <Left>12.12978cm</Left>
+              <Left>12.60603cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36782cm</Width>
               <ZIndex>2</ZIndex>
@@ -1627,7 +1784,7 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
-                        <Format>#,0.00;(#,0.00)</Format>
+                        <Format>'$'#,0.00;('$'#,0.00)</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1650,6 +1807,7 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
                 <PaddingBottom>2pt</PaddingBottom>
+                <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
               </Style>
             </Textbox>
             <Textbox Name="Textbox70">
@@ -2070,41 +2228,6 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Fields!LocalCurrencySymbol.Value</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>9pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Right</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.30583cm</Top>
-              <Left>15.56816cm</Left>
-              <Height>0.6cm</Height>
-              <Width>0.41627cm</Width>
-              <ZIndex>15</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -2480,155 +2603,4 @@ End Function</Code>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_State">
-          <DataField>CompanyInfo_State</DataField>
-        </Field>
-        <Field Name="CompanyInfo_ZipCode">
-          <DataField>CompanyInfo_ZipCode</DataField>
-        </Field>
-        <Field Name="LocalCurrencySymbol">
-          <DataField>LocalCurrencySymbol</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="Payment_Terms_Code">
-          <DataField>Payment_Terms_Code</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Bill_to_Name">
-          <DataField>Bill_to_Name</DataField>
-        </Field>
-        <Field Name="Bill_to_Address">
-          <DataField>Bill_to_Address</DataField>
-        </Field>
-        <Field Name="Bill_to_Address_2">
-          <DataField>Bill_to_Address_2</DataField>
-        </Field>
-        <Field Name="Bill_to_City">
-          <DataField>Bill_to_City</DataField>
-        </Field>
-        <Field Name="Bill_to_County">
-          <DataField>Bill_to_County</DataField>
-        </Field>
-        <Field Name="Bill_to_Post_Code">
-          <DataField>Bill_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Bill_to_Country_Region_Code">
-          <DataField>Bill_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Ship_to_City">
-          <DataField>Ship_to_City</DataField>
-        </Field>
-        <Field Name="Ship_to_Post_Code">
-          <DataField>Ship_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_County">
-          <DataField>Ship_to_County</DataField>
-        </Field>
-        <Field Name="Ship_to_Country_Region_Code">
-          <DataField>Ship_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="WorkDescriptionLine_Grec">
-          <DataField>WorkDescriptionLine_Grec</DataField>
-        </Field>
-        <Field Name="EncodeTextCode39">
-          <DataField>EncodeTextCode39</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Amount_GRec">
-          <DataField>Amount_GRec</DataField>
-        </Field>
-        <Field Name="Amount_GRecFormat">
-          <DataField>Amount_GRecFormat</DataField>
-        </Field>
-        <Field Name="Rate_GRec">
-          <DataField>Rate_GRec</DataField>
-        </Field>
-        <Field Name="Rate_GRecFormat">
-          <DataField>Rate_GRecFormat</DataField>
-        </Field>
-        <Field Name="ShippingAmount_GRec">
-          <DataField>ShippingAmount_GRec</DataField>
-        </Field>
-        <Field Name="ShippingAmount_GRecFormat">
-          <DataField>ShippingAmount_GRecFormat</DataField>
-        </Field>
-        <Field Name="SubTotalAmount_GRec">
-          <DataField>SubTotalAmount_GRec</DataField>
-        </Field>
-        <Field Name="SubTotalAmount_GRecFormat">
-          <DataField>SubTotalAmount_GRecFormat</DataField>
-        </Field>
-        <Field Name="TotalAmount_Grec">
-          <DataField>TotalAmount_Grec</DataField>
-        </Field>
-        <Field Name="TotalAmount_GrecFormat">
-          <DataField>TotalAmount_GrecFormat</DataField>
-        </Field>
-        <Field Name="PaymentMethodCode">
-          <DataField>PaymentMethodCode</DataField>
-        </Field>
-        <Field Name="Package_Tracking_No_">
-          <DataField>Package_Tracking_No_</DataField>
-        </Field>
-        <Field Name="Serial_LotNo_GRec">
-          <DataField>Serial_LotNo_GRec</DataField>
-        </Field>
-        <Field Name="PrintLine">
-          <DataField>PrintLine</DataField>
-        </Field>
-        <Field Name="PrintLineFormat">
-          <DataField>PrintLineFormat</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
