@@ -8,11 +8,11 @@ report 52602 "HMX Sales Credit memo"
 
     dataset
     {
-        dataitem("Sales_Header"; "Sales Header")
+        dataitem("Sales_Header"; "Sales Cr.Memo Header")
         {
             CalcFields = "Work Description";
             RequestFilterFields = "No.";
-            DataItemTableView = where("Document Type" = const("Credit Memo"));
+
 
             column(CompanyInfo_Picture; CompanyInfo_Grec.Picture)
             {
@@ -42,15 +42,11 @@ report 52602 "HMX Sales Credit memo"
             column(No_; "No.")
             {
             }
-            column(Order_Date; "Order Date")
+            column(Order_Date; "Posting Date")
             {
             }
-            column(Shipment_Date; "Shipment Date")
-            {
-            }
-            column(Payment_Terms_Code; "Payment Terms Code")
-            {
-            }
+
+
             column(External_Document_No_; "External Document No.")
             {
             }
@@ -81,20 +77,25 @@ report 52602 "HMX Sales Credit memo"
             {
 
             }
-            column(PaymentMethodCode; paymentMtdDesc)
+            column(ShippingMthDesc; ShippingMthDesc)
             {
 
             }
-            dataitem("Sales Line"; "Sales Line")
+            dataitem("Sales Line"; "Sales Cr.Memo Line")
             {
                 DataItemLinkReference = "Sales_Header";
-                DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
+                DataItemLink = "Document No." = field("No.");
                 DataItemTableView = where(Type = const(Item));
 
                 column(Quantity; Quantity)
                 {
 
                 }
+                column(ItemNo; "No.")
+                {
+
+                }
+
                 column(Description; Description)
                 {
 
@@ -117,18 +118,12 @@ report 52602 "HMX Sales Credit memo"
 
                 }
 
-                column(Package_Tracking_No_; "Package Tracking No.")
-                {
 
-                }
                 column(Serial_LotNo_GRec; this.Serial_LotNo_GRec)
                 {
 
                 }
-                column(PrintLine; this.PrintLine)
-                {
 
-                }
                 trigger OnPreDataItem()
 
                 begin
@@ -145,24 +140,23 @@ report 52602 "HMX Sales Credit memo"
                     Clear(this.Amount_GRec);
                     Clear(this.Serial_LotNo_GRec);
 
-                    if "Sales Line".Type = "Sales Line".Type::Item then begin
-                        this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
-                        this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
-                        this.SubTotalAmount_GRec += this.Amount_GRec;
-                        this.PrintLine := 1;
-                        this.ReservationEntry_GRec.Reset();
-                        this.ReservationEntry_GRec.SetRange("Source Type", 37);
-                        this.ReservationEntry_GRec.SetRange("Source Subtype", 1);
-                        this.ReservationEntry_GRec.SetRange("Source ID", "Sales Line"."Document No.");
-                        this.ReservationEntry_GRec.SetRange("Source Ref. No.", "Sales Line"."Line No.");
-                        if this.ReservationEntry_GRec.FindFirst() then
-                            if this.ReservationEntry_GRec."Serial No." <> '' then
-                                this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Serial No."
-                            else
-                                this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Lot No.";
+
+                    this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
+                    this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
+                    this.SubTotalAmount_GRec += this.Amount_GRec;
+
+                    this.ReservationEntry_GRec.Reset();
+                    this.ReservationEntry_GRec.SetRange("Source Type", 37);
+                    this.ReservationEntry_GRec.SetRange("Source Subtype", 1);
+                    this.ReservationEntry_GRec.SetRange("Source ID", "Sales Line"."Document No.");
+                    this.ReservationEntry_GRec.SetRange("Source Ref. No.", "Sales Line"."Line No.");
+                    if this.ReservationEntry_GRec.FindFirst() then
+                        if this.ReservationEntry_GRec."Serial No." <> '' then
+                            this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Serial No."
+                        else
+                            this.Serial_LotNo_GRec := this.ReservationEntry_GRec."Lot No.";
 
 
-                    end;
 
 
                     this.TotalAmount_Grec := this.SubTotalAmount_GRec;
@@ -182,8 +176,7 @@ report 52602 "HMX Sales Credit memo"
             trigger OnPreDataItem()
 
             begin
-                Clear(this.WorkDescriptionInstream_GRec);
-                Clear(this.WorkDescriptionLine_Grec);
+
 
             end;
 
@@ -193,10 +186,10 @@ report 52602 "HMX Sales Credit memo"
                 BarcodeSymbology: Enum "Barcode Symbology";
                 BarcodeFontProvider: Interface "Barcode Font Provider";
             begin
-                Clear(PaymentMtdDesc);
+                Clear(ShippingMthDesc);
 
-                if this.PaymentMethod_Grec.Get(Sales_Header."Payment Method Code") then
-                    PaymentMtdDesc := this.PaymentMethod_Grec.Description;
+                if this.ShippingMethod_GRec.Get(Sales_Header."Shipment Method Code") then
+                    ShippingMthDesc := this.ShippingMethod_GRec.Description;
 
                 //Print barcode
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
@@ -222,27 +215,32 @@ report 52602 "HMX Sales Credit memo"
 
     labels
     {
-        SalesOrderLbl = 'Sales Order';
-        DateLbl = 'Date';
-        OrderLbl = 'Order #';
-        AnticipatedShipdateLbl = 'Anticipated Ship Date';
-        PaymentTermsLbl = 'Terms';
-        PoLbl = 'PO #';
+        SaleCreditMemoLabel = 'Credit Memo';
+        DateLabel = 'Date';
+        CreditLabel = 'Credit #';
+        POLabel = 'PO #';
+        ProjectLblel = 'Project';
+        ShippingMethodLabel = 'Shipping Method';
+        ShippingTaxCodeLabel = 'Shipping Tax Code';
+        ShippingTaxRateLabel = 'Shipping Tax Rate';
         BillToLbl = 'Bill To';
-        ShipToLbl = 'Ship To';
-        NotestoShipperLbl = 'Notes to Shipper';
-        QuantityLbl = 'Quantity';
-        DescriptionLbl = 'Description';
-        SerialLotLbl = 'Serial/Lot Numbers';
-        RateLbl = 'Rate';
-        AmountLbl = 'Amount';
+        Itemlabel = 'Item';
+        descriptionLabel = 'Description';
+        QuantityLabel = 'Quantity';
+        UnitsLabel = 'Units';
+        OptionsLabel = 'Options';
+        SerialLotNoLabel = 'Serial/ Lot Numbers';
+        RateLabel = 'Rate';
+        AmountLabel = 'Amount';
+        TaxRateLabel = 'Tax Rate';
+        TaxLabel = 'Tax';
+
         SubtotalLbl = 'Subtotal';
-        ShippingCostLbl = 'Shipping Cost (Other)';
         TotalLbl = 'Total';
-        CustomerShpSpecLbl = 'Customer Shipping Specifications';
-        PaymentMtdLbl = 'Payment Method';
-        CreditCardNoLbl = 'Credit Card #';
-        TrackingLbl = 'Tracking #';
+
+
+
+
     }
     trigger OnPreReport()
     begin
@@ -261,20 +259,19 @@ report 52602 "HMX Sales Credit memo"
 
     var
         CompanyInfo_Grec: Record "Company Information";
-        PaymentMethod_Grec: Record "Payment Method";
-        PaymentMtdDesc: Text;
+        ShippingMethod_GRec: Record "Shipment Method";
+        ShippingMthDesc: Text;
         ReservationEntry_GRec: Record "Reservation Entry";
         GenLedSetup_GRec: Record "General Ledger Setup";
-        WorkDescriptionLine_Grec: Text;
         Serial_LotNo_GRec: Text;
         EncodeTextCode39: Text;
-        WorkDescriptionInstream_GRec: InStream;
+
         Rate_GRec: Decimal;
         Amount_GRec: Decimal;
-        ShippingAmount_GRec: Decimal;
+
         TotalAmount_Grec: Decimal;
         SubTotalAmount_GRec: Decimal;
-        PrintLine: Decimal;
+
         BarcodeSymbology: Enum "Barcode Symbology";
 
 
