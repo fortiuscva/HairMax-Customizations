@@ -52,6 +52,10 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
             {
                 ApplicationArea = all;
             }
+            field("HMX County"; Rec."HMX County")
+            {
+                ApplicationArea = all;
+            }
             field("HMX Post Code"; Rec."HMX Post Code")
             {
                 ApplicationArea = all;

@@ -80,6 +80,12 @@ tableextension 52603 "HMX CustomerExt" extends Customer
             Caption = 'Comments';
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the comments for the interaction';
+            trigger OnLookup()
+            var
+                TempInterLogEntryCommentLine: Record "Inter. Log Entry Comment Line";
+            begin
+                PAGE.RunModal(PAGE::"Inter. Log Entry Comment Sheet", TempInterLogEntryCommentLine);
+            end;
 
         }
 
@@ -130,6 +136,8 @@ tableextension 52603 "HMX CustomerExt" extends Customer
         SegmentLine_Lrec.Validate("Line No.", LastLineNo_Lrec + 10000);
         SegmentLine_Lrec.Insert();
         Commit();
+        Rec."HMX Date of Interaction" := Today();
+        Rec."HMX Time of Interaction" := Time();
         SegmentLine_Lrec.Validate("Interaction Template Code", Rec."HMX Interaction Template Code");
         SegmentLine_Lrec.Validate(Description, Rec."HMX Description");
         SegmentLine_Lrec.Validate("Salesperson Code", Rec."HMX Salesperson");
@@ -188,6 +196,7 @@ tableextension 52603 "HMX CustomerExt" extends Customer
         Rec."HMX Salesperson" := '';
         Rec."HMX Interaction Language Code" := '';
         Rec."HMX Date of Interaction" := 0D;
+        Rec."HMX Comments" := '';
         Rec."HMX Time of Interaction" := 0T;
         Rec."HMX Correspondence Type" := Rec."HMX Correspondence Type"::" ";
         Rec."HMX Information Flow" := Rec."HMX Information Flow"::" ";
