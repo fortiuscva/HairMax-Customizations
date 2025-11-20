@@ -52,6 +52,10 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
             {
                 ApplicationArea = all;
             }
+            field("HMX County"; Rec."HMX County")
+            {
+                ApplicationArea = all;
+            }
             field("HMX Post Code"; Rec."HMX Post Code")
             {
                 ApplicationArea = all;
@@ -66,15 +70,51 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
             group("HMX Qualityreview")
             {
                 Caption = 'Quality Review';
+                field("HMX Complaintcategory"; Rec."HMX Complaintcategory")
+                {
+                    ApplicationArea = all;
+                }
 
-                field("HMX ReportableEvent"; Rec."HMX ReportableEvent")
+                field("HMX Justification"; Justification)
+                {
+                    ApplicationArea = all;
+                    MultiLine = true;
+                    Caption = 'Quality Evaluation';
+                    trigger OnValidate()
+
+                    begin
+                        Rec.SetJustofication(Justification);
+                    end;
+                }
+                field("HMX ExistingCaseTracking"; Rec."HMX ExistingCaseTracking")
                 {
                     ApplicationArea = all;
                 }
-                field("HMX NonRequiredEvent"; Rec."HMX NonRequiredEvent")
+                label("Risk Assessment1")
                 {
                     ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
                 }
+                label("Risk Assessment2")
+                {
+                    ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
+                }
+                label("Risk Assessment3")
+                {
+                    ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
+                }
+                label("Risk Assessment")
+                {
+                    ApplicationArea = all;
+                    Style = Strong;
+                }
+
+
                 field("HMX ComplaintInvestReq"; Rec."HMX ComplaintInvestReq")
                 {
                     ApplicationArea = all;
@@ -83,19 +123,13 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Complaintcategory"; Rec."HMX Complaintcategory")
-                {
-                    ApplicationArea = all;
-                }
-                field("HMX Justification"; Rec."HMX Justification")
-                {
-                    ApplicationArea = all;
-                }
-                field("HMX ExistingCaseTracking"; Rec."HMX ExistingCaseTracking")
-                {
-                    ApplicationArea = all;
-                }
                 field("HMX JustificationNoCAPA"; Rec."HMX JustificationNoCAPA")
+                {
+                    ApplicationArea = all;
+                }
+
+
+                field("HMX ReportableEvent"; Rec."HMX ReportableEvent")
                 {
                     ApplicationArea = all;
                 }
@@ -124,6 +158,16 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
     {
         // Add changes to page actions here
     }
+    var
+        Justification: Text;
 
+    trigger OnAfterGetRecord()
+    var
+        Salesheader: Record "Sales Header";
+    begin
+        Justification := '';
+        if Rec."HMX Justification".HasValue then
+            Justification := Rec.GetJustification();
+    end;
 
 }

@@ -34,7 +34,7 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
         }
         field(50004; "HMX case Issue"; Enum "HMX Case Issue")
         {
-            Caption = 'Case Issue';
+            Caption = 'Case Issue/As reported';
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the Case Issue';
         }
@@ -116,16 +116,11 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
         }
         field(50011; "HMX ReportableEvent"; Boolean)
         {
-            Caption = 'Reportable Event (MDR Required)';
+            Caption = 'CAPA Escalation Required';
             ToolTip = 'Specifies the Reportable Event';
             DataClassification = CustomerContent;
         }
-        field(50012; "HMX NonRequiredEvent"; Boolean)
-        {
-            Caption = 'Non-Required Event (MDR is not required)';
-            ToolTip = 'Specifies the Non required Event';
-            DataClassification = CustomerContent;
-        }
+
         field(50013; "HMX ComplaintInvestReq"; Boolean)
         {
             Caption = 'Complaint Investigation Required';
@@ -134,38 +129,40 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
         }
         field(50014; "HMX CorrectiveActionReq"; Boolean)
         {
-            Caption = 'Corrective Action Required';
+            Caption = 'Containment Action Required';
             ToolTip = 'Specifies if the Corrective action is required';
             DataClassification = CustomerContent;
         }
-        field(50015; "HMX Complaintcategory"; Enum "HMX Complaint Category")
+        field(50015; "HMX Complaintcategory"; Text[250])
         {
-            Caption = 'Complaint Category';
+            Caption = 'Case Issue/As Evaluated';
             ToolTip = 'Specifies the complaint category';
+            TableRelation = "HMX Complaint category";
             DataClassification = CustomerContent;
         }
-        field(50016; "HMX Justification"; Text[250])
+        field(50016; "HMX Justification"; Blob)
         {
-            Caption = 'Justification if no investigation is required';
+            Caption = 'Quality Evaluation';
             ToolTip = 'Specifies the justification if no investigation is required';
             DataClassification = CustomerContent;
         }
         field(50017; "HMX ExistingCaseTracking"; Text[100])
         {
-            Caption = 'Existing Case Tracking the Complaint';
+            Caption = 'Associated Complaint(s)';
             ToolTip = 'Specifies the exisiting case tracking of the complaint';
             DataClassification = CustomerContent;
             TableRelation = "HMX ExistingCaseTracking";
         }
         field(50018; "HMX JustificationNoCAPA"; Text[250])
         {
-            Caption = 'Justification if No CAPA is Required';
+            Caption = 'Containment Action';
             ToolTip = 'Specifies the Justification if No CAPA is Required';
             DataClassification = CustomerContent;
+
         }
         field(50019; "HMX CorrectiveAction"; Text[250])
         {
-            Caption = 'Corrective Action #';
+            Caption = 'Associated CAPA';
             ToolTip = 'Specifies the Corrective Action #';
             DataClassification = CustomerContent;
         }
@@ -194,6 +191,26 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
         // Add changes to field groups here
     }
 
+    procedure SetJustofication(NewJustification: Text)
+    var
+        OutStream: OutStream;
+    begin
 
+        Clear("HMX Justification");
+        "HMX Justification".CreateOutStream(OutStream, TEXTENCODING::UTF8);
+        OutStream.WriteText(NewJustification);
+        Modify();
+    end;
+
+
+    procedure GetJustification() Justification: Text
+    var
+        TypeHelper: Codeunit "Type Helper";
+        InStream: InStream;
+    begin
+        CalcFields("HMX Justification");
+        "HMX Justification".CreateInStream(InStream, TEXTENCODING::UTF8);
+        exit(TypeHelper.TryReadAsTextWithSepAndFieldErrMsg(InStream, TypeHelper.LFSeparator(), FieldName("HMX Justification")));
+    end;
 
 }
