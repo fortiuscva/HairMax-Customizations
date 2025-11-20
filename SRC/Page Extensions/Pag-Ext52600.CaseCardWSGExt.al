@@ -70,28 +70,16 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
             group("HMX Qualityreview")
             {
                 Caption = 'Quality Review';
-
-                field("HMX ReportableEvent"; Rec."HMX ReportableEvent")
-                {
-                    ApplicationArea = all;
-                }
-
-                field("HMX ComplaintInvestReq"; Rec."HMX ComplaintInvestReq")
-                {
-                    ApplicationArea = all;
-                }
-                field("HMX CorrectiveActionReq"; Rec."HMX CorrectiveActionReq")
-                {
-                    ApplicationArea = all;
-                }
                 field("HMX Complaintcategory"; Rec."HMX Complaintcategory")
                 {
                     ApplicationArea = all;
                 }
+
                 field("HMX Justification"; Justification)
                 {
                     ApplicationArea = all;
                     MultiLine = true;
+                    Caption = 'Quality Evaluation';
                     trigger OnValidate()
 
                     begin
@@ -102,7 +90,46 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
                 {
                     ApplicationArea = all;
                 }
+                label("Risk Assessment1")
+                {
+                    ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
+                }
+                label("Risk Assessment2")
+                {
+                    ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
+                }
+                label("Risk Assessment3")
+                {
+                    ApplicationArea = all;
+                    Caption = '';
+                    Style = Strong;
+                }
+                label("Risk Assessment")
+                {
+                    ApplicationArea = all;
+                    Style = Strong;
+                }
+
+
+                field("HMX ComplaintInvestReq"; Rec."HMX ComplaintInvestReq")
+                {
+                    ApplicationArea = all;
+                }
+                field("HMX CorrectiveActionReq"; Rec."HMX CorrectiveActionReq")
+                {
+                    ApplicationArea = all;
+                }
                 field("HMX JustificationNoCAPA"; Rec."HMX JustificationNoCAPA")
+                {
+                    ApplicationArea = all;
+                }
+
+
+                field("HMX ReportableEvent"; Rec."HMX ReportableEvent")
                 {
                     ApplicationArea = all;
                 }
