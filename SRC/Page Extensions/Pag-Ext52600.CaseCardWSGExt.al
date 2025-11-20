@@ -75,10 +75,7 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
                 {
                     ApplicationArea = all;
                 }
-                field("HMX NonRequiredEvent"; Rec."HMX NonRequiredEvent")
-                {
-                    ApplicationArea = all;
-                }
+
                 field("HMX ComplaintInvestReq"; Rec."HMX ComplaintInvestReq")
                 {
                     ApplicationArea = all;
@@ -91,9 +88,15 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
                 {
                     ApplicationArea = all;
                 }
-                field("HMX Justification"; Rec."HMX Justification")
+                field("HMX Justification"; Justification)
                 {
                     ApplicationArea = all;
+                    MultiLine = true;
+                    trigger OnValidate()
+
+                    begin
+                        Rec.SetJustofication(Justification);
+                    end;
                 }
                 field("HMX ExistingCaseTracking"; Rec."HMX ExistingCaseTracking")
                 {
@@ -128,6 +131,16 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
     {
         // Add changes to page actions here
     }
+    var
+        Justification: Text;
 
+    trigger OnAfterGetRecord()
+    var
+        Salesheader: Record "Sales Header";
+    begin
+        Justification := '';
+        if Rec."HMX Justification".HasValue then
+            Justification := Rec.GetJustification();
+    end;
 
 }

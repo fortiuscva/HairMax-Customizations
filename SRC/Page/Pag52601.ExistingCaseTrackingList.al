@@ -72,4 +72,11 @@ page 52601 "HMX ExistingCaseTrackingList"
             }
         }
     }
+    trigger OnOpenPage()
+    var
+        UserSetuprec: Record "User Setup";
+    begin
+        if (UserSetuprec.Get(UserId()) and (not UserSetuprec.CaseMangement)) then
+            Error('You do not have permission to open this page.');
+    end;
 }

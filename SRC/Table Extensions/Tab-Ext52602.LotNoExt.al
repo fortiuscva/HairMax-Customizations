@@ -8,6 +8,7 @@ tableextension 52602 "HMX LotNoExt" extends "Lot No. Information"
             Caption = 'Customer No.';
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the Customer No.';
+
             trigger OnValidate()
             var
                 Customer_Lrec: Record Customer;

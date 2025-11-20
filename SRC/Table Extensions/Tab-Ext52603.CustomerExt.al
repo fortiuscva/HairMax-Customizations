@@ -8,6 +8,34 @@ tableextension 52603 "HMX CustomerExt" extends Customer
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the interaction template code';
             TableRelation = "Interaction Template";
+            trigger OnValidate()
+            var
+                InteractionTemplate: Record "Interaction Template";
+                TempInterLogEntryCommentLine: Record "Inter. Log Entry Comment Line";
+                InteractionLogEntry_Lrec: Record "Interaction Log Entry";
+            begin
+                if InteractionTemplate.Get(Rec."HMX Interaction Template Code") then begin
+                    Rec."HMX Description" := InteractionTemplate.Description;
+                    Rec."HMX Information Flow" := InteractionTemplate."Information Flow";
+                    Rec."HMX Initiated By" := InteractionTemplate."Initiated By";
+                    Rec."HMX Date of Interaction" := Today();
+                    Rec."HMX Time of Interaction" := Time();
+                    if NextInteractLogEntryNo = 0 then
+                        GetNextEntryNo();
+                    "HMX Entry No." := NextInteractLogEntryNo;
+
+                    TempInterLogEntryCommentLine.Reset();
+                    TempInterLogEntryCommentLine.Init();
+                    TempInterLogEntryCommentLine."Entry No." := Rec."HMX Entry No.";
+                    TempInterLogEntryCommentLine.Date := Today();
+                    TempInterLogEntryCommentLine.Insert();
+                    Commit();
+                    InteractionLogEntry_Lrec.reset();
+                    InteractionLogEntry_Lrec.Init();
+                    InteractionLogEntry_Lrec.Validate("Entry No.", Rec."HMX Entry No.");
+                    InteractionLogEntry_Lrec.insert;
+                end;
+            end;
 
         }
         field(50001; "HMX Description"; Text[100])
@@ -78,13 +106,27 @@ tableextension 52603 "HMX CustomerExt" extends Customer
         field(50009; "HMX Comments"; Text[80])
         {
             Caption = 'Comments';
-            DataClassification = CustomerContent;
             ToolTip = 'Specifies the comments for the interaction';
+            DataClassification = CustomerContent;
             trigger OnLookup()
             var
                 TempInterLogEntryCommentLine: Record "Inter. Log Entry Comment Line";
+
             begin
-                PAGE.RunModal(PAGE::"Inter. Log Entry Comment Sheet", TempInterLogEntryCommentLine);
+
+                TempInterLogEntryCommentLine.Reset();
+                TempInterLogEntryCommentLine.SetRange("Entry No.", Rec."HMX Entry No.");
+                if TempInterLogEntryCommentLine.FindFirst() then
+                    PAGE.RunModal(PAGE::"Inter. Log Entry Comment Sheet", TempInterLogEntryCommentLine);
+
+                Rec."HMX Comments" := 'Comments';
+            end;
+
+            trigger OnValidate()
+
+            begin
+                if Rec."HMX Comments" <> 'Comments' then
+                    Error('Please use the lookup to enter comments');
             end;
 
         }
@@ -113,26 +155,43 @@ tableextension 52603 "HMX CustomerExt" extends Customer
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the duration of the interaction';
         }
+        field(50014; "HMX Entry No."; Integer)
+        {
+            Caption = 'Entry No.';
+            DataClassification = CustomerContent;
+            ToolTip = 'Specifies the entry no for interaction log entry';
+        }
 
     }
+
+
     procedure InitSegmentLine()
     var
         SegmentLine_Lrec: Record "Segment Line";
         LastLineNo_Lrec: Integer;
         CreateIntercation: page "Create Interaction";
-
+        ContBusRel: Record "Contact Business Relation";
+        Cont: Record Contact;
     begin
-        if (Rec."HMX Interaction Template Code" = '') or (Rec."Primary Contact No." = '') then
+        if (Rec."HMX Interaction Template Code" = '') then
+            exit;
+
+        ContBusRel.Reset();
+        ContBusRel.SetCurrentKey("Link to Table", "No.");
+        ContBusRel.SetRange("Link to Table", ContBusRel."Link to Table"::Customer);
+        ContBusRel.SetRange("No.", Rec."No.");
+        if not ContBusRel.FindFirst() then
             exit;
         SegmentLine_Lrec.Reset();
-        SegmentLine_Lrec.SetRange("Contact No.", Rec."Primary Contact No.");
+        SegmentLine_Lrec.SetRange("Contact No.", ContBusRel."Contact No.");
         if SegmentLine_Lrec.FindLast() then
             LastLineNo_Lrec := SegmentLine_Lrec."Line No."
         else
             LastLineNo_Lrec := 0;
         SegmentLine_Lrec.Reset();
         SegmentLine_Lrec.Init();
-        SegmentLine_Lrec.Validate("Contact No.", Rec."Primary Contact No.");
+
+        SegmentLine_Lrec.Validate("Contact No.", ContBusRel."Contact No.");
         SegmentLine_Lrec.Validate("Line No.", LastLineNo_Lrec + 10000);
         SegmentLine_Lrec.Insert();
         Commit();
@@ -156,37 +215,46 @@ tableextension 52603 "HMX CustomerExt" extends Customer
         CreateInteractionLogEntry(SegmentLine_Lrec);
     end;
 
+    local procedure GetNextEntryNo()
+    var
+
+        SequenceNoMgt: Codeunit "Sequence No. Mgt.";
+    begin
+        Clear(NextInteractLogEntryNo);
+        NextInteractLogEntryNo := SequenceNoMgt.GetNextSeqNo(Database::"Interaction Log Entry");
+
+    end;
+
     local procedure CreateInteractionLogEntry(Var SegmentLine_Lrec: Record "Segment Line")
     var
         InteractionLogEntry_Lrec: Record "Interaction Log Entry";
-        NextInteractLogEntryNo: Integer;
-        SequenceNoMgt: Codeunit "Sequence No. Mgt.";
+
+
     begin
-        if (Rec."HMX Interaction Template Code" = '') or (Rec."Primary Contact No." = '') then
+        if (Rec."HMX Interaction Template Code" = '') then
             exit;
-        Clear(NextInteractLogEntryNo);
-        NextInteractLogEntryNo := SequenceNoMgt.GetNextSeqNo(Database::"Interaction Log Entry");
         InteractionLogEntry_Lrec.Reset();
-        InteractionLogEntry_Lrec.Init();
-        InteractionLogEntry_Lrec.Validate("Entry No.", NextInteractLogEntryNo);
-        InteractionLogEntry_Lrec.Validate("Contact No.", SegmentLine_Lrec."Contact No.");
-        InteractionLogEntry_Lrec.Validate("Contact Company No.", SegmentLine_Lrec."Contact No.");
-        InteractionLogEntry_Lrec.Validate("Interaction Template Code", SegmentLine_Lrec."Interaction Template Code");
-        InteractionLogEntry_Lrec.Validate(Description, SegmentLine_Lrec.Description);
-        InteractionLogEntry_Lrec.Validate("Salesperson Code", SegmentLine_Lrec."Salesperson Code");
-        InteractionLogEntry_Lrec.Validate("Interaction Language Code", SegmentLine_Lrec."Language Code");
-        InteractionLogEntry_Lrec.Validate(Date, SegmentLine_Lrec.Date);
-        InteractionLogEntry_Lrec.Validate("Time of Interaction", SegmentLine_Lrec."Time of Interaction");
-        InteractionLogEntry_Lrec.Validate("Correspondence Type", SegmentLine_Lrec."Correspondence Type");
-        InteractionLogEntry_Lrec.Validate("Information Flow", SegmentLine_Lrec."Information Flow");
-        InteractionLogEntry_Lrec.Validate("Initiated By", SegmentLine_Lrec."Initiated By");
-        InteractionLogEntry_Lrec.Validate(Evaluation, SegmentLine_Lrec.Evaluation);
-        InteractionLogEntry_Lrec.Validate("Attempt Failed", not SegmentLine_Lrec."Interaction Successful");
-        InteractionLogEntry_Lrec.Validate("Cost (LCY)", SegmentLine_Lrec."Cost (LCY)");
-        InteractionLogEntry_Lrec.Validate("Duration (Min.)", SegmentLine_Lrec."Duration (Min.)");
-        InteractionLogEntry_Lrec.Insert(true);
-        Commit();
-        SegmentLine_Lrec.Delete(true);
+        InteractionLogEntry_Lrec.SetRange("Entry No.", Rec."HMX Entry No.");
+        if InteractionLogEntry_Lrec.FindFirst() then begin
+            InteractionLogEntry_Lrec.Validate("Contact No.", SegmentLine_Lrec."Contact No.");
+            InteractionLogEntry_Lrec.Validate("Contact Company No.", SegmentLine_Lrec."Contact No.");
+            InteractionLogEntry_Lrec.Validate("Interaction Template Code", SegmentLine_Lrec."Interaction Template Code");
+            InteractionLogEntry_Lrec.Validate(Description, SegmentLine_Lrec.Description);
+            InteractionLogEntry_Lrec.Validate("Salesperson Code", SegmentLine_Lrec."Salesperson Code");
+            InteractionLogEntry_Lrec.Validate("Interaction Language Code", SegmentLine_Lrec."Language Code");
+            InteractionLogEntry_Lrec.Validate(Date, SegmentLine_Lrec.Date);
+            InteractionLogEntry_Lrec.Validate("Time of Interaction", SegmentLine_Lrec."Time of Interaction");
+            InteractionLogEntry_Lrec.Validate("Correspondence Type", SegmentLine_Lrec."Correspondence Type");
+            InteractionLogEntry_Lrec.Validate("Information Flow", SegmentLine_Lrec."Information Flow");
+            InteractionLogEntry_Lrec.Validate("Initiated By", SegmentLine_Lrec."Initiated By");
+            InteractionLogEntry_Lrec.Validate(Evaluation, SegmentLine_Lrec.Evaluation);
+            InteractionLogEntry_Lrec.Validate("Attempt Failed", not SegmentLine_Lrec."Interaction Successful");
+            InteractionLogEntry_Lrec.Validate("Cost (LCY)", SegmentLine_Lrec."Cost (LCY)");
+            InteractionLogEntry_Lrec.Validate("Duration (Min.)", SegmentLine_Lrec."Duration (Min.)");
+            InteractionLogEntry_Lrec.Modify(true);
+            Commit();
+            SegmentLine_Lrec.Delete(true);
+        end;
     end;
 
     procedure ClearIntercationDetails()
@@ -205,11 +273,13 @@ tableextension 52603 "HMX CustomerExt" extends Customer
         Rec."HMX Was Successful" := false;
         Rec."HMX Cost" := 0;
         Rec."HMX Duration" := 0;
+        Rec."HMX Entry No." := 0;
         Rec.Modify();
     end;
 
 
-
+    var
+        NextInteractLogEntryNo: Integer;
 
 
 }

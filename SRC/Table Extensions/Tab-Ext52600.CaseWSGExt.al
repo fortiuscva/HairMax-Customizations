@@ -120,12 +120,7 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
             ToolTip = 'Specifies the Reportable Event';
             DataClassification = CustomerContent;
         }
-        field(50012; "HMX NonRequiredEvent"; Boolean)
-        {
-            Caption = 'Non-Required Event (MDR is not required)';
-            ToolTip = 'Specifies the Non required Event';
-            DataClassification = CustomerContent;
-        }
+
         field(50013; "HMX ComplaintInvestReq"; Boolean)
         {
             Caption = 'Complaint Investigation Required';
@@ -138,13 +133,14 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
             ToolTip = 'Specifies if the Corrective action is required';
             DataClassification = CustomerContent;
         }
-        field(50015; "HMX Complaintcategory"; Enum "HMX Complaint Category")
+        field(50015; "HMX Complaintcategory"; Text[250])
         {
             Caption = 'Complaint Category';
             ToolTip = 'Specifies the complaint category';
+            TableRelation = "HMX Complaint category";
             DataClassification = CustomerContent;
         }
-        field(50016; "HMX Justification"; Text[250])
+        field(50016; "HMX Justification"; Blob)
         {
             Caption = 'Justification if no investigation is required';
             ToolTip = 'Specifies the justification if no investigation is required';
@@ -162,6 +158,7 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
             Caption = 'Justification if No CAPA is Required';
             ToolTip = 'Specifies the Justification if No CAPA is Required';
             DataClassification = CustomerContent;
+            TableRelation = "HMX JustificationNoCAPA";
         }
         field(50019; "HMX CorrectiveAction"; Text[250])
         {
@@ -194,6 +191,26 @@ tableextension 52600 "HMX CaseWSGExt" extends "Case WSG"
         // Add changes to field groups here
     }
 
+    procedure SetJustofication(NewJustification: Text)
+    var
+        OutStream: OutStream;
+    begin
 
+        Clear("HMX Justification");
+        "HMX Justification".CreateOutStream(OutStream, TEXTENCODING::UTF8);
+        OutStream.WriteText(NewJustification);
+        Modify();
+    end;
+
+
+    procedure GetJustification() Justification: Text
+    var
+        TypeHelper: Codeunit "Type Helper";
+        InStream: InStream;
+    begin
+        CalcFields("HMX Justification");
+        "HMX Justification".CreateInStream(InStream, TEXTENCODING::UTF8);
+        exit(TypeHelper.TryReadAsTextWithSepAndFieldErrMsg(InStream, TypeHelper.LFSeparator(), FieldName("HMX Justification")));
+    end;
 
 }
