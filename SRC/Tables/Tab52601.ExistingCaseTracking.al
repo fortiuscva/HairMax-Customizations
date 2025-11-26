@@ -7,7 +7,7 @@ table 52601 "HMX ExistingCaseTracking"
     {
         field(1; "Internal ID"; Text[100])
         {
-            Caption = 'Internal ID';
+            Caption = 'Exisiting Case Tracking Number';
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the Internal ID for the exisiting case';
         }
@@ -89,6 +89,13 @@ table 52601 "HMX ExistingCaseTracking"
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the country for the exisiting case';
         }
+        field(15; Description; Text[250])
+        {
+            Caption = 'Exisiting Case Tracking Number Description';
+            DataClassification = CustomerContent;
+            ToolTip = 'Specifies the Internal ID for the exisiting case';
+        }
+
     }
     keys
     {
@@ -99,7 +106,7 @@ table 52601 "HMX ExistingCaseTracking"
     }
     fieldgroups
     {
-        fieldgroup(DropDown; "Internal ID", Number, "Incident Date", Company, Subject, Item, Priority, Stage, Status, Type, "Warranty Status", "Fault category", "Assigned To", Country)
+        fieldgroup(DropDown; "Internal ID", Description)
         {
 
         }
