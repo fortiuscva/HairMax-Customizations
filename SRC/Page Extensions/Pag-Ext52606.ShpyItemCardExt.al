@@ -32,7 +32,7 @@ pageextension 52606 "HMX ShpyItemCardExt" extends "Item Card"
                 trigger OnAction()
                 var
                     ShopifyProduct: Record "Shpfy Product";
-                    Report: Report "Planning Availability";
+
 
                 begin
                     ShopifyProduct.Reset();
