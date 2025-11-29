@@ -37,6 +37,7 @@ pageextension 52611 "HMX SalesOrderListExt" extends "Sales Order List"
                                 repeat
                                     SalesLineRec.Validate("Tax Area Code", '');
                                     SalesLineRec.Validate("Tax Group Code", '');
+                                    SalesLineRec.Validate("Tax Liable", false);
                                     SalesLineRec.Modify();
                                 until SalesLineRec.Next() = 0;
                             end;
