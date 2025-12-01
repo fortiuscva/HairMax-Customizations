@@ -102,6 +102,11 @@ report 52604 "HMX Packing Slip"
             {
 
             }
+            column(Order_No_; "Order No.")
+            {
+
+            }
+
 
 
             dataitem("Sales Line"; "Sales Shipment Line")
@@ -204,7 +209,7 @@ report 52604 "HMX Packing Slip"
                 //Print barcode
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                 BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
-                BarcodeString := "No.";
+                BarcodeString := "Order No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
             end;
