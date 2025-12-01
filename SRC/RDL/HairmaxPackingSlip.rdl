@@ -870,7 +870,8 @@ Cstr(Fields!Ship_to_City.Value) + Chr(177) +
 Cstr(Fields!Ship_to_County.Value) + Chr(177) + 
 Cstr(Fields!Ship_to_Post_Code.Value) + Chr(177) + 
 Cstr(Fields!Ship_to_Country_Region_Code.Value) + Chr(177) + 
-Cstr(Fields!ShippingMthDesc.Value) , 1 )</Hidden>
+Cstr(Fields!ShippingMthDesc.Value) + Chr(177) + 
+Cstr(Fields!Order_No_.Value), 1 )</Hidden>
                                             </Visibility>
                                             <Style>
                                               <Border>
@@ -1191,7 +1192,7 @@ Cstr(Fields!ShippingMthDesc.Value) , 1 )</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(1,1)</Value>
+                          <Value>=Code.GetData(13,1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -1792,7 +1793,7 @@ Cstr(Fields!ShippingMthDesc.Value) , 1 )</Hidden>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!No_.Value</Value>
+                      <Value>=Fields!Order_No_.Value</Value>
                       <Style>
                         <FontFamily>IDAutomationHC39M</FontFamily>
                       </Style>
@@ -1803,7 +1804,7 @@ Cstr(Fields!ShippingMthDesc.Value) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
               <Top>2.13374cm</Top>
-              <Left>0.03529cm</Left>
+              <Left>0.01992cm</Left>
               <Height>2.0715cm</Height>
               <Width>6.06489cm</Width>
               <Style>
@@ -2230,6 +2231,9 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
         </Field>
         <Field Name="Package_Tracking_No_">
           <DataField>Package_Tracking_No_</DataField>
+        </Field>
+        <Field Name="Order_No_">
+          <DataField>Order_No_</DataField>
         </Field>
         <Field Name="Quantity">
           <DataField>Quantity</DataField>
