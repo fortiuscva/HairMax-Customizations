@@ -47,6 +47,30 @@ pageextension 52611 "HMX SalesOrderListExt" extends "Sales Order List"
                 end;
 
             }
+            action("HMX ModifyShiptoPhone")
+            {
+                Caption = 'Modify Ship-to code if missing in shopify orders';
+                ToolTip = 'Updates the shopify orders to include the ship-to phone number from the general tab if it missing.';
+                ApplicationArea = all;
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
+                    Salesheaderrec: Record "Sales Header";
+                begin
+                    Salesheaderrec.Reset();
+                    CurrPage.SetSelectionFilter(Salesheaderrec);
+
+                    if Salesheaderrec.FindSet() then
+                        repeat
+                            if Salesheaderrec."Ship-to Phone No." = '' then begin
+                                Salesheaderrec.Validate("Ship-to Phone No.", Salesheaderrec."Sell-to Phone No.");
+                                Salesheaderrec.Modify();
+                            end;
+                        until Salesheaderrec.Next() = 0;
+
+                end;
+            }
 
         }
 
