@@ -208,8 +208,8 @@ report 52604 "HMX Packing Slip"
                     ShippingMthDesc := Shippingmethod_GRec.Description;
                 //Print barcode
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
-                BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
-                BarcodeString := "Order No.";
+                BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
+                BarcodeString := Sales_Header."Order No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
             end;
