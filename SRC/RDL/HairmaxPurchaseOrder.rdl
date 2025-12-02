@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2025-12-02T18:47:37.5869793Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
@@ -11,6 +22,160 @@
       <rd:DataSourceID>04cd2196-cc7a-40b2-b42f-0d1ca2ec6e7c</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Requested_Receipt_Date">
+          <DataField>Requested_Receipt_Date</DataField>
+        </Field>
+        <Field Name="Payment_Terms_Code">
+          <DataField>Payment_Terms_Code</DataField>
+        </Field>
+        <Field Name="Vendor_Order_No_">
+          <DataField>Vendor_Order_No_</DataField>
+        </Field>
+        <Field Name="Buy_from_Vendor_Name">
+          <DataField>Buy_from_Vendor_Name</DataField>
+        </Field>
+        <Field Name="Buy_from_Address">
+          <DataField>Buy_from_Address</DataField>
+        </Field>
+        <Field Name="Buy_from_Address_2">
+          <DataField>Buy_from_Address_2</DataField>
+        </Field>
+        <Field Name="Buy_from_City">
+          <DataField>Buy_from_City</DataField>
+        </Field>
+        <Field Name="Buy_from_County">
+          <DataField>Buy_from_County</DataField>
+        </Field>
+        <Field Name="Buy_from_Country_Region_Code">
+          <DataField>Buy_from_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="buy_from_Post_Code">
+          <DataField>buy_from_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Requistioner">
+          <DataField>Requistioner</DataField>
+        </Field>
+        <Field Name="RequistionerContact">
+          <DataField>RequistionerContact</DataField>
+        </Field>
+        <Field Name="Expected_Receipt_Date">
+          <DataField>Expected_Receipt_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Method_Code">
+          <DataField>Shipment_Method_Code</DataField>
+        </Field>
+        <Field Name="Payment_Method_Code">
+          <DataField>Payment_Method_Code</DataField>
+        </Field>
+        <Field Name="commentarray">
+          <DataField>commentarray</DataField>
+        </Field>
+        <Field Name="PaymentMethodCode">
+          <DataField>PaymentMethodCode</DataField>
+        </Field>
+        <Field Name="Agent_Code">
+          <DataField>Agent_Code</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Direct_Unit_Cost">
+          <DataField>Direct_Unit_Cost</DataField>
+        </Field>
+        <Field Name="Direct_Unit_CostFormat">
+          <DataField>Direct_Unit_CostFormat</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="TotalFormat">
+          <DataField>TotalFormat</DataField>
+        </Field>
+        <Field Name="Line_Expected_Receipt_Date">
+          <DataField>Line_Expected_Receipt_Date</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -19,7 +184,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>20.5285cm</Width>
+                  <Width>20.338cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -34,16 +199,16 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>2.9018cm</Width>
+                                    <Width>2.20411cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.11971cm</Width>
+                                    <Width>1.70248cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.89024cm</Width>
+                                    <Width>1.69974cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.90747cm</Width>
+                                    <Width>4.87366cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>2.9018cm</Width>
@@ -52,7 +217,10 @@
                                     <Width>2.50407cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.30339cm</Width>
+                                    <Width>2.14512cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.30702cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -291,6 +459,41 @@
                                               </Paragraph>
                                             </Paragraphs>
                                             <rd:DefaultName>Textbox51</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <BackgroundColor>White</BackgroundColor>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox1">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Segoe UI Black</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox1</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -549,6 +752,41 @@
                                           </Textbox>
                                         </CellContents>
                                       </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox12">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Parameters!ExpectedShipDateLbl.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI Black</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox12</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <BackgroundColor>Silver</BackgroundColor>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
                                     </TablixCells>
                                   </TablixRow>
                                   <TablixRow>
@@ -653,6 +891,7 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
+                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -789,12 +1028,46 @@
                                           </Textbox>
                                         </CellContents>
                                       </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Line_Expected_Receipt_Date">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!Line_Expected_Receipt_Date.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Line_Expected_Receipt_Date</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>Gray</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
                                     </TablixCells>
                                   </TablixRow>
                                 </TablixRows>
                               </TablixBody>
                               <TablixColumnHierarchy>
                                 <TablixMembers>
+                                  <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
@@ -815,7 +1088,7 @@
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Height>1.39783cm</Height>
-                              <Width>20.52848cm</Width>
+                              <Width>20.338cm</Width>
                               <Style>
                                 <Border>
                                   <Color>Gray</Color>
@@ -856,7 +1129,7 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox6">
+                                          <Textbox Name="Vendor_Order_No_">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -870,7 +1143,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox6</rd:DefaultName>
+                                            <rd:DefaultName>Vendor_Order_No_</rd:DefaultName>
                                             <Visibility>
                                               <Hidden>=Code.SetData(Cstr(Fields!No_.Value) + Chr(177) + 
 Cstr(Fields!Order_Date.Value) + Chr(177) + 
@@ -897,7 +1170,7 @@ Cstr(Fields!Expected_Receipt_Date.Value)  + Chr(177) +
 Cstr(Fields!Shipment_Method_Code.Value)  + Chr(177) +  
 Cstr(Last(Fields!PaymentMethodCode.Value))  + Chr(177) +  
 Cstr(Last(Fields!commentarray.Value))  + Chr(177) +  
-Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
+Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidden>
                                             </Visibility>
                                             <Style>
                                               <Border>
@@ -926,6 +1199,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
                                   <TablixMember />
                                 </TablixMembers>
                               </TablixRowHierarchy>
+                              <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.65087cm</Top>
                               <Left>19.3675cm</Left>
                               <Height>0.39757cm</Height>
@@ -970,9 +1244,10 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
             <Left>0.03528cm</Left>
             <Height>1.8cm</Height>
-            <Width>20.5285cm</Width>
+            <Width>20.338cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1886,7 +2161,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               <Top>11.14051cm</Top>
               <Left>0.03528cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.79683cm</Width>
+              <Width>3.82833cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
                 <Border>
@@ -1934,7 +2209,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.14051cm</Top>
-              <Left>5.84218cm</Left>
+              <Left>3.87368cm</Left>
               <Height>0.6cm</Height>
               <Width>3.74366cm</Width>
               <ZIndex>9</ZIndex>
@@ -1985,7 +2260,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               <Top>11.74051cm</Top>
               <Left>0.03528cm</Left>
               <Height>1.06567cm</Height>
-              <Width>5.79683cm</Width>
+              <Width>3.82833cm</Width>
               <ZIndex>10</ZIndex>
               <Style>
                 <Border>
@@ -2020,7 +2295,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>=Code.GetData(27,1)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -2032,7 +2307,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.74051cm</Top>
-              <Left>5.84218cm</Left>
+              <Left>3.87368cm</Left>
               <Height>1.06567cm</Height>
               <Width>3.74366cm</Width>
               <ZIndex>11</ZIndex>
@@ -2082,9 +2357,9 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.14051cm</Top>
-              <Left>9.60701cm</Left>
+              <Left>7.67026cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.79683cm</Width>
+              <Width>3.79658cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
                 <Border>
@@ -2132,9 +2407,9 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.14051cm</Top>
-              <Left>15.41391cm</Left>
+              <Left>11.50866cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.14987cm</Width>
+              <Width>8.86462cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
                 <Border>
@@ -2169,7 +2444,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Code.GetData(24,1)</Value>
+                      <Value>=Code.GetData(23,1)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -2181,9 +2456,9 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.74051cm</Top>
-              <Left>9.60701cm</Left>
+              <Left>7.67026cm</Left>
               <Height>1.06567cm</Height>
-              <Width>5.79683cm</Width>
+              <Width>3.79658cm</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -2230,9 +2505,9 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.74051cm</Top>
-              <Left>15.41391cm</Left>
+              <Left>11.50866cm</Left>
               <Height>1.06567cm</Height>
-              <Width>5.14987cm</Width>
+              <Width>8.86462cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
                 <Border>
@@ -2294,7 +2569,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
               <Top>0.11289cm</Top>
-              <Left>14.85704cm</Left>
+              <Left>12.60279cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36782cm</Width>
               <Style>
@@ -2328,7 +2603,7 @@ Cstr(Last(Fields!Total.Value)) , 1 )</Hidden>
               </Paragraphs>
               <rd:DefaultName>Textbox67</rd:DefaultName>
               <Top>0.10583cm</Top>
-              <Left>18.26446cm</Left>
+              <Left>16.01021cm</Left>
               <Height>0.6cm</Height>
               <Width>2.29932cm</Width>
               <ZIndex>1</ZIndex>
@@ -3097,152 +3372,4 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_State">
-          <DataField>CompanyInfo_State</DataField>
-        </Field>
-        <Field Name="CompanyInfo_ZipCode">
-          <DataField>CompanyInfo_ZipCode</DataField>
-        </Field>
-        <Field Name="LocalCurrencySymbol">
-          <DataField>LocalCurrencySymbol</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Requested_Receipt_Date">
-          <DataField>Requested_Receipt_Date</DataField>
-        </Field>
-        <Field Name="Payment_Terms_Code">
-          <DataField>Payment_Terms_Code</DataField>
-        </Field>
-        <Field Name="Vendor_Order_No_">
-          <DataField>Vendor_Order_No_</DataField>
-        </Field>
-        <Field Name="Buy_from_Vendor_Name">
-          <DataField>Buy_from_Vendor_Name</DataField>
-        </Field>
-        <Field Name="Buy_from_Address">
-          <DataField>Buy_from_Address</DataField>
-        </Field>
-        <Field Name="Buy_from_Address_2">
-          <DataField>Buy_from_Address_2</DataField>
-        </Field>
-        <Field Name="Buy_from_City">
-          <DataField>Buy_from_City</DataField>
-        </Field>
-        <Field Name="Buy_from_County">
-          <DataField>Buy_from_County</DataField>
-        </Field>
-        <Field Name="Buy_from_Country_Region_Code">
-          <DataField>Buy_from_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="buy_from_Post_Code">
-          <DataField>buy_from_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Ship_to_City">
-          <DataField>Ship_to_City</DataField>
-        </Field>
-        <Field Name="Ship_to_Post_Code">
-          <DataField>Ship_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_County">
-          <DataField>Ship_to_County</DataField>
-        </Field>
-        <Field Name="Ship_to_Country_Region_Code">
-          <DataField>Ship_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="EncodeTextCode39">
-          <DataField>EncodeTextCode39</DataField>
-        </Field>
-        <Field Name="Requistioner">
-          <DataField>Requistioner</DataField>
-        </Field>
-        <Field Name="RequistionerContact">
-          <DataField>RequistionerContact</DataField>
-        </Field>
-        <Field Name="Expected_Receipt_Date">
-          <DataField>Expected_Receipt_Date</DataField>
-        </Field>
-        <Field Name="Shipment_Method_Code">
-          <DataField>Shipment_Method_Code</DataField>
-        </Field>
-        <Field Name="Payment_Method_Code">
-          <DataField>Payment_Method_Code</DataField>
-        </Field>
-        <Field Name="commentarray">
-          <DataField>commentarray</DataField>
-        </Field>
-        <Field Name="PaymentMethodCode">
-          <DataField>PaymentMethodCode</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Direct_Unit_Cost">
-          <DataField>Direct_Unit_Cost</DataField>
-        </Field>
-        <Field Name="Direct_Unit_CostFormat">
-          <DataField>Direct_Unit_CostFormat</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="Serial_LotNo_GRec">
-          <DataField>Serial_LotNo_GRec</DataField>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-        </Field>
-        <Field Name="TotalFormat">
-          <DataField>TotalFormat</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
