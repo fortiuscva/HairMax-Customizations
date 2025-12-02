@@ -22,160 +22,6 @@
       <rd:DataSourceID>04cd2196-cc7a-40b2-b42f-0d1ca2ec6e7c</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_State">
-          <DataField>CompanyInfo_State</DataField>
-        </Field>
-        <Field Name="CompanyInfo_ZipCode">
-          <DataField>CompanyInfo_ZipCode</DataField>
-        </Field>
-        <Field Name="LocalCurrencySymbol">
-          <DataField>LocalCurrencySymbol</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Requested_Receipt_Date">
-          <DataField>Requested_Receipt_Date</DataField>
-        </Field>
-        <Field Name="Payment_Terms_Code">
-          <DataField>Payment_Terms_Code</DataField>
-        </Field>
-        <Field Name="Vendor_Order_No_">
-          <DataField>Vendor_Order_No_</DataField>
-        </Field>
-        <Field Name="Buy_from_Vendor_Name">
-          <DataField>Buy_from_Vendor_Name</DataField>
-        </Field>
-        <Field Name="Buy_from_Address">
-          <DataField>Buy_from_Address</DataField>
-        </Field>
-        <Field Name="Buy_from_Address_2">
-          <DataField>Buy_from_Address_2</DataField>
-        </Field>
-        <Field Name="Buy_from_City">
-          <DataField>Buy_from_City</DataField>
-        </Field>
-        <Field Name="Buy_from_County">
-          <DataField>Buy_from_County</DataField>
-        </Field>
-        <Field Name="Buy_from_Country_Region_Code">
-          <DataField>Buy_from_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="buy_from_Post_Code">
-          <DataField>buy_from_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Ship_to_City">
-          <DataField>Ship_to_City</DataField>
-        </Field>
-        <Field Name="Ship_to_Post_Code">
-          <DataField>Ship_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_County">
-          <DataField>Ship_to_County</DataField>
-        </Field>
-        <Field Name="Ship_to_Country_Region_Code">
-          <DataField>Ship_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="EncodeTextCode39">
-          <DataField>EncodeTextCode39</DataField>
-        </Field>
-        <Field Name="Requistioner">
-          <DataField>Requistioner</DataField>
-        </Field>
-        <Field Name="RequistionerContact">
-          <DataField>RequistionerContact</DataField>
-        </Field>
-        <Field Name="Expected_Receipt_Date">
-          <DataField>Expected_Receipt_Date</DataField>
-        </Field>
-        <Field Name="Shipment_Method_Code">
-          <DataField>Shipment_Method_Code</DataField>
-        </Field>
-        <Field Name="Payment_Method_Code">
-          <DataField>Payment_Method_Code</DataField>
-        </Field>
-        <Field Name="commentarray">
-          <DataField>commentarray</DataField>
-        </Field>
-        <Field Name="PaymentMethodCode">
-          <DataField>PaymentMethodCode</DataField>
-        </Field>
-        <Field Name="Agent_Code">
-          <DataField>Agent_Code</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Direct_Unit_Cost">
-          <DataField>Direct_Unit_Cost</DataField>
-        </Field>
-        <Field Name="Direct_Unit_CostFormat">
-          <DataField>Direct_Unit_CostFormat</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="Serial_LotNo_GRec">
-          <DataField>Serial_LotNo_GRec</DataField>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-        </Field>
-        <Field Name="TotalFormat">
-          <DataField>TotalFormat</DataField>
-        </Field>
-        <Field Name="Line_Expected_Receipt_Date">
-          <DataField>Line_Expected_Receipt_Date</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -184,7 +30,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>20.338cm</Width>
+                  <Width>20.4966cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -199,22 +45,22 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>2.20411cm</Width>
+                                    <Width>3.42216cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.70248cm</Width>
+                                    <Width>1.56363cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.69974cm</Width>
+                                    <Width>1.40341cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.87366cm</Width>
+                                    <Width>5.16999cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.9018cm</Width>
+                                    <Width>2.46803cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.50407cm</Width>
+                                    <Width>2.01724cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>2.14512cm</Width>
@@ -891,7 +737,6 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -1037,7 +882,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Line_Expected_Receipt_Date.Value</Value>
+                                                    <Value>=Format(Fields!Line_Expected_Receipt_Date.Value,"MM/dd/yyyy")</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -1088,7 +933,7 @@
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Height>1.39783cm</Height>
-                              <Width>20.338cm</Width>
+                              <Width>20.4966cm</Width>
                               <Style>
                                 <Border>
                                   <Color>Gray</Color>
@@ -1129,7 +974,7 @@
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Vendor_Order_No_">
+                                          <Textbox Name="Textbox6">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -1143,7 +988,6 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Vendor_Order_No_</rd:DefaultName>
                                             <Visibility>
                                               <Hidden>=Code.SetData(Cstr(Fields!No_.Value) + Chr(177) + 
 Cstr(Fields!Order_Date.Value) + Chr(177) + 
@@ -1170,7 +1014,7 @@ Cstr(Fields!Expected_Receipt_Date.Value)  + Chr(177) +
 Cstr(Fields!Shipment_Method_Code.Value)  + Chr(177) +  
 Cstr(Last(Fields!PaymentMethodCode.Value))  + Chr(177) +  
 Cstr(Last(Fields!commentarray.Value))  + Chr(177) +  
-Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidden>
+Cstr(Last(Fields!Total.Value)) + Chr(177) + Cstr(Fields!Agent_Code.Value) , 1 )</Hidden>
                                             </Visibility>
                                             <Style>
                                               <Border>
@@ -1247,7 +1091,7 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
             <DataSetName>DataSet_Result</DataSetName>
             <Left>0.03528cm</Left>
             <Height>1.8cm</Height>
-            <Width>20.338cm</Width>
+            <Width>20.4966cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2357,7 +2201,7 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.14051cm</Top>
-              <Left>7.67026cm</Left>
+              <Left>7.63851cm</Left>
               <Height>0.6cm</Height>
               <Width>3.79658cm</Width>
               <ZIndex>12</ZIndex>
@@ -2407,9 +2251,9 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.14051cm</Top>
-              <Left>11.50866cm</Left>
+              <Left>11.44516cm</Left>
               <Height>0.6cm</Height>
-              <Width>8.86462cm</Width>
+              <Width>9.02337cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
                 <Border>
@@ -2456,7 +2300,7 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.74051cm</Top>
-              <Left>7.67026cm</Left>
+              <Left>7.63851cm</Left>
               <Height>1.06567cm</Height>
               <Width>3.79658cm</Width>
               <ZIndex>14</ZIndex>
@@ -2505,9 +2349,9 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>11.74051cm</Top>
-              <Left>11.50866cm</Left>
+              <Left>11.44516cm</Left>
               <Height>1.06567cm</Height>
-              <Width>8.86462cm</Width>
+              <Width>9.02337cm</Width>
               <ZIndex>15</ZIndex>
               <Style>
                 <Border>
@@ -2569,9 +2413,9 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
               <Top>0.11289cm</Top>
-              <Left>12.60279cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.36782cm</Width>
+              <Left>13.23779cm</Left>
+              <Height>0.56825cm</Height>
+              <Width>3.49482cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2603,9 +2447,9 @@ Cstr(Last(Fields!Total.Value)) , 1 ) + Chr(177) + Cstr(Fields!Agent_Code)</Hidde
               </Paragraphs>
               <rd:DefaultName>Textbox67</rd:DefaultName>
               <Top>0.10583cm</Top>
-              <Left>16.01021cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.29932cm</Width>
+              <Left>16.64521cm</Left>
+              <Height>0.56825cm</Height>
+              <Width>2.42632cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -3372,4 +3216,158 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Requested_Receipt_Date">
+          <DataField>Requested_Receipt_Date</DataField>
+        </Field>
+        <Field Name="Payment_Terms_Code">
+          <DataField>Payment_Terms_Code</DataField>
+        </Field>
+        <Field Name="Vendor_Order_No_">
+          <DataField>Vendor_Order_No_</DataField>
+        </Field>
+        <Field Name="Buy_from_Vendor_Name">
+          <DataField>Buy_from_Vendor_Name</DataField>
+        </Field>
+        <Field Name="Buy_from_Address">
+          <DataField>Buy_from_Address</DataField>
+        </Field>
+        <Field Name="Buy_from_Address_2">
+          <DataField>Buy_from_Address_2</DataField>
+        </Field>
+        <Field Name="Buy_from_City">
+          <DataField>Buy_from_City</DataField>
+        </Field>
+        <Field Name="Buy_from_County">
+          <DataField>Buy_from_County</DataField>
+        </Field>
+        <Field Name="Buy_from_Country_Region_Code">
+          <DataField>Buy_from_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="buy_from_Post_Code">
+          <DataField>buy_from_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Requistioner">
+          <DataField>Requistioner</DataField>
+        </Field>
+        <Field Name="RequistionerContact">
+          <DataField>RequistionerContact</DataField>
+        </Field>
+        <Field Name="Expected_Receipt_Date">
+          <DataField>Expected_Receipt_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Method_Code">
+          <DataField>Shipment_Method_Code</DataField>
+        </Field>
+        <Field Name="Payment_Method_Code">
+          <DataField>Payment_Method_Code</DataField>
+        </Field>
+        <Field Name="commentarray">
+          <DataField>commentarray</DataField>
+        </Field>
+        <Field Name="PaymentMethodCode">
+          <DataField>PaymentMethodCode</DataField>
+        </Field>
+        <Field Name="Agent_Code">
+          <DataField>Agent_Code</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Direct_Unit_Cost">
+          <DataField>Direct_Unit_Cost</DataField>
+        </Field>
+        <Field Name="Direct_Unit_CostFormat">
+          <DataField>Direct_Unit_CostFormat</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="TotalFormat">
+          <DataField>TotalFormat</DataField>
+        </Field>
+        <Field Name="Line_Expected_Receipt_Date">
+          <DataField>Line_Expected_Receipt_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
