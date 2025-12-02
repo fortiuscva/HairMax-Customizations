@@ -130,6 +130,9 @@ report 52601 "HMX PurchaseOrder"
             {
 
             }
+            column(Agent_Code; "Purchaser Code")
+            {
+            }
 
 
             dataitem("Purchase Line"; "Purchase Line")
@@ -164,6 +167,10 @@ report 52601 "HMX PurchaseOrder"
 
                 }
                 column(Total; Total)
+                {
+
+                }
+                column(Line_Expected_Receipt_Date; "Expected Receipt Date")
                 {
 
                 }
