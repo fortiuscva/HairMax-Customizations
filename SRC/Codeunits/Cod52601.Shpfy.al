@@ -4,15 +4,23 @@ using Microsoft.Finance.SalesTax;
 using Microsoft.Finance.GeneralLedger.Account;
 using Microsoft.Sales.Document;
 
-codeunit 52601 "HMX Shpfyaddtax"
+codeunit 52601 "HMX Shpfy"
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", 'OnAfterCreateShippingCostSalesLine', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", 'OnAfterCreateItemSalesLine', '', false, false)]
     local procedure AddTaxLineToSalesOrder(ShopifyOrderHeader: Record "Shpfy Order Header"; SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
     var
         SalesLineRec: Record "Sales Line";
         TaxSetup: Record "Tax Setup";
         GLAccount: Record "G/L Account";
     begin
+
+        SalesLineRec.Reset();
+        SalesLineRec.SetRange("Document No.", SalesHeader."No.");
+        SalesLineRec.SetRange(Type, SalesLineRec.Type::"G/L Account");
+        if TaxSetup.Get() then
+            SalesLineRec.SetRange("No.", TaxSetup."Tax Account (Sales)");
+        if SalesLineRec.FindFirst() then
+            exit;
 
         if (TaxSetup.Get()) and (GLAccount.Get(TaxSetup."Tax Account (Sales)")) and (ShopifyOrderHeader."VAT Amount" <> 0) then begin
             SalesLineRec.Init();
@@ -28,4 +36,14 @@ codeunit 52601 "HMX Shpfyaddtax"
             SalesLineRec.Insert();
         end;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", 'OnAfterCreateSalesHeader', '', false, false)]
+    local procedure OnAfterCreateSalesHeader(var SalesHeader: Record "Sales Header")
+
+    begin
+        if SalesHeader."Ship-to Phone No." = '' then
+            SalesHeader.Validate("Ship-to Phone No.", SalesHeader."Sell-to Phone No.");
+
+    end;
+
 }
