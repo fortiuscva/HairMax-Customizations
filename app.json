@@ -30,6 +30,12 @@
 "name": "Shopify Connector",
 "publisher": "Microsoft",
 "version": "27.0.38460.41723"
+},
+{
+"id": "ba1776ba-1198-4b4c-a61e-c4612f1880d5",
+"name": "IWorks Common",
+"publisher": "Insight Works",
+"version": "2.18.9389.1"
 }
 
     
