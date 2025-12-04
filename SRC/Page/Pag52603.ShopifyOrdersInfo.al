@@ -4,7 +4,7 @@ page 52603 "HMX Shopify Orders Info"
     Caption = 'Shopify Orders Information';
     PageType = List;
     SourceTable = "HMX Shopify Order Info";
-    SourceTableTemporary = true;
+    // SourceTableTemporary = true;
     UsageCategory = Lists;
 
     layout
@@ -34,7 +34,7 @@ page 52603 "HMX Shopify Orders Info"
         {
             action(Log_Shopify_Orders_Info)
             {
-                ApplicationArea = area;
+                ApplicationArea = All;
                 Caption = 'Log Shopify Orders Information';
                 Image = Log;
                 trigger OnAction()

@@ -1,12 +1,12 @@
 codeunit 52602 "HMX Shopify Order Info Mgt"
 {
-    procedure LogShopifyOrderInfo(var TempShopifyOrdInfo: Record "HMX Shopify Order Info" temporary)
+    procedure LogShopifyOrderInfo(var ShopifyOrdInfo: Record "HMX Shopify Order Info")
     var
         SalesHeader: Record "Sales Header";
-        TempShopifyOrderInfo: Record "HMX Shopify Order Info" temporary;
+        ShopifyOrderInfo: Record "HMX Shopify Order Info";
         ShopifyOrderNo: Code[50];
     begin
-        TempShopifyOrderInfo.DeleteAll(true);
+        ShopifyOrderInfo.DeleteAll(true);
 
         SalesHeader.Reset();
         SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
@@ -14,16 +14,16 @@ codeunit 52602 "HMX Shopify Order Info Mgt"
         if SalesHeader.FindSet() then begin
             repeat
                 ShopifyOrderNo := SalesHeader."Shpfy Order No.";
-                if not TempShopifyOrderInfo.Get(ShopifyOrderNo) then begin
-                    TempShopifyOrderInfo.Init();
-                    TempShopifyOrderInfo."Shopify Order No." := ShopifyOrderNo;
-                    TempShopifyOrderInfo."Sales Orders Count" := 1;
-                    TempShopifyOrderInfo."Sales Order Nos." := SalesHeader."No.";
-                    TempShopifyOrderInfo.Insert(true);
+                if not ShopifyOrderInfo.Get(ShopifyOrderNo) then begin
+                    ShopifyOrderInfo.Init();
+                    ShopifyOrderInfo."Shopify Order No." := ShopifyOrderNo;
+                    ShopifyOrderInfo."Sales Orders Count" := 1;
+                    ShopifyOrderInfo."Sales Order Nos." := SalesHeader."No.";
+                    ShopifyOrderInfo.Insert(true);
                 end else begin
-                    TempShopifyOrderInfo."Sales Orders Count" += 1;
-                    TempShopifyOrderInfo."Sales Order Nos." := TempShopifyOrderInfo."Sales Order Nos." + '|' + SalesHeader."No.";
-                    TempShopifyOrderInfo.Modify(true);
+                    ShopifyOrderInfo."Sales Orders Count" += 1;
+                    ShopifyOrderInfo."Sales Order Nos." := ShopifyOrderInfo."Sales Order Nos." + '|' + SalesHeader."No.";
+                    ShopifyOrderInfo.Modify(true);
                 end;
             until SalesHeader.Next() = 0;
         end;
