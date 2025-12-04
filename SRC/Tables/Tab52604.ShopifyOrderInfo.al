@@ -1,7 +1,7 @@
 table 52604 "HMX Shopify Order Info"
 {
     Caption = 'Shopify Order Information';
-    TableType = Temporary;
+    // TableType = Temporary;
     DataClassification = ToBeClassified;
 
     fields
