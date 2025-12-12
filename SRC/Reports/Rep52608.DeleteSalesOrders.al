@@ -12,25 +12,17 @@ report 52608 "HMX Delete Sales Orders"
     {
         dataitem(SalesHeader; "Sales Header")
         {
+            RequestFilterFields = "No.";
             trigger OnPreDataItem()
             begin
                 SetRange("Document Type", "Document Type"::Order);
-                SetFilter("Document Date", '..%1', PriorDate);
+                SetFilter(SystemCreatedAt, '..%1', CreateDateTime(PriorDate, 000000T));
                 DeletedCount := 0;
             end;
 
             trigger OnAfterGetRecord()
-            var
-                SalesLine: Record "Sales Line";
             begin
-                // Delete related sales lines
-                SalesLine.SetRange("Document Type", SalesHeader."Document Type"::Order);
-                SalesLine.SetRange("Document No.", SalesHeader."No.");
-                if SalesLine.FindSet() then
-                    SalesLine.DeleteAll();
-
-                // Delete header
-                SalesHeader.Delete();
+                Delete(true);
                 DeletedCount += 1;
             end;
 
@@ -60,8 +52,18 @@ report 52608 "HMX Delete Sales Orders"
             }
         }
     }
+    trigger OnPreReport()
+    begin
+        HairmaxSingleInstance.SetHideDeleteSOReservationConfirm(true);
+    end;
+
+    trigger OnPostReport()
+    begin
+        HairmaxSingleInstance.SetHideDeleteSOReservationConfirm(false);
+    end;
 
     var
         PriorDate: Date;
         DeletedCount: Integer;
+        HairmaxSingleInstance: Codeunit "HMX HairMax Single Instance";
 }
