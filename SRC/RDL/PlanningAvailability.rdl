@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-12-24T13:14:18.1192808Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-12-24T13:16:02.6459543Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -2828,6 +2828,7 @@
                             <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2, "#efefef","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
+                            <PaddingRight>5pt</PaddingRight>
                             <PaddingBottom>0cm</PaddingBottom>
                           </Style>
                         </Textbox>
