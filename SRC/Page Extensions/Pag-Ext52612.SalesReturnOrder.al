@@ -10,17 +10,20 @@ pageextension 52612 "HMX Sales Return Order" extends "Sales Return Order"
     {
         modify("Customer Posting Group")
         {
-            Editable = true;
-            trigger OnBeforeValidate()
-            var
-                UserSetupRecLcl: Record "User Setup";
-                EditNotAllowedLbl: Label 'User %1 is not allowed to edit this field';
-            begin
-                if UserSetupRecLcl.Get(UserId) then begin
-                    if not UserSetupRecLcl."HMX Edit Cust. Post. Group" then
-                        Error(StrSubstNo(EditNotAllowedLbl, UserId));
-                end;
-            end;
+            Editable = IsCustomerPostingGroupEditable;
         }
     }
+    trigger OnOpenPage()
+    var
+        UserSetupRec: Record "User Setup";
+    begin
+        IsCustomerPostingGroupEditable := false;
+        if UserSetupRec.Get(UserId) then begin
+            if UserSetupRec."HMX Edit Cust. Post. Group" then
+                IsCustomerPostingGroupEditable := true;
+        end;
+    end;
+
+    var
+        IsCustomerPostingGroupEditable: Boolean;
 }

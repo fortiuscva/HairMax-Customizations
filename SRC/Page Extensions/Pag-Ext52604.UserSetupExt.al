@@ -1,10 +1,10 @@
-pageextension 52604 UserSetupExt extends "User Setup"
+pageextension 52604 "HMX UserSetupExt" extends "User Setup"
 {
     layout
     {
         addafter("Register Time")
         {
-            field(CaseMangement; Rec.CaseMangement)
+            field("HMX CaseMangement"; Rec."HMX CaseMangement")
             {
                 ApplicationArea = all;
                 ToolTip = 'Enabled if the user need the access to the lists in Case management';
