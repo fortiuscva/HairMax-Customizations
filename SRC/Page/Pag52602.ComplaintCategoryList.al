@@ -27,7 +27,7 @@ page 52602 "HMX ComplaintCategoryList"
     var
         UserSetuprec: Record "User Setup";
     begin
-        if (UserSetuprec.Get(UserId()) and (not UserSetuprec.CaseMangement)) then
+        if (UserSetuprec.Get(UserId()) and (not UserSetuprec."HMX CaseMangement")) then
             Error('You do not have permission to open this page.');
     end;
 
