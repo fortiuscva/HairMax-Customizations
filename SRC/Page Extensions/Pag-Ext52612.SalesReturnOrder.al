@@ -14,16 +14,28 @@ pageextension 52612 "HMX Sales Return Order" extends "Sales Return Order"
         }
     }
     trigger OnOpenPage()
+    begin
+        ControlEditableFields();
+    end;
+
+    trigger OnAfterGetCurrRecord()
+    begin
+        ControlEditableFields();
+    end;
+
+
     var
-        UserSetupRec: Record "User Setup";
+        IsCustomerPostingGroupEditable: Boolean;
+        UserSetup: Record "User Setup";
+
+
+    procedure ControlEditableFields()
     begin
         IsCustomerPostingGroupEditable := false;
-        if UserSetupRec.Get(UserId) then begin
-            if UserSetupRec."HMX Edit Cust. Post. Group" then
+        if UserSetup.Get(UserId) then begin
+            if UserSetup."HMX Edit Cust. Post. Group" then
                 IsCustomerPostingGroupEditable := true;
         end;
     end;
 
-    var
-        IsCustomerPostingGroupEditable: Boolean;
 }
