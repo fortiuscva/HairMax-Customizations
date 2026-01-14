@@ -139,7 +139,7 @@ report 52601 "HMX PurchaseOrder"
             {
                 DataItemLinkReference = purchaseHeader;
                 DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
-                DataItemTableView = where(Type = const(Type::Item));
+                //  DataItemTableView = where(Type = const(Type::Item));
                 column(ItemNo; "No.")
                 {
 
