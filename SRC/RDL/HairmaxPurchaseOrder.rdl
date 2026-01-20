@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-12-03T12:31:14.7582935Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-20T13:23:11.6415495Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -680,7 +680,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Value>=Code.Blankzero(Fields!Quantity.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -814,7 +814,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Direct_Unit_Cost.Value</Value>
+                                                    <Value>=Code.Blankzero(Fields!Direct_Unit_Cost.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -848,7 +848,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Amount.Value</Value>
+                                                    <Value>=Code.Blankzero(Fields!Amount.Value)</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
