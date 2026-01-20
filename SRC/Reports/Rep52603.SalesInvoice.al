@@ -206,23 +206,23 @@ report 52603 "HMX Sales Invoice"
                     Clear(this.Serial_LotNo_GRec);
 
                     Clear(this.PrintLine);
-                    if "Sales Line".Type = "Sales Line".Type::Item then begin
-                        this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
-                        this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
-                        this.SubTotalAmount_GRec += this.Amount_GRec;
-                        this.PrintLine := true;
-                        this.ItemLedEntry_GRec.Reset();
-                        this.ItemLedEntry_GRec.SetRange("Document No.", "Sales Line"."Document No.");
-                        this.ItemLedEntry_GRec.SetRange("Document Line No.", "Sales Line"."Line No.");
-                        if this.ItemLedEntry_GRec.FindSet() then
-                            repeat
-                                if this.ItemLedEntry_GRec."Serial No." <> '' then
-                                    this.Serial_LotNo_GRec += this.ItemLedEntry_GRec."Serial No."
-                                else
-                                    this.Serial_LotNo_GRec += this.ItemLedEntry_GRec."Lot No.";
-                            until ItemLedEntry_GRec.Next() = 0;
+                    // if "Sales Line".Type = "Sales Line".Type::Item then begin
+                    this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
+                    this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
+                    this.SubTotalAmount_GRec += this.Amount_GRec;
+                    this.PrintLine := true;
+                    this.ItemLedEntry_GRec.Reset();
+                    this.ItemLedEntry_GRec.SetRange("Document No.", "Sales Line"."Document No.");
+                    this.ItemLedEntry_GRec.SetRange("Document Line No.", "Sales Line"."Line No.");
+                    if this.ItemLedEntry_GRec.FindSet() then
+                        repeat
+                            if this.ItemLedEntry_GRec."Serial No." <> '' then
+                                this.Serial_LotNo_GRec += this.ItemLedEntry_GRec."Serial No."
+                            else
+                                this.Serial_LotNo_GRec += this.ItemLedEntry_GRec."Lot No.";
+                        until ItemLedEntry_GRec.Next() = 0;
 
-                    end;
+                    // end;
 
                     if ("Sales Line".Type = "Sales Line".Type::"G/L Account") and ("Sales Line"."No." = '40391') then
                         this.ShippingAmount_GRec += "Sales Line".Amount;
