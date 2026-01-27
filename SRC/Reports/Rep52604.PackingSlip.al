@@ -129,7 +129,8 @@ report 52604 "HMX Packing Slip"
                 {
 
                 }
-
+                column(ItemNoBarcode; this.ItemNoBarCode39)
+                { }
 
 
                 column(Serial_LotNo_GRec; this.Serial_LotNo_GRec)
@@ -152,7 +153,10 @@ report 52604 "HMX Packing Slip"
                 end;
 
                 trigger OnAfterGetRecord()
-
+                var
+                    BarcodeString: Text;
+                    BarcodeSymbology: Enum "Barcode Symbology";
+                    BarcodeFontProvider: Interface "Barcode Font Provider";
                 begin
 
                     Clear(this.Serial_LotNo_GRec);
@@ -177,8 +181,11 @@ report 52604 "HMX Packing Slip"
                         OrderQty := SalesLine_GRec.Quantity
                     else
                         OrderQty := "Sales Line".Quantity;
-
-
+                    BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                    BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
+                    BarcodeString := "Sales Line"."No.";
+                    BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
+                    this.ItemNoBarCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
                 end;
 
                 trigger OnPostDataItem()
@@ -249,7 +256,7 @@ report 52604 "HMX Packing Slip"
         OptionsLabel = 'Options';
         BackOrderedLabel = 'Back Ordered';
         SerialLotNoLabel = 'Serial/ Lot Numbers';
-
+        ItemBarcodeLbl = 'Item Barcode';
 
     }
     trigger OnPreReport()
@@ -282,7 +289,6 @@ report 52604 "HMX Packing Slip"
         GenLedSetup_GRec: Record "General Ledger Setup";
         Serial_LotNo_GRec: Text;
         EncodeTextCode39: Text;
-
+        ItemNoBarCode39: Text;
         BarcodeSymbology: Enum "Barcode Symbology";
-
 }
