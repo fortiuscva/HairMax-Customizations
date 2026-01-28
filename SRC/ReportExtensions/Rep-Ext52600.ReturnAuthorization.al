@@ -6,6 +6,15 @@ reportextension 52600 "HMX Return Authorization" extends "Return Authorization"
 {
     dataset
     {
+        add(SalesLine)
+        {
+            column(HMXQtyReturnedCaption; QtyReturnedCaptionLbl)
+            {
+            }
+            column(HMXInitialsCaption; InitialsCaptionLbl)
+            {
+            }
+        }
     }
 
     rendering
@@ -18,5 +27,7 @@ reportextension 52600 "HMX Return Authorization" extends "Return Authorization"
             Type = RDLC;
         }
     }
-
+    var
+        QtyReturnedCaptionLbl: Label 'Quantity Returned';
+        InitialsCaptionLbl: Label 'Initials';
 }
