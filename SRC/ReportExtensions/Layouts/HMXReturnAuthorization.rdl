@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-28T10:53:34.3457199Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-28T15:20:07.9713890Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,214 +22,6 @@
       <rd:DataSourceID>489ebc40-3830-48aa-b867-4053d6c770fc</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Sales_Header_Document_Type">
-          <DataField>Sales_Header_Document_Type</DataField>
-        </Field>
-        <Field Name="Sales_Header_No_">
-          <DataField>Sales_Header_No_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_1_">
-          <DataField>CompanyAddress_1_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_2_">
-          <DataField>CompanyAddress_2_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_3_">
-          <DataField>CompanyAddress_3_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_4_">
-          <DataField>CompanyAddress_4_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_5_">
-          <DataField>CompanyAddress_5_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_6_">
-          <DataField>CompanyAddress_6_</DataField>
-        </Field>
-        <Field Name="CopyTxt">
-          <DataField>CopyTxt</DataField>
-        </Field>
-        <Field Name="BillToAddress_1_">
-          <DataField>BillToAddress_1_</DataField>
-        </Field>
-        <Field Name="BillToAddress_2_">
-          <DataField>BillToAddress_2_</DataField>
-        </Field>
-        <Field Name="BillToAddress_3_">
-          <DataField>BillToAddress_3_</DataField>
-        </Field>
-        <Field Name="BillToAddress_4_">
-          <DataField>BillToAddress_4_</DataField>
-        </Field>
-        <Field Name="BillToAddress_5_">
-          <DataField>BillToAddress_5_</DataField>
-        </Field>
-        <Field Name="BillToAddress_6_">
-          <DataField>BillToAddress_6_</DataField>
-        </Field>
-        <Field Name="BillToAddress_7_">
-          <DataField>BillToAddress_7_</DataField>
-        </Field>
-        <Field Name="Sales_Header___Shipment_Date_">
-          <DataField>Sales_Header___Shipment_Date_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_1_">
-          <DataField>ShipToAddress_1_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_2_">
-          <DataField>ShipToAddress_2_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_3_">
-          <DataField>ShipToAddress_3_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_4_">
-          <DataField>ShipToAddress_4_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_5_">
-          <DataField>ShipToAddress_5_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_6_">
-          <DataField>ShipToAddress_6_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_7_">
-          <DataField>ShipToAddress_7_</DataField>
-        </Field>
-        <Field Name="Sales_Header___Bill_to_Customer_No__">
-          <DataField>Sales_Header___Bill_to_Customer_No__</DataField>
-        </Field>
-        <Field Name="Sales_Header___Your_Reference_">
-          <DataField>Sales_Header___Your_Reference_</DataField>
-        </Field>
-        <Field Name="SalesPurchPerson_Name">
-          <DataField>SalesPurchPerson_Name</DataField>
-        </Field>
-        <Field Name="Sales_Header___No__">
-          <DataField>Sales_Header___No__</DataField>
-        </Field>
-        <Field Name="Sales_Header___Document_Date_">
-          <DataField>Sales_Header___Document_Date_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_7_">
-          <DataField>CompanyAddress_7_</DataField>
-        </Field>
-        <Field Name="CompanyAddress_8_">
-          <DataField>CompanyAddress_8_</DataField>
-        </Field>
-        <Field Name="BillToAddress_8_">
-          <DataField>BillToAddress_8_</DataField>
-        </Field>
-        <Field Name="ShipToAddress_8_">
-          <DataField>ShipToAddress_8_</DataField>
-        </Field>
-        <Field Name="ShipmentMethod_Description">
-          <DataField>ShipmentMethod_Description</DataField>
-        </Field>
-        <Field Name="Sales_Header___Order_Date_">
-          <DataField>Sales_Header___Order_Date_</DataField>
-        </Field>
-        <Field Name="TaxRegLabel">
-          <DataField>TaxRegLabel</DataField>
-        </Field>
-        <Field Name="TaxRegNo">
-          <DataField>TaxRegNo</DataField>
-        </Field>
-        <Field Name="CopyNo">
-          <DataField>CopyNo</DataField>
-        </Field>
-        <Field Name="PageLoop_Number">
-          <DataField>PageLoop_Number</DataField>
-        </Field>
-        <Field Name="SalesHeaderExDocNo">
-          <DataField>SalesHeaderExDocNo</DataField>
-        </Field>
-        <Field Name="SoldCaption">
-          <DataField>SoldCaption</DataField>
-        </Field>
-        <Field Name="To_Caption">
-          <DataField>To_Caption</DataField>
-        </Field>
-        <Field Name="Ship_DateCaption">
-          <DataField>Ship_DateCaption</DataField>
-        </Field>
-        <Field Name="Customer_IDCaption">
-          <DataField>Customer_IDCaption</DataField>
-        </Field>
-        <Field Name="P_O__NumberCaption">
-          <DataField>P_O__NumberCaption</DataField>
-        </Field>
-        <Field Name="SalesPersonCaption">
-          <DataField>SalesPersonCaption</DataField>
-        </Field>
-        <Field Name="ShipCaption">
-          <DataField>ShipCaption</DataField>
-        </Field>
-        <Field Name="To_Caption_Control89">
-          <DataField>To_Caption_Control89</DataField>
-        </Field>
-        <Field Name="RETURN_AUTHORIZATIONCaption">
-          <DataField>RETURN_AUTHORIZATIONCaption</DataField>
-        </Field>
-        <Field Name="Return_Authorization_Number_Caption">
-          <DataField>Return_Authorization_Number_Caption</DataField>
-        </Field>
-        <Field Name="Return_Authorization_Date_Caption">
-          <DataField>Return_Authorization_Date_Caption</DataField>
-        </Field>
-        <Field Name="Page_Caption">
-          <DataField>Page_Caption</DataField>
-        </Field>
-        <Field Name="Ship_ViaCaption">
-          <DataField>Ship_ViaCaption</DataField>
-        </Field>
-        <Field Name="P_O__DateCaption">
-          <DataField>P_O__DateCaption</DataField>
-        </Field>
-        <Field Name="TempSalesLine__No__">
-          <DataField>TempSalesLine__No__</DataField>
-        </Field>
-        <Field Name="TempSalesLine__Unit_of_Measure_">
-          <DataField>TempSalesLine__Unit_of_Measure_</DataField>
-        </Field>
-        <Field Name="TempSalesLine_Quantity">
-          <DataField>TempSalesLine_Quantity</DataField>
-        </Field>
-        <Field Name="TempSalesLine_QuantityFormat">
-          <DataField>TempSalesLine_QuantityFormat</DataField>
-        </Field>
-        <Field Name="TempSalesLine_Description_________TempSalesLine__Description_2_">
-          <DataField>TempSalesLine_Description_________TempSalesLine__Description_2_</DataField>
-        </Field>
-        <Field Name="SalesLine_Number">
-          <DataField>SalesLine_Number</DataField>
-        </Field>
-        <Field Name="Item_No_Caption">
-          <DataField>Item_No_Caption</DataField>
-        </Field>
-        <Field Name="UnitCaption">
-          <DataField>UnitCaption</DataField>
-        </Field>
-        <Field Name="DescriptionCaption">
-          <DataField>DescriptionCaption</DataField>
-        </Field>
-        <Field Name="QuantityCaption">
-          <DataField>QuantityCaption</DataField>
-        </Field>
-        <Field Name="HMXQtyReturnedCaption">
-          <DataField>HMXQtyReturnedCaption</DataField>
-        </Field>
-        <Field Name="HMXInitialsCaption">
-          <DataField>HMXInitialsCaption</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -247,13 +39,16 @@
                   <Width>0.57874in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.36976in</Width>
+                  <Width>1.12816in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.90725in</Width>
+                  <Width>0.15111in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.03125in</Width>
+                  <Width>0.86116in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.07734in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.91266in</Width>
@@ -407,9 +202,10 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
                             <PaddingRight>0.04134in</PaddingRight>
                           </Style>
                         </Textbox>
-                        <ColSpan>4</ColSpan>
+                        <ColSpan>5</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell />
                     <TablixCell />
                     <TablixCell />
@@ -553,6 +349,33 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>0.04134in</PaddingLeft>
+                            <PaddingRight>0.04134in</PaddingRight>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -654,6 +477,7 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -705,16 +529,15 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0in</Top>
             <Height>0.19804in</Height>
-            <Width>8.14463in</Width>
+            <Width>8.05414in</Width>
             <Style />
           </Tablix>
         </ReportItems>
         <Height>0.19804in</Height>
         <Style />
       </Body>
-      <Width>8.14463in</Width>
+      <Width>8.05414in</Width>
       <Page>
         <PageHeader>
           <Height>4.68821in</Height>
@@ -1970,7 +1793,7 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
                 </Paragraph>
               </Paragraphs>
               <Top>4.16391in</Top>
-              <Left>5.05974in</Left>
+              <Left>5.18474in</Left>
               <Height>0.49967in</Height>
               <Width>0.99213in</Width>
               <ZIndex>53</ZIndex>
@@ -2064,12 +1887,6 @@ Fields!HMXQtyReturnedCaption.Value + Chr(177) +
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -2136,4 +1953,212 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>54ef51cf-e8ef-45f8-9db5-38d13966a5d1</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Sales_Header_Document_Type">
+          <DataField>Sales_Header_Document_Type</DataField>
+        </Field>
+        <Field Name="Sales_Header_No_">
+          <DataField>Sales_Header_No_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_1_">
+          <DataField>CompanyAddress_1_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_2_">
+          <DataField>CompanyAddress_2_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_3_">
+          <DataField>CompanyAddress_3_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_4_">
+          <DataField>CompanyAddress_4_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_5_">
+          <DataField>CompanyAddress_5_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_6_">
+          <DataField>CompanyAddress_6_</DataField>
+        </Field>
+        <Field Name="CopyTxt">
+          <DataField>CopyTxt</DataField>
+        </Field>
+        <Field Name="BillToAddress_1_">
+          <DataField>BillToAddress_1_</DataField>
+        </Field>
+        <Field Name="BillToAddress_2_">
+          <DataField>BillToAddress_2_</DataField>
+        </Field>
+        <Field Name="BillToAddress_3_">
+          <DataField>BillToAddress_3_</DataField>
+        </Field>
+        <Field Name="BillToAddress_4_">
+          <DataField>BillToAddress_4_</DataField>
+        </Field>
+        <Field Name="BillToAddress_5_">
+          <DataField>BillToAddress_5_</DataField>
+        </Field>
+        <Field Name="BillToAddress_6_">
+          <DataField>BillToAddress_6_</DataField>
+        </Field>
+        <Field Name="BillToAddress_7_">
+          <DataField>BillToAddress_7_</DataField>
+        </Field>
+        <Field Name="Sales_Header___Shipment_Date_">
+          <DataField>Sales_Header___Shipment_Date_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_1_">
+          <DataField>ShipToAddress_1_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_2_">
+          <DataField>ShipToAddress_2_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_3_">
+          <DataField>ShipToAddress_3_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_4_">
+          <DataField>ShipToAddress_4_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_5_">
+          <DataField>ShipToAddress_5_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_6_">
+          <DataField>ShipToAddress_6_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_7_">
+          <DataField>ShipToAddress_7_</DataField>
+        </Field>
+        <Field Name="Sales_Header___Bill_to_Customer_No__">
+          <DataField>Sales_Header___Bill_to_Customer_No__</DataField>
+        </Field>
+        <Field Name="Sales_Header___Your_Reference_">
+          <DataField>Sales_Header___Your_Reference_</DataField>
+        </Field>
+        <Field Name="SalesPurchPerson_Name">
+          <DataField>SalesPurchPerson_Name</DataField>
+        </Field>
+        <Field Name="Sales_Header___No__">
+          <DataField>Sales_Header___No__</DataField>
+        </Field>
+        <Field Name="Sales_Header___Document_Date_">
+          <DataField>Sales_Header___Document_Date_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_7_">
+          <DataField>CompanyAddress_7_</DataField>
+        </Field>
+        <Field Name="CompanyAddress_8_">
+          <DataField>CompanyAddress_8_</DataField>
+        </Field>
+        <Field Name="BillToAddress_8_">
+          <DataField>BillToAddress_8_</DataField>
+        </Field>
+        <Field Name="ShipToAddress_8_">
+          <DataField>ShipToAddress_8_</DataField>
+        </Field>
+        <Field Name="ShipmentMethod_Description">
+          <DataField>ShipmentMethod_Description</DataField>
+        </Field>
+        <Field Name="Sales_Header___Order_Date_">
+          <DataField>Sales_Header___Order_Date_</DataField>
+        </Field>
+        <Field Name="TaxRegLabel">
+          <DataField>TaxRegLabel</DataField>
+        </Field>
+        <Field Name="TaxRegNo">
+          <DataField>TaxRegNo</DataField>
+        </Field>
+        <Field Name="CopyNo">
+          <DataField>CopyNo</DataField>
+        </Field>
+        <Field Name="PageLoop_Number">
+          <DataField>PageLoop_Number</DataField>
+        </Field>
+        <Field Name="SalesHeaderExDocNo">
+          <DataField>SalesHeaderExDocNo</DataField>
+        </Field>
+        <Field Name="SoldCaption">
+          <DataField>SoldCaption</DataField>
+        </Field>
+        <Field Name="To_Caption">
+          <DataField>To_Caption</DataField>
+        </Field>
+        <Field Name="Ship_DateCaption">
+          <DataField>Ship_DateCaption</DataField>
+        </Field>
+        <Field Name="Customer_IDCaption">
+          <DataField>Customer_IDCaption</DataField>
+        </Field>
+        <Field Name="P_O__NumberCaption">
+          <DataField>P_O__NumberCaption</DataField>
+        </Field>
+        <Field Name="SalesPersonCaption">
+          <DataField>SalesPersonCaption</DataField>
+        </Field>
+        <Field Name="ShipCaption">
+          <DataField>ShipCaption</DataField>
+        </Field>
+        <Field Name="To_Caption_Control89">
+          <DataField>To_Caption_Control89</DataField>
+        </Field>
+        <Field Name="RETURN_AUTHORIZATIONCaption">
+          <DataField>RETURN_AUTHORIZATIONCaption</DataField>
+        </Field>
+        <Field Name="Return_Authorization_Number_Caption">
+          <DataField>Return_Authorization_Number_Caption</DataField>
+        </Field>
+        <Field Name="Return_Authorization_Date_Caption">
+          <DataField>Return_Authorization_Date_Caption</DataField>
+        </Field>
+        <Field Name="Page_Caption">
+          <DataField>Page_Caption</DataField>
+        </Field>
+        <Field Name="Ship_ViaCaption">
+          <DataField>Ship_ViaCaption</DataField>
+        </Field>
+        <Field Name="P_O__DateCaption">
+          <DataField>P_O__DateCaption</DataField>
+        </Field>
+        <Field Name="TempSalesLine__No__">
+          <DataField>TempSalesLine__No__</DataField>
+        </Field>
+        <Field Name="TempSalesLine__Unit_of_Measure_">
+          <DataField>TempSalesLine__Unit_of_Measure_</DataField>
+        </Field>
+        <Field Name="TempSalesLine_Quantity">
+          <DataField>TempSalesLine_Quantity</DataField>
+        </Field>
+        <Field Name="TempSalesLine_QuantityFormat">
+          <DataField>TempSalesLine_QuantityFormat</DataField>
+        </Field>
+        <Field Name="TempSalesLine_Description_________TempSalesLine__Description_2_">
+          <DataField>TempSalesLine_Description_________TempSalesLine__Description_2_</DataField>
+        </Field>
+        <Field Name="SalesLine_Number">
+          <DataField>SalesLine_Number</DataField>
+        </Field>
+        <Field Name="Item_No_Caption">
+          <DataField>Item_No_Caption</DataField>
+        </Field>
+        <Field Name="UnitCaption">
+          <DataField>UnitCaption</DataField>
+        </Field>
+        <Field Name="DescriptionCaption">
+          <DataField>DescriptionCaption</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="HMXQtyReturnedCaption">
+          <DataField>HMXQtyReturnedCaption</DataField>
+        </Field>
+        <Field Name="HMXInitialsCaption">
+          <DataField>HMXInitialsCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
