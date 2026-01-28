@@ -183,7 +183,7 @@ report 52604 "HMX Packing Slip"
                         OrderQty := "Sales Line".Quantity;
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
-                    BarcodeString := "Sales Line"."No.";
+                    BarcodeString := UpperCase(ConvertStr("Sales Line"."No.", '_', ' '));
                     BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                     this.ItemNoBarCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
                 end;
