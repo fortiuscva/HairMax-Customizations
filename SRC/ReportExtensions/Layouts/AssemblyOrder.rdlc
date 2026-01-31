@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-23T15:34:34.1951027Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-30T17:52:32.4420403Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -2636,58 +2636,55 @@
                                             <TablixBody>
                                               <TablixColumns>
                                                 <TablixColumn>
-                                                  <Width>1.20928cm</Width>
+                                                  <Width>1.29784cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.3669cm</Width>
+                                                  <Width>3.41848cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>2.6624cm</Width>
+                                                  <Width>3.75633cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.50552cm</Width>
+                                                  <Width>1.33569cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>2.14402cm</Width>
+                                                  <Width>1.30988cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>0.92323cm</Width>
+                                                  <Width>1.27775cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.20928cm</Width>
+                                                  <Width>1.09736cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.78626cm</Width>
+                                                  <Width>1.66067cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.62173cm</Width>
+                                                  <Width>1.95002cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.33072cm</Width>
+                                                  <Width>1.89989cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>2.15cm</Width>
-                                                </TablixColumn>
-                                                <TablixColumn>
-                                                  <Width>1.67452cm</Width>
+                                                  <Width>1.46675cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
                                                   <Width>0.07938cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>2.06124cm</Width>
+                                                  <Width>1.60337cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>0.13758cm</Width>
+                                                  <Width>0.07938cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>1.34435cm</Width>
+                                                  <Width>1.60612cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>0.18561cm</Width>
+                                                  <Width>0.07938cm</Width>
                                                 </TablixColumn>
                                                 <TablixColumn>
-                                                  <Width>2.2562cm</Width>
+                                                  <Width>1.72994cm</Width>
                                                 </TablixColumn>
                                               </TablixColumns>
                                               <TablixRows>
@@ -2779,38 +2776,6 @@
                                                             </Paragraph>
                                                           </Paragraphs>
                                                           <rd:DefaultName>Textbox10</rd:DefaultName>
-                                                          <Style>
-                                                            <Border>
-                                                              <Color>LightGrey</Color>
-                                                            </Border>
-                                                            <VerticalAlign>Bottom</VerticalAlign>
-                                                            <PaddingLeft>5pt</PaddingLeft>
-                                                            <PaddingRight>5pt</PaddingRight>
-                                                          </Style>
-                                                        </Textbox>
-                                                      </CellContents>
-                                                    </TablixCell>
-                                                    <TablixCell>
-                                                      <CellContents>
-                                                        <Textbox Name="Textbox3">
-                                                          <CanGrow>true</CanGrow>
-                                                          <KeepTogether>true</KeepTogether>
-                                                          <Paragraphs>
-                                                            <Paragraph>
-                                                              <TextRuns>
-                                                                <TextRun>
-                                                                  <Value>=Parameters!VariantCaption.Value</Value>
-                                                                  <Style>
-                                                                    <FontFamily>Segoe UI</FontFamily>
-                                                                    <FontSize>8pt</FontSize>
-                                                                    <FontWeight>Bold</FontWeight>
-                                                                  </Style>
-                                                                </TextRun>
-                                                              </TextRuns>
-                                                              <Style />
-                                                            </Paragraph>
-                                                          </Paragraphs>
-                                                          <rd:DefaultName>Textbox2</rd:DefaultName>
                                                           <Style>
                                                             <Border>
                                                               <Color>LightGrey</Color>
@@ -3112,14 +3077,14 @@
                                                     </TablixCell>
                                                     <TablixCell>
                                                       <CellContents>
-                                                        <Textbox Name="Textbox6">
+                                                        <Textbox Name="Textbox30">
                                                           <CanGrow>true</CanGrow>
                                                           <KeepTogether>true</KeepTogether>
                                                           <Paragraphs>
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value>=Parameters!QtyReturntoStockCaption.Value</Value>
+                                                                  <Value>=Parameters!QuantityConsumedCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3130,7 +3095,7 @@
                                                               <Style />
                                                             </Paragraph>
                                                           </Paragraphs>
-                                                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                                                          <rd:DefaultName>Textbox24</rd:DefaultName>
                                                           <Style>
                                                             <Border>
                                                               <Color>LightGrey</Color>
@@ -3176,14 +3141,14 @@
                                                     </TablixCell>
                                                     <TablixCell>
                                                       <CellContents>
-                                                        <Textbox Name="Textbox14">
+                                                        <Textbox Name="Textbox6">
                                                           <CanGrow>true</CanGrow>
                                                           <KeepTogether>true</KeepTogether>
                                                           <Paragraphs>
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value>=Parameters!InitialsCaption.Value</Value>
+                                                                  <Value>=Parameters!QtyReturntoStockCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3194,7 +3159,7 @@
                                                               <Style />
                                                             </Paragraph>
                                                           </Paragraphs>
-                                                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                                                          <rd:DefaultName>Textbox6</rd:DefaultName>
                                                           <Style>
                                                             <Border>
                                                               <Color>LightGrey</Color>
@@ -3240,14 +3205,14 @@
                                                     </TablixCell>
                                                     <TablixCell>
                                                       <CellContents>
-                                                        <Textbox Name="Textbox30">
+                                                        <Textbox Name="Textbox14">
                                                           <CanGrow>true</CanGrow>
                                                           <KeepTogether>true</KeepTogether>
                                                           <Paragraphs>
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value>=Parameters!QuantityConsumedCaption.Value</Value>
+                                                                  <Value>=Parameters!InitialsCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3258,7 +3223,7 @@
                                                               <Style />
                                                             </Paragraph>
                                                           </Paragraphs>
-                                                          <rd:DefaultName>Textbox24</rd:DefaultName>
+                                                          <rd:DefaultName>Textbox14</rd:DefaultName>
                                                           <Style>
                                                             <Border>
                                                               <Color>LightGrey</Color>
@@ -3304,10 +3269,9 @@
                                                             </BottomBorder>
                                                           </Style>
                                                         </Textbox>
-                                                        <ColSpan>18</ColSpan>
+                                                        <ColSpan>17</ColSpan>
                                                       </CellContents>
                                                     </TablixCell>
-                                                    <TablixCell />
                                                     <TablixCell />
                                                     <TablixCell />
                                                     <TablixCell />
@@ -3355,10 +3319,9 @@
                                                             </Border>
                                                           </Style>
                                                         </Textbox>
-                                                        <ColSpan>18</ColSpan>
+                                                        <ColSpan>17</ColSpan>
                                                       </CellContents>
                                                     </TablixCell>
-                                                    <TablixCell />
                                                     <TablixCell />
                                                     <TablixCell />
                                                     <TablixCell />
@@ -3469,39 +3432,6 @@
                                                             </Paragraph>
                                                           </Paragraphs>
                                                           <rd:DefaultName>Description_AssemblyLine</rd:DefaultName>
-                                                          <Style>
-                                                            <Border>
-                                                              <Color>LightGrey</Color>
-                                                              <Style>None</Style>
-                                                            </Border>
-                                                            <BackgroundColor>=iif(RowNumber(Nothing) Mod 2, "#EFEFEF", "#FFFFF")</BackgroundColor>
-                                                            <VerticalAlign>Top</VerticalAlign>
-                                                            <PaddingLeft>5pt</PaddingLeft>
-                                                            <PaddingRight>5pt</PaddingRight>
-                                                          </Style>
-                                                        </Textbox>
-                                                      </CellContents>
-                                                    </TablixCell>
-                                                    <TablixCell>
-                                                      <CellContents>
-                                                        <Textbox Name="VariantCode_AssemblyLine2">
-                                                          <CanGrow>true</CanGrow>
-                                                          <KeepTogether>true</KeepTogether>
-                                                          <Paragraphs>
-                                                            <Paragraph>
-                                                              <TextRuns>
-                                                                <TextRun>
-                                                                  <Value>=Fields!VariantCode_AssemblyLine.Value</Value>
-                                                                  <Style>
-                                                                    <FontFamily>Segoe UI</FontFamily>
-                                                                    <FontSize>8pt</FontSize>
-                                                                  </Style>
-                                                                </TextRun>
-                                                              </TextRuns>
-                                                              <Style />
-                                                            </Paragraph>
-                                                          </Paragraphs>
-                                                          <rd:DefaultName>VariantCode_AssemblyLine1</rd:DefaultName>
                                                           <Style>
                                                             <Border>
                                                               <Color>LightGrey</Color>
@@ -4007,7 +3937,6 @@
                                             </TablixBody>
                                             <TablixColumnHierarchy>
                                               <TablixMembers>
-                                                <TablixMember />
                                                 <TablixMember />
                                                 <TablixMember />
                                                 <TablixMember />
