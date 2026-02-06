@@ -8,8 +8,9 @@ reportextension 52601 "HMX Assembly Order" extends "Assembly Order"
 
     labels
     {
-        QtyReturntoStockCaption = 'Quantity Return to Stock';
+        QtyReturntoStockCaption = 'Qty Return to Stock';
         InitialsCaption = 'Initials';
+        QtyPickedCaption = 'Qty. Pick';
+        QtyConsumedCaption = 'Qty. Cons.';
     }
-
 }
