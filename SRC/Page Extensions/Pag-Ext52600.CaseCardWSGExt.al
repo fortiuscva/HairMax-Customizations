@@ -16,8 +16,8 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
             }
             field("HMX case Priority"; Rec."HMX case Priority")
             {
-                ApplicationArea = all;
-
+                ApplicationArea = none;
+                Visible = false;
             }
             field("HMX case Issue"; Rec."HMX case Issue")
             {
