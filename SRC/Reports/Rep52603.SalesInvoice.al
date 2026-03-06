@@ -138,7 +138,8 @@ report 52603 "HMX Sales Invoice"
             {
 
             }
-
+            column(Invoice_Discount_Value; "Invoice Discount Value")
+            { }
             dataitem("Sales Line"; "Sales Invoice Line")
             {
                 DataItemLinkReference = "Sales_Header";
@@ -170,7 +171,7 @@ report 52603 "HMX Sales Invoice"
 
                 }
 
-                column(SubTotalAmount_GRec; this.SubTotalAmount_GRec)
+                column(SubTotalAmount_GRec; this.SubTotalAmount_GRec - Sales_Header."Invoice Discount Value")
                 {
 
                 }
@@ -341,6 +342,7 @@ report 52603 "HMX Sales Invoice"
 
         SubtotalLbl = 'Subtotal';
         ShippingCostLbl = 'Shipping Cost(Other)';
+        DiscountLbl = 'Discount';
         TotalLbl = 'Total';
 
         InvoicereportLbl = 'At HairMax, we truly care. We hope your experience was satisfactory and we thank you for being a valued HairMax partner.';
