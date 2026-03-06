@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-20T12:49:06.2265493Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-03-06T18:57:32.9340189Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -661,7 +661,6 @@
                                               <PaddingBottom>2pt</PaddingBottom>
                                             </Style>
                                           </Textbox>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell>
@@ -922,6 +921,42 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
                               <Height>0.43067cm</Height>
                               <Width>0.74317cm</Width>
                               <ZIndex>4</ZIndex>
+                              <Visibility>
+                                <Hidden>true</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="InvoiceDiscountAmt">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Last(Fields!Invoice_Discount_Value.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>9pt</FontSize>
+                                        <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>1.35497cm</Top>
+                              <Left>11.78884cm</Left>
+                              <Height>0.43067cm</Height>
+                              <Width>0.74317cm</Width>
+                              <ZIndex>5</ZIndex>
                               <Visibility>
                                 <Hidden>true</Hidden>
                               </Visibility>
@@ -2842,7 +2877,7 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
-              <Top>1.31289cm</Top>
+              <Top>1.94789cm</Top>
               <Left>12.60603cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36782cm</Width>
@@ -2947,7 +2982,7 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox67</rd:DefaultName>
-              <Top>1.30583cm</Top>
+              <Top>1.94083cm</Top>
               <Left>15.98442cm</Left>
               <Height>0.6cm</Height>
               <Width>4.55085cm</Width>
@@ -3025,6 +3060,76 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
                   <Style>None</Style>
                 </Border>
                 <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox77">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!DiscountLbl.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox64</rd:DefaultName>
+              <Top>1.32108cm</Top>
+              <Left>12.61868cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.36784cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox78">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=ReportItems!InvoiceDiscountAmt.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <Format>#,0.00;(#,0.00)</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox67</rd:DefaultName>
+              <Top>1.32108cm</Top>
+              <Left>15.99708cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.55085cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3347,6 +3452,15 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
       </DefaultValue>
       <Prompt>ShippingCostLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="DiscountLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DiscountLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DiscountLbl</Prompt>
+    </ReportParameter>
     <ReportParameter Name="TotalLbl">
       <DataType>String</DataType>
       <DefaultValue>
@@ -3369,7 +3483,7 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>35</NumberOfRows>
+      <NumberOfRows>36</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -3539,11 +3653,16 @@ Cstr(Fields!commentarray_Grec.Value), 1 )</Hidden>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>33</RowIndex>
-          <ParameterName>TotalLbl</ParameterName>
+          <ParameterName>DiscountLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>34</RowIndex>
+          <ParameterName>TotalLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>35</RowIndex>
           <ParameterName>InvoicereportLbl</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -3730,6 +3849,12 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
         </Field>
         <Field Name="SalesPurchaseDesc">
           <DataField>SalesPurchaseDesc</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_Value">
+          <DataField>Invoice_Discount_Value</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_ValueFormat">
+          <DataField>Invoice_Discount_ValueFormat</DataField>
         </Field>
         <Field Name="Quantity">
           <DataField>Quantity</DataField>
