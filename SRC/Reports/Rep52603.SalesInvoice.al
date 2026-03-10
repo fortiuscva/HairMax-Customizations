@@ -171,11 +171,11 @@ report 52603 "HMX Sales Invoice"
 
                 }
 
-                column(SubTotalAmount_GRec; this.SubTotalAmount_GRec - Sales_Header."Invoice Discount Value")
+                column(SubTotalAmount_GRec; this.SubTotalAmount_GRec)
                 {
 
                 }
-                column(TotalAmount_Grec; this.TotalAmount_Grec)
+                column(TotalAmount_Grec; this.TotalAmount_Grec - Sales_Header."Invoice Discount Value")
                 {
 
                 }
