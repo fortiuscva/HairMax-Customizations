@@ -3,7 +3,7 @@ report 52608 "HMX Sales Order Packing Slip"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     DefaultLayout = RDLC;
-    Caption = 'Hairmax Sales Order Packing Slip Report';
+    Caption = 'Sales Order Packing Slip Report';
     RDLCLayout = './SRC/RDL/HairmaxSalesOrderPackingSlip.rdl';
 
     dataset
