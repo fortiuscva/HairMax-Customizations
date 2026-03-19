@@ -104,6 +104,8 @@ report 52600 "HMX Sales Order"
             {
 
             }
+            column(Invoice_Discount_Value; "Invoice Discount Value")
+            { }
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLinkReference = "Sales_Header";
@@ -133,7 +135,7 @@ report 52600 "HMX Sales Order"
                 {
 
                 }
-                column(TotalAmount_Grec; this.TotalAmount_Grec)
+                column(TotalAmount_Grec; this.TotalAmount_Grec - Sales_Header."Invoice Discount Value")
                 {
 
                 }
@@ -270,6 +272,7 @@ report 52600 "HMX Sales Order"
         AmountLbl = 'Amount';
         SubtotalLbl = 'Subtotal';
         ShippingCostLbl = 'Shipping Cost (Other)';
+        DiscountLbl = 'Discount';
         TotalLbl = 'Total';
         CustomerShpSpecLbl = 'Customer Shipping Specifications';
         PaymentMtdLbl = 'Payment Method';
