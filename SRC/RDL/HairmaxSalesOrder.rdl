@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.0.20283.0</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2026-03-06T18:09:48.4404585Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
@@ -475,7 +486,8 @@ Cstr(Last(Fields!SubTotalAmount_GRec.Value))  + Chr(177) +
 Cstr(Fields!PaymentMethodCode.Value)  + Chr(177) + 
 Cstr(Fields!Package_Tracking_No_.Value)  + Chr(177) +  
 Cstr(Last(Fields!TotalAmount_Grec.Value))  + Chr(177) +  
-Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
+Cstr(Fields!Ship_to_County.Value)   + Chr(177) +  
+Cstr(Last(Fields!Invoice_Discount_Value.Value))  , 1 )</Value>
                                   <Style>
                                     <Color>White</Color>
                                   </Style>
@@ -1538,7 +1550,7 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox64</rd:DefaultName>
-              <Top>1.31289cm</Top>
+              <Top>1.94789cm</Top>
               <Left>12.60603cm</Left>
               <Height>0.6cm</Height>
               <Width>3.36782cm</Width>
@@ -1643,7 +1655,7 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox67</rd:DefaultName>
-              <Top>1.30583cm</Top>
+              <Top>1.94083cm</Top>
               <Left>15.98442cm</Left>
               <Height>0.6cm</Height>
               <Width>4.55085cm</Width>
@@ -2077,6 +2089,77 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Textbox Name="Textbox78">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!DiscountLbl.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox64</rd:DefaultName>
+              <Top>1.34577cm</Top>
+              <Left>12.6001cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.36782cm</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox79">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=CDec(Code.GetData(26,1))</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <Format>#,0.00;(#,0.00)</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox67</rd:DefaultName>
+              <Top>1.33871cm</Top>
+              <Left>15.97849cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.55085cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -2240,6 +2323,15 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
       </DefaultValue>
       <Prompt>ShippingCostLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="DiscountLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DiscountLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DiscountLbl</Prompt>
+    </ReportParameter>
     <ReportParameter Name="TotalLbl">
       <DataType>String</DataType>
       <DefaultValue>
@@ -2289,7 +2381,7 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>21</NumberOfRows>
+      <NumberOfRows>22</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -2374,26 +2466,31 @@ Cstr(Fields!Ship_to_County.Value) , 1 )</Value>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>16</RowIndex>
-          <ParameterName>TotalLbl</ParameterName>
+          <ParameterName>DiscountLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>17</RowIndex>
-          <ParameterName>CustomerShpSpecLbl</ParameterName>
+          <ParameterName>TotalLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>18</RowIndex>
-          <ParameterName>PaymentMtdLbl</ParameterName>
+          <ParameterName>CustomerShpSpecLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>19</RowIndex>
-          <ParameterName>CreditCardNoLbl</ParameterName>
+          <ParameterName>PaymentMtdLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>20</RowIndex>
+          <ParameterName>CreditCardNoLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>21</RowIndex>
           <ParameterName>TrackingLbl</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -2565,6 +2662,12 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
         </Field>
         <Field Name="EncodeTextCode39">
           <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_Value">
+          <DataField>Invoice_Discount_Value</DataField>
+        </Field>
+        <Field Name="Invoice_Discount_ValueFormat">
+          <DataField>Invoice_Discount_ValueFormat</DataField>
         </Field>
         <Field Name="Quantity">
           <DataField>Quantity</DataField>
