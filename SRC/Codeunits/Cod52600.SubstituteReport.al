@@ -13,4 +13,11 @@ codeunit 52600 "HMX SubstituteReport"
             NewReportId := Report::"HMX PurchaseOrder"
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document", OnBeforeManualReleaseSalesDoc, '', false, false)]
+    local procedure "Release Sales Document_OnBeforeManualReleaseSalesDoc"(var SalesHeader: Record "Sales Header"; PreviewMode: Boolean)
+    begin
+        SalesHeader.TestField("Sell-to Phone No.");
+        SalesHeader.TestField("Sell-to Country/Region Code");
+        SalesHeader.TestField("Salesperson Code");
+    end;
 }
