@@ -20,20 +20,6 @@ codeunit 52600 "HMX SubstituteReport"
     begin
         SalesHeader.TestField("Salesperson Code");
         SalesHeader.TestField("Sell-to Country/Region Code");
-        case SalesHeader."Document Type" of
-            SalesHeader."Document Type"::Quote,
-            SalesHeader."Document Type"::"Credit Memo",
-             SalesHeader."Document Type"::Invoice,
-            SalesHeader."Document Type"::"Return Order":
-                begin
-                    if SalesHeader."Sell-to Contact No." <> '' then begin
-                        SelltoContact.Get(SalesHeader."Sell-to Contact No.");
-                        SelltoContact.TestField("Phone No.");
-                    end else
-                        SalesHeader.TestField("Sell-to Contact No.");
-                end
-            else
-                SalesHeader.TestField("Sell-to Phone No.");
-        end;
+        SalesHeader.ValidateSellToPhoneNo(SalesHeader);
     end;
 }
