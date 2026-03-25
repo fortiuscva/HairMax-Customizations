@@ -3,6 +3,7 @@ report 52609 "HMX Shopify Marketplace Sales"
     Caption = 'Shopify Marketplace Sales';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
+
     DefaultLayout = RDLC;
     RDLCLayout = './SRC/RDL/ShopifyMarketplaceSales.rdl';
 
@@ -55,6 +56,10 @@ report 52609 "HMX Shopify Marketplace Sales"
 
                     RetailerFilter::ShopSimon:
                         if Retailer <> 'SS' then
+                            CurrReport.Skip();
+
+                    RetailerFilter::Both:
+                        if (Retailer <> 'SC') and (Retailer <> 'SS') then
                             CurrReport.Skip();
                 end;
 
@@ -145,7 +150,7 @@ report 52609 "HMX Shopify Marketplace Sales"
 
         DateFilterFrom: Date;
         DateFilterTo: Date;
-        RetailerFilter: Option All,SalonCentric,ShopSimon;
+        RetailerFilter: Option Both,SalonCentric,ShopSimon;
 
         LastOrderNo: Code[20];
         LastShipDate: Date;
