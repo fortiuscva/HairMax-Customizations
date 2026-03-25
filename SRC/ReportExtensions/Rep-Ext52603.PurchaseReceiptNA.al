@@ -11,10 +11,11 @@ reportextension 52603 "HMX Purchase Receipt NA" extends "Purchase Receipt NA"
     {
         add("Purch. Rcpt. Header")
         {
-            column(HMXShipment_Method_Code; "Shipment Method Code")
+
+            column(HMXShipment_Method_Code; ShippingAgentName)
             {
             }
-            column(HMXAgent_Code; ShippingAgentName)
+            column(HMXAgent_Code; ShipmentMethodRec.Description)
             {
             }
             column(HMXShipmentMethodCodeCaptionLbl; ShipmentMethodCodeCaptionLbl)
@@ -31,12 +32,13 @@ reportextension 52603 "HMX Purchase Receipt NA" extends "Purchase Receipt NA"
             begin
                 ShippingAgent.Get("Purch. Rcpt. Header"."HMX Shipping Agent Code");
                 ShippingAgentName := ShippingAgent.Name;
-
+                ShipmentMethodRec.Get("Purch. Rcpt. Header"."Shipment Method Code");
             end;
         }
     }
     var
         ShippingAgentName: Text;
+        ShipmentMethodRec: Record "Shipment Method";
         ShipmentMethodCodeCaptionLbl: Label 'Shipment Method Code';
         ShippingAgentCodeCaptionLbl: Label 'Shipping Agent Code';
 }
