@@ -13,6 +13,13 @@ codeunit 52600 "HMX SubstituteReport"
             NewReportId := Report::"HMX PurchaseOrder"
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", OnAfterCopyBuyFromVendorFieldsFromVendor, '', false, false)]
+    local procedure "Purchase Header_OnAfterCopyBuyFromVendorFieldsFromVendor"(var PurchaseHeader: Record "Purchase Header"; Vendor: Record Vendor; xPurchaseHeader: Record "Purchase Header")
+    begin
+        PurchaseHeader."HMX Shipping Agent Code" := Vendor."Shipping Agent Code";
+        PurchaseHeader.Modify();
+    end;
+    
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"DSHIP Event Publisher", OnAfterGetLabel, '', false, false)]
     local procedure OnAfterGetLabel(docType: Enum "DSHIP Document Type"; docNo: Code[50])
     var
