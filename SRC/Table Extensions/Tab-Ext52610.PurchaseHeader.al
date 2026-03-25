@@ -3,7 +3,7 @@ namespace HairMaxCustomizations.HairMaxCustomizations;
 using Microsoft.Purchases.Document;
 using Microsoft.Foundation.Shipping;
 
-tableextension 52605 "HMX Purchase Header" extends "Purchase Header"
+tableextension 52610 "HMX Purchase Header" extends "Purchase Header"
 {
     fields
     {
