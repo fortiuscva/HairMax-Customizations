@@ -169,6 +169,10 @@ report 52601 "HMX PurchaseOrder"
                 {
 
                 }
+                column(Line_Expected_Receipt_Date; "Expected Receipt Date")
+                {
+
+                }
                 trigger OnPreDataItem()
 
                 begin
