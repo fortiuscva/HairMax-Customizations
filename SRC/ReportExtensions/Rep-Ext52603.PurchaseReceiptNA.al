@@ -3,12 +3,13 @@ namespace HairMaxCustomizations.HairMaxCustomizations;
 using Microsoft.Purchases.Document;
 using Microsoft.Foundation.Shipping;
 
-reportextension 52602 "HMX Purchase Invoice NA" extends "Purchase Invoice NA"
+reportextension 52603 "HMX Purchase Receipt NA" extends "Purchase Receipt NA"
 {
-    RDLCLayout = './SRC/ReportExtensions/Layouts/PurchaseInvoiceNA.rdlc';
+
+    RDLCLayout = './SRC/ReportExtensions/Layouts/PurchaseReceiptNA.rdlc';
     dataset
     {
-        add("Purch. Inv. Header")
+        add("Purch. Rcpt. Header")
         {
             column(HMXShipment_Method_Code; "Shipment Method Code")
             {
@@ -21,23 +22,19 @@ reportextension 52602 "HMX Purchase Invoice NA" extends "Purchase Invoice NA"
             column(HMXShippingAgentCodeCaptionLbl; ShippingAgentCodeCaptionLbl)
             { }
         }
-        modify("Purch. Inv. Header")
+        modify("Purch. Rcpt. Header")
         {
             trigger OnAfterAfterGetRecord()
             var
+
                 ShippingAgent: Record "Shipping Agent";
             begin
-                ShippingAgent.Get("Purch. Inv. Header"."HMX Shipping Agent Code");
+                ShippingAgent.Get("Purch. Rcpt. Header"."HMX Shipping Agent Code");
                 ShippingAgentName := ShippingAgent.Name;
+
             end;
         }
     }
-    labels
-    {
-        ShipmentMethodCodeCaption = 'Shipment Method Code';
-        ShippingAgentName = 'Shipping Agent Code';
-    }
-
     var
         ShippingAgentName: Text;
         ShipmentMethodCodeCaptionLbl: Label 'Shipment Method Code';

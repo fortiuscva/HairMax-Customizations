@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-03-12T11:20:21.9921343Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-03-13T12:31:47.7363938Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -135,8 +135,8 @@ Last(Fields!BreakdownLabel4.Value) + Chr (177) +
 Cstr(Last(Fields!BreakdownAmt1.Value)) + Chr(177) +
 Cstr(Last(Fields!BreakdownAmt2.Value)) + Chr(177) +
 Cstr(Last(Fields!BreakdownAmt3.Value)) + Chr(177)+ 
-Cstr(Last(Fields!BreakdownAmt4.Value))
-, Fields!No_PurchInvHeader.Value) + Chr(177) + Cstr(Fields!HMXShipment_Method_Code.Value) + Chr(177) + Cstr(Fields!HMXAgent_Code.Value)</Hidden>
+Cstr(Last(Fields!BreakdownAmt4.Value)) + Chr(177)+ Chr(177) + Cstr(Fields!HMXShipmentMethodCodeCaptionLbl.Value) + Chr(177) + Chr(177) + Cstr(Fields!HMXShippingAgentCodeCaptionLbl.Value) + Chr(177) + Cstr(Fields!HMXShipment_Method_Code.Value) + Chr(177) + Cstr(Fields!HMXAgent_Code.Value)
+, Fields!No_PurchInvHeader.Value)</Hidden>
                           </Visibility>
                           <Style>
                             <Border>
@@ -2500,7 +2500,7 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!ShipmentMethodCodeCaption.Value</Value>
+                      <Value>=Code.GetData(65,Globals!PageName)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -2512,10 +2512,10 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.19685in</Top>
-              <Left>4.89273in</Left>
-              <Height>11pt</Height>
-              <Width>0.94815in</Width>
+              <Top>4.21989in</Top>
+              <Left>4.88995in</Left>
+              <Height>11.9pt</Height>
+              <Width>1.44815in</Width>
               <ZIndex>53</ZIndex>
               <Style>
                 <Border>
@@ -2530,7 +2530,7 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Code.GetData(65,Globals!PageName)</Value>
+                      <Value>=Code.GetData(68,Globals!PageName)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -2542,10 +2542,10 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.19685in</Top>
-              <Left>5.84088in</Left>
-              <Height>11pt</Height>
-              <Width>1.49467in</Width>
+              <Top>4.21989in</Top>
+              <Left>6.3381in</Left>
+              <Height>11.9pt</Height>
+              <Width>0.96967in</Width>
               <ZIndex>54</ZIndex>
               <Style>
                 <VerticalAlign>Top</VerticalAlign>
@@ -2557,7 +2557,7 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!ShippingAgentName.Value</Value>
+                      <Value>=Code.GetData(67,Globals!PageName)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -2569,12 +2569,15 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.38435in</Top>
-              <Left>4.88023in</Left>
-              <Height>11pt</Height>
-              <Width>0.94815in</Width>
+              <Top>4.41364in</Top>
+              <Left>4.90245in</Left>
+              <Height>11.9pt</Height>
+              <Width>1.44815in</Width>
               <ZIndex>55</ZIndex>
               <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </Textbox>
@@ -2584,7 +2587,7 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Code.GetData(66,Globals!PageName)</Value>
+                      <Value>=Code.GetData(69,Globals!PageName)</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -2596,10 +2599,10 @@ Cstr(Last(Fields!BreakdownAmt4.Value))
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>4.38435in</Top>
-              <Left>5.82838in</Left>
-              <Height>11pt</Height>
-              <Width>1.49467in</Width>
+              <Top>4.41364in</Top>
+              <Left>6.3506in</Left>
+              <Height>11.9pt</Height>
+              <Width>0.96967in</Width>
               <ZIndex>56</ZIndex>
               <Style>
                 <VerticalAlign>Top</VerticalAlign>
@@ -3684,6 +3687,12 @@ End Function
         </Field>
         <Field Name="HMXAgent_Code">
           <DataField>HMXAgent_Code</DataField>
+        </Field>
+        <Field Name="HMXShipmentMethodCodeCaptionLbl">
+          <DataField>HMXShipmentMethodCodeCaptionLbl</DataField>
+        </Field>
+        <Field Name="HMXShippingAgentCodeCaptionLbl">
+          <DataField>HMXShippingAgentCodeCaptionLbl</DataField>
         </Field>
       </Fields>
       <Query>
