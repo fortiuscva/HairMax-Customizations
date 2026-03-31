@@ -36,7 +36,6 @@ report 52601 "HMX PurchaseOrder"
             }
             column(LocalCurrencySymbol; this.GenLedSetup_GRec."Local Currency Symbol")
             {
-
             }
             column(No_; "No.")
             {
@@ -114,7 +113,7 @@ report 52601 "HMX PurchaseOrder"
             {
 
             }
-            column(Shipment_Method_Code; "Shipment Method Code")
+            column(Shipment_Method_Code; ShippingAgentName)
             {
 
             }
@@ -129,6 +128,9 @@ report 52601 "HMX PurchaseOrder"
             column(PaymentMethodCode; paymentMethodDesc)
             {
 
+            }
+            column(Agent_Code; ShipmentMethod.Description)
+            {
             }
 
 
@@ -212,7 +214,7 @@ report 52601 "HMX PurchaseOrder"
                 BarcodeString: Text;
                 BarcodeSymbology: Enum "Barcode Symbology";
                 BarcodeFontProvider: Interface "Barcode Font Provider";
-
+                ShippingAgent: Record "Shipping Agent";
             begin
                 Clear(Requistioner);
                 Clear(requistionerContact);
@@ -245,6 +247,9 @@ report 52601 "HMX PurchaseOrder"
                 BarcodeString := "No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                ShippingAgent.Get(purchaseHeader."HMX Shipping Agent Code");
+                ShippingAgentName := ShippingAgent.Name;
+                ShipmentMethod.Get(purchaseHeader."Shipment Method Code");
             end;
 
 
@@ -273,7 +278,7 @@ report 52601 "HMX PurchaseOrder"
         RequisitionerContactLbl = 'Requistioner Contact';
         ExpectedShipDateLbl = 'Expected Ship Date';
         ShippingTermLbl = 'Shipping Terms';
-        PaymentTermLbl = 'Payment Method';
+        PaymentTermLbl = 'Payment Terms';
         ShippingMethodLbl = 'Shipping Method';
         ItemLbl = 'Item';
         QuantityLbl = 'Quantity';
@@ -309,6 +314,7 @@ report 52601 "HMX PurchaseOrder"
         CompanyInfo_Grec: Record "Company Information";
         PaymentMethod_Grec: Record "Payment Method";
         PaymentTerms_Grec: Record "Payment Terms";
+        ShipmentMethod: Record "Shipment Method";
         ReservationEntry_GRec: Record "Reservation Entry";
         GenLedSetup_GRec: Record "General Ledger Setup";
         PurchOrderComments_GRec: Record "Purch. Comment Line";
@@ -323,6 +329,5 @@ report 52601 "HMX PurchaseOrder"
         requistionerContact: Text;
         paymentTermsDesc: Text;
         paymentMethodDesc: Text;
-
-
+        ShippingAgentName: Text;
 }
