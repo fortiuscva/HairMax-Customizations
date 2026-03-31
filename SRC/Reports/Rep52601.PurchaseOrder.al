@@ -36,7 +36,6 @@ report 52601 "HMX PurchaseOrder"
             }
             column(LocalCurrencySymbol; this.GenLedSetup_GRec."Local Currency Symbol")
             {
-
             }
             column(No_; "No.")
             {
@@ -130,6 +129,9 @@ report 52601 "HMX PurchaseOrder"
             {
 
             }
+            column(Agent_Code; ShippingAgentName)
+            {
+            }
 
 
             dataitem("Purchase Line"; "Purchase Line")
@@ -212,7 +214,7 @@ report 52601 "HMX PurchaseOrder"
                 BarcodeString: Text;
                 BarcodeSymbology: Enum "Barcode Symbology";
                 BarcodeFontProvider: Interface "Barcode Font Provider";
-
+                ShippingAgent: Record "Shipping Agent";
             begin
                 Clear(Requistioner);
                 Clear(requistionerContact);
@@ -245,6 +247,8 @@ report 52601 "HMX PurchaseOrder"
                 BarcodeString := "No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                ShippingAgent.Get(purchaseHeader."HMX Shipping Agent Code");
+                ShippingAgentName := ShippingAgent.Name;
             end;
 
 
@@ -273,7 +277,7 @@ report 52601 "HMX PurchaseOrder"
         RequisitionerContactLbl = 'Requistioner Contact';
         ExpectedShipDateLbl = 'Expected Ship Date';
         ShippingTermLbl = 'Shipping Terms';
-        PaymentTermLbl = 'Payment Method';
+        PaymentTermLbl = 'Payment Terms';
         ShippingMethodLbl = 'Shipping Method';
         ItemLbl = 'Item';
         QuantityLbl = 'Quantity';
@@ -323,6 +327,5 @@ report 52601 "HMX PurchaseOrder"
         requistionerContact: Text;
         paymentTermsDesc: Text;
         paymentMethodDesc: Text;
-
-
+        ShippingAgentName: Text;
 }
