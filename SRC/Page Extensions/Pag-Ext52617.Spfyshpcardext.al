@@ -1,4 +1,4 @@
-pageextension 52613 "HMX Spfyshpcardext" extends "Shpfy Shop Card"
+pageextension 52617 "HMX Spfyshpcardext" extends "Shpfy Shop Card"
 {
     layout
     {

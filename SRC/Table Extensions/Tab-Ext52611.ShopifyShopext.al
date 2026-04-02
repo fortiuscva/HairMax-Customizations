@@ -1,4 +1,4 @@
-tableextension 52606 "HMX ShopifyShopext" extends "Shpfy Shop"
+tableextension 52611 "HMX ShopifyShopext" extends "Shpfy Shop"
 {
     fields
     {
