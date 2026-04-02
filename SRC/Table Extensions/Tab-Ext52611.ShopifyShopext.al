@@ -14,6 +14,7 @@ tableextension 52611 "HMX ShopifyShopext" extends "Shpfy Shop"
             TableRelation = "No. Series";
             Caption = 'Posted Invoice No series';
         }
+
         field(52602; "HMX Old No series"; Code[20])
         {
             DataClassification = CustomerContent;

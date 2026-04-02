@@ -12,6 +12,7 @@ pageextension 52617 "HMX Spfyshpcardext" extends "Shpfy Shop Card"
             {
                 ApplicationArea = All;
             }
+
         }
     }
 
