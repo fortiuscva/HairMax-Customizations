@@ -113,7 +113,7 @@ report 52601 "HMX PurchaseOrder"
             {
 
             }
-            column(Shipment_Method_Code; "Shipment Method Code")
+            column(Shipment_Method_Code; ShippingAgentName)
             {
 
             }
@@ -129,7 +129,7 @@ report 52601 "HMX PurchaseOrder"
             {
 
             }
-            column(Agent_Code; ShippingAgentName)
+            column(Agent_Code; ShipmentMethod.Description)
             {
             }
 
@@ -317,6 +317,7 @@ report 52601 "HMX PurchaseOrder"
         CompanyInfo_Grec: Record "Company Information";
         PaymentMethod_Grec: Record "Payment Method";
         PaymentTerms_Grec: Record "Payment Terms";
+        ShipmentMethod: Record "Shipment Method";
         ReservationEntry_GRec: Record "Reservation Entry";
         GenLedSetup_GRec: Record "General Ledger Setup";
         PurchOrderComments_GRec: Record "Purch. Comment Line";

@@ -10,10 +10,10 @@ reportextension 52602 "HMX Purchase Invoice NA" extends "Purchase Invoice NA"
     {
         add("Purch. Inv. Header")
         {
-            column(HMXShipment_Method_Code; "Shipment Method Code")
+            column(HMXShipment_Method_Code; ShippingAgentName)
             {
             }
-            column(HMXAgent_Code; ShippingAgentName)
+            column(HMXAgent_Code; ShipmentMethodRec.Description)
             {
             }
             column(HMXShipmentMethodCodeCaptionLbl; ShipmentMethodCodeCaptionLbl)
@@ -29,6 +29,7 @@ reportextension 52602 "HMX Purchase Invoice NA" extends "Purchase Invoice NA"
             begin
                 ShippingAgent.Get("Purch. Inv. Header"."HMX Shipping Agent Code");
                 ShippingAgentName := ShippingAgent.Name;
+                ShipmentMethodRec.Get("Purch. Inv. Header"."Shipment Method Code");
             end;
         }
     }
@@ -40,6 +41,7 @@ reportextension 52602 "HMX Purchase Invoice NA" extends "Purchase Invoice NA"
 
     var
         ShippingAgentName: Text;
+        ShipmentMethodRec: Record "Shipment Method";
         ShipmentMethodCodeCaptionLbl: Label 'Shipment Method Code';
         ShippingAgentCodeCaptionLbl: Label 'Shipping Agent Code';
 }
