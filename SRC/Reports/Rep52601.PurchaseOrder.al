@@ -251,8 +251,8 @@ report 52601 "HMX PurchaseOrder"
                 BarcodeString := "No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-                ShippingAgent.Get(purchaseHeader."HMX Shipping Agent Code");
-                ShippingAgentName := ShippingAgent.Name;
+                if ShippingAgent.Get(purchaseHeader."HMX Shipping Agent Code") then
+                    ShippingAgentName := ShippingAgent.Name;
                 ShipmentMethod.Get(purchaseHeader."Shipment Method Code");
             end;
 
