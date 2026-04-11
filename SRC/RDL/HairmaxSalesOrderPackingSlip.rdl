@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-10T19:59:48.2911721Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-11T14:13:37.4859950Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1308,10 +1308,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Constant">Thank You!
+                      <Value>Thank You!
 
-Thank you for purchase form Hairmax!
-if you have questions about your iorder please visit us online at</Value>
+Thank you for your purchase form Hairmax!
+If you have questions about your order please visit us online at www.hairmax.com or email us at.</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8pt</FontSize>
