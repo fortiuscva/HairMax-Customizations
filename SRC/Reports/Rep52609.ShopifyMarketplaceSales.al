@@ -21,19 +21,26 @@ report 52609 "HMX Shopify Marketplace Sales"
             column(Quantity; Quantity) { }
             column(Amount; Amount) { }
 
+            column(ShopifyOrderId; OrderId) { }
+            column(SalesOrderNo; SalesOrderNo) { }
+            column(SalespersonCode; SalespersonCode) { }
+
             trigger OnAfterGetRecord()
             var
                 SalesInvHeader: Record "Sales Invoice Header";
-                OrderId: BigInteger;
+                OrderIdLocal: BigInteger;
             begin
                 if not SalesInvHeader.Get("Document No.") then
                     CurrReport.Skip();
 
-                OrderId := SalesInvHeader."Shpfy Order Id";
-                if OrderId = 0 then
+                OrderIdLocal := SalesInvHeader."Shpfy Order Id";
+                if OrderIdLocal = 0 then
                     CurrReport.Skip();
 
-                if not ShopifyBuffer.Get(OrderId) then
+                if (ShopifyOrderFilter <> 0) and (OrderIdLocal <> ShopifyOrderFilter) then
+                    CurrReport.Skip();
+
+                if not ShopifyBuffer.Get(OrderIdLocal) then
                     CurrReport.Skip();
 
                 ShopifyTag := ShopifyBuffer."Tags";
@@ -62,6 +69,10 @@ report 52609 "HMX Shopify Marketplace Sales"
                         if (Retailer <> 'SC') and (Retailer <> 'SS') then
                             CurrReport.Skip();
                 end;
+
+                SalesOrderNo := SalesInvHeader."Order No.";
+                SalespersonCode := SalesInvHeader."Salesperson Code";
+                OrderId := OrderIdLocal;
 
                 if SalesInvHeader."Order No." <> LastOrderNo then begin
                     LastOrderNo := SalesInvHeader."Order No.";
@@ -98,6 +109,12 @@ report 52609 "HMX Shopify Marketplace Sales"
                     field(RetailerFilter; RetailerFilter)
                     {
                         Caption = 'Retailer';
+                        ApplicationArea = All;
+                    }
+
+                    field(ShopifyOrderFilter; ShopifyOrderFilter)
+                    {
+                        Caption = 'Shopify Order Id';
                         ApplicationArea = All;
                     }
                 }
@@ -144,13 +161,19 @@ report 52609 "HMX Shopify Marketplace Sales"
         ShopifyBuffer: Record "HMX Shopify Order Buffer" temporary;
 
         ShopifyTag: Text;
-        Retailer: Code[10]; // SC / SS
+        Retailer: Code[10];
         DateOfSale: Date;
         ShipDate: Date;
 
         DateFilterFrom: Date;
         DateFilterTo: Date;
+
         RetailerFilter: Option Both,SalonCentric,ShopSimon;
+        ShopifyOrderFilter: BigInteger;
+
+        SalesOrderNo: Code[20];
+        SalespersonCode: Code[20];
+        OrderId: BigInteger;
 
         LastOrderNo: Code[20];
         LastShipDate: Date;
