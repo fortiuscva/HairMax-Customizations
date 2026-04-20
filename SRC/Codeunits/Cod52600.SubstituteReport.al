@@ -48,4 +48,19 @@ codeunit 52600 "HMX SubstituteReport"
         SalesHeader.TestField("Sell-to Country/Region Code");
         SalesHeader.ValidateSellToPhoneNo(SalesHeader);
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", OnAfterOnInsert, '', false, false)]
+    local procedure "Sales Header_OnAfterOnInsert"(var SalesHeader: Record "Sales Header")
+    var
+        ShpfyTag: Record "Shpfy Tag";
+    begin
+        ShpfyTag.SetRange("Parent Id", SalesHeader."Shpfy Order Id");
+        ShpfyTag.SetFilter("Tag", '%1|%2', 'SalonCentric', 'Simon SPO');
+        if ShpfyTag.FindSet() then begin
+            repeat
+                SalesHeader.Validate("Salesperson Code", 'Urban Dynamics');
+                SalesHeader.Modify(true);
+            until ShpfyTag.Next() = 0;
+        end;
+    end;
 }
