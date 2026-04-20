@@ -16,9 +16,6 @@ tableextension 52605 "HMX Sales Header" extends "Sales Header"
             begin
                 if "Sell-to Country/Region Code" = '' then
                     "Sell-to Country/Region Code" := 'US';
-                if "Shpfy Order No." <> '' then
-                    if "Salesperson Code" = '' then
-                        "Salesperson Code" := 'SHOPIFY';
                 case Rec."Document Type" of
                     Rec."Document Type"::Quote,
                     Rec."Document Type"::"Credit Memo",
