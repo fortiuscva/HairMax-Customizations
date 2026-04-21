@@ -53,8 +53,8 @@ codeunit 52600 "HMX SubstituteReport"
             SalesHeader.Validate("Salesperson Code", 'Urban Dynamics')
         else
             SalesHeader.Validate("Salesperson Code", 'Shopify');
-
+        SalesHeader.Validate("Sell-to Phone No.", '561-314-2430');
+        SalesHeader.Validate("Sell-to Country/Region Code", 'US');
         SalesHeader.Modify(true);
     end;
-
 }
