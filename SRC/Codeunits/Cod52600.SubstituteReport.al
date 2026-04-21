@@ -40,22 +40,21 @@ codeunit 52600 "HMX SubstituteReport"
         SalesHeader.TestField("Salesperson Code");
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Sales Header", OnAfterOnInsert, '', false, false)]
-    local procedure "Sales Header_OnAfterOnInsert"(var SalesHeader: Record "Sales Header")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", OnAfterCreateSalesHeader, '', false, false)]
+    local procedure "Shpfy Order Events_OnAfterCreateSalesHeader"(OrderHeader: Record "Shpfy Order Header"; var SalesHeader: Record "Sales Header")
     var
         ShpfyTag: Record "Shpfy Tag";
+        IsDefaultShpfyTag: Boolean;
     begin
-        ShpfyTag.SetRange("Parent Id", SalesHeader."Shpfy Order Id");
-        if ShpfyTag.FindSet() then begin
-            repeat
-                if (ShpfyTag.Tag = 'SalonCentric') or (ShpfyTag.Tag = 'Simon SPO') then begin
-                    SalesHeader.Validate("Salesperson Code", 'Urban Dynamics');
-                    SalesHeader.Modify(true);
-                end else begin
-                    SalesHeader.Validate("Salesperson Code", 'Shopify');
-                    SalesHeader.Modify(true);
-                end;
-            until ShpfyTag.Next() = 0;
-        end;
+        ShpfyTag.SetRange("Parent Id", OrderHeader."Shopify Order Id");
+        ShpfyTag.SetFilter(Tag, '%1|%2', 'SalonCentric', 'Simon SPO');
+
+        if ShpfyTag.FindFirst() then
+            SalesHeader.Validate("Salesperson Code", 'Urban Dynamics')
+        else
+            SalesHeader.Validate("Salesperson Code", 'Shopify');
+
+        SalesHeader.Modify(true);
     end;
+
 }
