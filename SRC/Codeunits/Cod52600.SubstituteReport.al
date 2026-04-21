@@ -55,11 +55,15 @@ codeunit 52600 "HMX SubstituteReport"
         ShpfyTag: Record "Shpfy Tag";
     begin
         ShpfyTag.SetRange("Parent Id", SalesHeader."Shpfy Order Id");
-        ShpfyTag.SetFilter("Tag", '%1|%2', 'SalonCentric', 'Simon SPO');
         if ShpfyTag.FindSet() then begin
             repeat
-                SalesHeader.Validate("Salesperson Code", 'Urban Dynamics');
-                SalesHeader.Modify(true);
+                if (ShpfyTag.Tag = 'SalonCentric') or (ShpfyTag.Tag = 'Simon SPO') then begin
+                    SalesHeader.Validate("Salesperson Code", 'Urban Dynamics');
+                    SalesHeader.Modify(true);
+                end else begin
+                    SalesHeader.Validate("Salesperson Code", 'Shopify');
+                    SalesHeader.Modify(true);
+                end;
             until ShpfyTag.Next() = 0;
         end;
     end;
