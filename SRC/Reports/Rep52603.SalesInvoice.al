@@ -138,7 +138,7 @@ report 52603 "HMX Sales Invoice"
             {
 
             }
-            column(Invoice_Discount_Value; "Invoice Discount Value")
+            column(Invoice_Discount_Value; InvoiceDiscountAmount)
             { }
             dataitem("Sales Line"; "Sales Invoice Line")
             {
@@ -175,7 +175,7 @@ report 52603 "HMX Sales Invoice"
                 {
 
                 }
-                column(TotalAmount_Grec; this.TotalAmount_Grec - Sales_Header."Invoice Discount Value")
+                column(TotalAmount_Grec; this.TotalAmount_Grec - InvoiceDiscountAmount)
                 {
 
                 }
@@ -288,6 +288,11 @@ report 52603 "HMX Sales Invoice"
                 BarcodeString := "No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                Sales_Header.CalcFields("Invoice Discount Amount");
+                if Sales_Header."Invoice Discount Value" <> 0 then
+                    InvoiceDiscountAmount := Sales_Header."Invoice Discount Value"
+                else
+                    InvoiceDiscountAmount := Sales_Header."Invoice Discount Amount";
             end;
 
 
@@ -391,6 +396,7 @@ report 52603 "HMX Sales Invoice"
 
         BarcodeSymbology: Enum "Barcode Symbology";
         ItemVariant: Record "Item Variant";
+        InvoiceDiscountAmount: Decimal;
 
 
 
