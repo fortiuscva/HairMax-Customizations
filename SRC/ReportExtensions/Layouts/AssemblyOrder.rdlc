@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-04T14:55:45.2290045Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-29T11:13:56.3513444Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -2854,7 +2854,6 @@
                                                             <PaddingRight>5pt</PaddingRight>
                                                           </Style>
                                                         </Textbox>
-                                                        <rd:Selected>true</rd:Selected>
                                                       </CellContents>
                                                     </TablixCell>
                                                     <TablixCell>
@@ -3156,7 +3155,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value>=Parameters!QtyReturntoStockCaption.Value</Value>
+                                                                  <Value>=Parameters!PickInitialsCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3220,7 +3219,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value>=Parameters!InitialsCaption.Value</Value>
+                                                                  <Value>=Parameters!InspectInitialsCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3241,6 +3240,7 @@
                                                             <PaddingRight>5pt</PaddingRight>
                                                           </Style>
                                                         </Textbox>
+                                                        <rd:Selected>true</rd:Selected>
                                                       </CellContents>
                                                     </TablixCell>
                                                   </TablixCells>
@@ -4427,32 +4427,23 @@
       </DefaultValue>
       <Prompt>EndingDateCaption</Prompt>
     </ReportParameter>
-    <ReportParameter Name="QtyReturntoStockCaption">
+    <ReportParameter Name="PickInitialsCaption">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>QtyReturntoStockCaption</Value>
+          <Value>PickInitialsCaption</Value>
         </Values>
       </DefaultValue>
-      <Prompt>QtyReturntoStockCaption</Prompt>
+      <Prompt>PickInitialsCaption</Prompt>
     </ReportParameter>
-    <ReportParameter Name="InitialsCaption">
+    <ReportParameter Name="InspectInitialsCaption">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>InitialsCaption</Value>
+          <Value>InspectInitialsCaption</Value>
         </Values>
       </DefaultValue>
-      <Prompt>InitialsCaption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="QtyAssembledCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>QtyAssembledCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>QtyAssembledCaption</Prompt>
+      <Prompt>InspectInitialsCaption</Prompt>
     </ReportParameter>
     <ReportParameter Name="QtyPickedCaption">
       <DataType>String</DataType>
@@ -4602,7 +4593,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>34</NumberOfRows>
+      <NumberOfRows>33</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -4682,96 +4673,91 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>15</RowIndex>
-          <ParameterName>QtyReturntoStockCaption</ParameterName>
+          <ParameterName>PickInitialsCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>16</RowIndex>
-          <ParameterName>InitialsCaption</ParameterName>
+          <ParameterName>InspectInitialsCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>17</RowIndex>
-          <ParameterName>QtyAssembledCaption</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>18</RowIndex>
           <ParameterName>QtyPickedCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>19</RowIndex>
+          <RowIndex>18</RowIndex>
           <ParameterName>QtyConsumedCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>20</RowIndex>
+          <RowIndex>19</RowIndex>
           <ParameterName>ItemNo_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>21</RowIndex>
+          <RowIndex>20</RowIndex>
           <ParameterName>Description_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>22</RowIndex>
+          <RowIndex>21</RowIndex>
           <ParameterName>Quantity_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>23</RowIndex>
+          <RowIndex>22</RowIndex>
           <ParameterName>QuantityToAssemble_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>24</RowIndex>
+          <RowIndex>23</RowIndex>
           <ParameterName>LocationCode_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>25</RowIndex>
+          <RowIndex>24</RowIndex>
           <ParameterName>BinCode_AssemblyHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>26</RowIndex>
+          <RowIndex>25</RowIndex>
           <ParameterName>Type_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>27</RowIndex>
+          <RowIndex>26</RowIndex>
           <ParameterName>No_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>28</RowIndex>
+          <RowIndex>27</RowIndex>
           <ParameterName>Description_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>29</RowIndex>
+          <RowIndex>28</RowIndex>
           <ParameterName>QuantityPer_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>30</RowIndex>
+          <RowIndex>29</RowIndex>
           <ParameterName>Quantity_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>31</RowIndex>
+          <RowIndex>30</RowIndex>
           <ParameterName>LocationCode_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>32</RowIndex>
+          <RowIndex>31</RowIndex>
           <ParameterName>BinCode_AssemblyLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>33</RowIndex>
+          <RowIndex>32</RowIndex>
           <ParameterName>QuantityToConsume_AssemblyLineCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
