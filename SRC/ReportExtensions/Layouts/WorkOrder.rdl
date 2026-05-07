@@ -22,124 +22,6 @@
       <rd:DataSourceID>bf5c0891-a645-4dd1-9b08-bd5133fcffab</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="No1_SalesHeader">
-          <DataField>No1_SalesHeader</DataField>
-        </Field>
-        <Field Name="ShipmentDate_SalesHeader">
-          <DataField>ShipmentDate_SalesHeader</DataField>
-        </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CustAddr1">
-          <DataField>CustAddr1</DataField>
-        </Field>
-        <Field Name="CustAddr2">
-          <DataField>CustAddr2</DataField>
-        </Field>
-        <Field Name="CustAddr3">
-          <DataField>CustAddr3</DataField>
-        </Field>
-        <Field Name="CustAddr4">
-          <DataField>CustAddr4</DataField>
-        </Field>
-        <Field Name="CustAddr5">
-          <DataField>CustAddr5</DataField>
-        </Field>
-        <Field Name="CustAddr6">
-          <DataField>CustAddr6</DataField>
-        </Field>
-        <Field Name="CustAddr7">
-          <DataField>CustAddr7</DataField>
-        </Field>
-        <Field Name="CustAddr8">
-          <DataField>CustAddr8</DataField>
-        </Field>
-        <Field Name="ShipmentDateCaption">
-          <DataField>ShipmentDateCaption</DataField>
-        </Field>
-        <Field Name="SalesOrderNoCaption">
-          <DataField>SalesOrderNoCaption</DataField>
-        </Field>
-        <Field Name="PageNoCaption">
-          <DataField>PageNoCaption</DataField>
-        </Field>
-        <Field Name="WorkOrderCaption">
-          <DataField>WorkOrderCaption</DataField>
-        </Field>
-        <Field Name="No_SalesLine">
-          <DataField>No_SalesLine</DataField>
-        </Field>
-        <Field Name="Description_SalesLine">
-          <DataField>Description_SalesLine</DataField>
-        </Field>
-        <Field Name="Quantity_SalesLine">
-          <DataField>Quantity_SalesLine</DataField>
-        </Field>
-        <Field Name="Quantity_SalesLineFormat">
-          <DataField>Quantity_SalesLineFormat</DataField>
-        </Field>
-        <Field Name="UnitofMeasure_SalesLine">
-          <DataField>UnitofMeasure_SalesLine</DataField>
-        </Field>
-        <Field Name="Type_SalesLine">
-          <DataField>Type_SalesLine</DataField>
-        </Field>
-        <Field Name="QtyworkPostSalesOrderCptn">
-          <DataField>QtyworkPostSalesOrderCptn</DataField>
-        </Field>
-        <Field Name="QuantityUsedCaption">
-          <DataField>QuantityUsedCaption</DataField>
-        </Field>
-        <Field Name="UnitofMeasureCaption">
-          <DataField>UnitofMeasureCaption</DataField>
-        </Field>
-        <Field Name="Date_SalesCommentLine">
-          <DataField>Date_SalesCommentLine</DataField>
-        </Field>
-        <Field Name="Code_SalesCommentLine">
-          <DataField>Code_SalesCommentLine</DataField>
-        </Field>
-        <Field Name="Comment_SalesCommentLine">
-          <DataField>Comment_SalesCommentLine</DataField>
-        </Field>
-        <Field Name="CommentsCaption">
-          <DataField>CommentsCaption</DataField>
-        </Field>
-        <Field Name="SalesCommentLineDtCptn">
-          <DataField>SalesCommentLineDtCptn</DataField>
-        </Field>
-        <Field Name="NoCaption">
-          <DataField>NoCaption</DataField>
-        </Field>
-        <Field Name="DescriptionCaption">
-          <DataField>DescriptionCaption</DataField>
-        </Field>
-        <Field Name="QuantityCaption">
-          <DataField>QuantityCaption</DataField>
-        </Field>
-        <Field Name="UnitofMeasureCaptionControl33">
-          <DataField>UnitofMeasureCaptionControl33</DataField>
-        </Field>
-        <Field Name="DateCaption">
-          <DataField>DateCaption</DataField>
-        </Field>
-        <Field Name="workPostdItemorResJnlCptn">
-          <DataField>workPostdItemorResJnlCptn</DataField>
-        </Field>
-        <Field Name="TypeCaption">
-          <DataField>TypeCaption</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -3074,7 +2956,6 @@ Fields!No1_SalesHeader.Value + Chr(177) + Fields!ShipmentDate_SalesHeader.Value)
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>0in</Top>
             <Height>6.29432cm</Height>
             <Width>19.8537cm</Width>
             <Style />
@@ -3360,7 +3241,7 @@ Fields!No1_SalesHeader.Value + Chr(177) + Fields!ShipmentDate_SalesHeader.Value)
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!WorkOrderCaption.Value, "DataSet_Result")</Value>
+                      <Value>=Parameters!WorkOrderReportHeaderCaption.Value</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -3374,6 +3255,9 @@ Fields!No1_SalesHeader.Value + Chr(177) + Fields!ShipmentDate_SalesHeader.Value)
               <Width>7.5cm</Width>
               <ZIndex>11</ZIndex>
               <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
                 <VerticalAlign>Middle</VerticalAlign>
               </Style>
             </Textbox>
@@ -3517,6 +3401,15 @@ Fields!No1_SalesHeader.Value + Chr(177) + Fields!ShipmentDate_SalesHeader.Value)
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="WorkOrderReportHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>WorkOrderReportHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>WorkOrderReportHeaderCaption</Prompt>
+    </ReportParameter>
     <ReportParameter Name="No_SalesLineCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -3584,41 +3477,46 @@ Fields!No1_SalesHeader.Value + Chr(177) + Fields!ShipmentDate_SalesHeader.Value)
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>7</NumberOfRows>
+      <NumberOfRows>8</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>No_SalesLineCaption</ParameterName>
+          <ParameterName>WorkOrderReportHeaderCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>Description_SalesLineCaption</ParameterName>
+          <ParameterName>No_SalesLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>Quantity_SalesLineCaption</ParameterName>
+          <ParameterName>Description_SalesLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>3</RowIndex>
-          <ParameterName>UnitofMeasure_SalesLineCaption</ParameterName>
+          <ParameterName>Quantity_SalesLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>4</RowIndex>
-          <ParameterName>Type_SalesLineCaption</ParameterName>
+          <ParameterName>UnitofMeasure_SalesLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>5</RowIndex>
-          <ParameterName>Code_SalesCommentLineCaption</ParameterName>
+          <ParameterName>Type_SalesLineCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>6</RowIndex>
+          <ParameterName>Code_SalesCommentLineCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>7</RowIndex>
           <ParameterName>Comment_SalesCommentLineCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -3675,4 +3573,122 @@ End Function</Code>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>eb15719a-2694-49bd-809c-95ce0143f052</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No1_SalesHeader">
+          <DataField>No1_SalesHeader</DataField>
+        </Field>
+        <Field Name="ShipmentDate_SalesHeader">
+          <DataField>ShipmentDate_SalesHeader</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CustAddr1">
+          <DataField>CustAddr1</DataField>
+        </Field>
+        <Field Name="CustAddr2">
+          <DataField>CustAddr2</DataField>
+        </Field>
+        <Field Name="CustAddr3">
+          <DataField>CustAddr3</DataField>
+        </Field>
+        <Field Name="CustAddr4">
+          <DataField>CustAddr4</DataField>
+        </Field>
+        <Field Name="CustAddr5">
+          <DataField>CustAddr5</DataField>
+        </Field>
+        <Field Name="CustAddr6">
+          <DataField>CustAddr6</DataField>
+        </Field>
+        <Field Name="CustAddr7">
+          <DataField>CustAddr7</DataField>
+        </Field>
+        <Field Name="CustAddr8">
+          <DataField>CustAddr8</DataField>
+        </Field>
+        <Field Name="ShipmentDateCaption">
+          <DataField>ShipmentDateCaption</DataField>
+        </Field>
+        <Field Name="SalesOrderNoCaption">
+          <DataField>SalesOrderNoCaption</DataField>
+        </Field>
+        <Field Name="PageNoCaption">
+          <DataField>PageNoCaption</DataField>
+        </Field>
+        <Field Name="WorkOrderCaption">
+          <DataField>WorkOrderCaption</DataField>
+        </Field>
+        <Field Name="No_SalesLine">
+          <DataField>No_SalesLine</DataField>
+        </Field>
+        <Field Name="Description_SalesLine">
+          <DataField>Description_SalesLine</DataField>
+        </Field>
+        <Field Name="Quantity_SalesLine">
+          <DataField>Quantity_SalesLine</DataField>
+        </Field>
+        <Field Name="Quantity_SalesLineFormat">
+          <DataField>Quantity_SalesLineFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_SalesLine">
+          <DataField>UnitofMeasure_SalesLine</DataField>
+        </Field>
+        <Field Name="Type_SalesLine">
+          <DataField>Type_SalesLine</DataField>
+        </Field>
+        <Field Name="QtyworkPostSalesOrderCptn">
+          <DataField>QtyworkPostSalesOrderCptn</DataField>
+        </Field>
+        <Field Name="QuantityUsedCaption">
+          <DataField>QuantityUsedCaption</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCaption">
+          <DataField>UnitofMeasureCaption</DataField>
+        </Field>
+        <Field Name="Date_SalesCommentLine">
+          <DataField>Date_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="Code_SalesCommentLine">
+          <DataField>Code_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="Comment_SalesCommentLine">
+          <DataField>Comment_SalesCommentLine</DataField>
+        </Field>
+        <Field Name="CommentsCaption">
+          <DataField>CommentsCaption</DataField>
+        </Field>
+        <Field Name="SalesCommentLineDtCptn">
+          <DataField>SalesCommentLineDtCptn</DataField>
+        </Field>
+        <Field Name="NoCaption">
+          <DataField>NoCaption</DataField>
+        </Field>
+        <Field Name="DescriptionCaption">
+          <DataField>DescriptionCaption</DataField>
+        </Field>
+        <Field Name="QuantityCaption">
+          <DataField>QuantityCaption</DataField>
+        </Field>
+        <Field Name="UnitofMeasureCaptionControl33">
+          <DataField>UnitofMeasureCaptionControl33</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="workPostdItemorResJnlCptn">
+          <DataField>workPostdItemorResJnlCptn</DataField>
+        </Field>
+        <Field Name="TypeCaption">
+          <DataField>TypeCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
