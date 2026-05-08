@@ -66,6 +66,7 @@ tableextension 52614 "HMX Requisition Line" extends "Requisition Line"
 
         // On-hand Quantity
         ItemRec.Get(Rec."No.");
+        ItemRec.CalcFields("Qty. on Purch. Order", Inventory);
         Rec."HMX On-hand Quantity" := ItemRec.Inventory;
 
 
