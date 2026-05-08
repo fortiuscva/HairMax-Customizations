@@ -150,6 +150,9 @@ report 52603 "HMX Sales Invoice"
                 {
 
                 }
+                column(HideGLLine; HideGLLine)
+                {
+                }
                 column(ItemNo; "No.")
                 {
 
@@ -207,11 +210,14 @@ report 52603 "HMX Sales Invoice"
                     Clear(this.Serial_LotNo_GRec);
 
                     Clear(this.PrintLine);
+                    Clear(HideGLLine);
                     // if "Sales Line".Type = "Sales Line".Type::Item then begin
                     this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
                     this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
                     if not (("Sales Line".Type = "Sales Line".Type::"G/L Account") and ("Sales Line"."No." = '40391')) then
-                        this.SubTotalAmount_GRec += this.Amount_GRec;
+                        this.SubTotalAmount_GRec += this.Amount_GRec
+                    else
+                        HideGLLine := true;
                     this.PrintLine := true;
                     this.ItemLedEntry_GRec.Reset();
                     this.ItemLedEntry_GRec.SetRange("Document No.", "Sales Line"."Document No.");
@@ -397,7 +403,7 @@ report 52603 "HMX Sales Invoice"
         BarcodeSymbology: Enum "Barcode Symbology";
         ItemVariant: Record "Item Variant";
         InvoiceDiscountAmount: Decimal;
-
+        HideGLLine: Boolean;
 
 
 }
