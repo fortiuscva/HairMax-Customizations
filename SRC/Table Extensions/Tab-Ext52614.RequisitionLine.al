@@ -32,6 +32,13 @@ tableextension 52614 "HMX Requisition Line" extends "Requisition Line"
             Caption = 'Quick Order Calc';
             Editable = false;
         }
+        modify("Due Date")
+        {
+            trigger OnAfterValidate()
+            begin
+                CalculateValues();
+            end;
+        }
     }
     procedure CalculateValues()
     var
@@ -70,6 +77,7 @@ tableextension 52614 "HMX Requisition Line" extends "Requisition Line"
 
         if Rec."HMX Quick Order Calc" < 0 then
             Rec."HMX Quick Order Calc" := 0;
+
     end;
 
 }
