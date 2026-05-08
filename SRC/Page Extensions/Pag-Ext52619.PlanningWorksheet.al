@@ -38,9 +38,4 @@ pageextension 52619 "HMX Planning Worksheet" extends "Planning Worksheet"
             }
         }
     }
-    trigger OnAfterGetRecord()
-    begin
-        Rec.CalculateValues();
-        CurrPage.Update(false);
-    end;
 }
