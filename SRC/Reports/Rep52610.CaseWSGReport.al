@@ -216,14 +216,7 @@ report 52610 "HMX Case WSG Report"
                 InStr: Instream;
             begin
                 Clear(HMXJustificationTxt);
-                if "RS Case"."HMX Justification".HasValue then begin
-                    "RS Case"."HMX Justification".CreateInStream(InStr);
-                    InStr.ReadText(HMXJustificationTxt);
-                end;
-                if IsCaseProcessed then
-                    exit;
-
-                IsCaseProcessed := true;
+                HMXJustificationTxt := "RS Case".GetJustification();
                 CaseNotesVar.Clear();
                 RecRef.GetTable("RS Case");
                 RecordLink.Reset();
@@ -318,6 +311,7 @@ report 52610 "HMX Case WSG Report"
         ReasonCodeCaption = 'Reason Code';
         ResolutionCodeCaption = 'Resolution Code';
         ResolutionDocCaption = 'Resolution Document';
+        HMXResolutionNoCaption = 'Resoution No';
         RelatedRecordCountCaption = 'Related Record Count';
     }
 

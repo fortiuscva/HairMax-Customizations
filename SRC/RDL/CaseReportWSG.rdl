@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-09T01:29:54.1672809Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-09T10:15:35.0812828Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1016,7 +1016,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!IssueDetailsCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1091,7 +1091,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!SourceDocumentCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1166,7 +1166,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!SourceNoCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1241,7 +1241,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!EvaluatedIssueCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1316,7 +1316,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!QualityEvaluationCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1391,7 +1391,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                                     <Value>=Parameters!AssociatedComplaintCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
-                                                      <TextDecoration>Underline</TextDecoration>
+                                                      <TextDecoration>None</TextDecoration>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -2833,7 +2833,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Parameters!ResolutionNoCaption.Value</Value>
+                                                    <Value>=Parameters!HMXResolutionNoCaption.Value</Value>
                                                     <Style>
                                                       <FontSize>8pt</FontSize>
                                                       <FontWeight>Bold</FontWeight>
@@ -3583,7 +3583,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0in</Top>
+            <Top>0.09028in</Top>
             <Height>7.37594in</Height>
             <Width>7.52067in</Width>
             <Style>
@@ -3593,13 +3593,13 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>7.37594in</Height>
+        <Height>7.46622in</Height>
         <Style />
       </Body>
       <Width>7.52067in</Width>
       <Page>
         <PageHeader>
-          <Height>1.74429in</Height>
+          <Height>1.90262in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -4263,8 +4263,8 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>1.57775in</Top>
-              <Height>0.16654in</Height>
+              <Top>1.59025in</Top>
+              <Height>0.17904in</Height>
               <Width>1.82292in</Width>
               <ZIndex>20</ZIndex>
               <Style>
@@ -4296,9 +4296,9 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.57636in</Top>
-              <Left>1.71377in</Left>
-              <Height>0.16654in</Height>
+              <Top>1.58886in</Top>
+              <Left>1.83877in</Left>
+              <Height>0.17904in</Height>
               <Width>4.66605in</Width>
               <ZIndex>21</ZIndex>
               <Style>
@@ -4875,6 +4875,15 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
       </DefaultValue>
       <Prompt>ResolutionDocCaption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="HMXResolutionNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>HMXResolutionNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>HMXResolutionNoCaption</Prompt>
+    </ReportParameter>
     <ReportParameter Name="RelatedRecordCountCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -5068,7 +5077,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>58</NumberOfRows>
+      <NumberOfRows>59</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -5258,106 +5267,111 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>37</RowIndex>
-          <ParameterName>RelatedRecordCountCaption</ParameterName>
+          <ParameterName>HMXResolutionNoCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>38</RowIndex>
-          <ParameterName>AssignedToCaption</ParameterName>
+          <ParameterName>RelatedRecordCountCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>39</RowIndex>
-          <ParameterName>CaseIDCaption</ParameterName>
+          <ParameterName>AssignedToCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>40</RowIndex>
-          <ParameterName>CompaintNotesCaption</ParameterName>
+          <ParameterName>CaseIDCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>41</RowIndex>
-          <ParameterName>CompaintReasonCaption</ParameterName>
+          <ParameterName>CompaintNotesCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>42</RowIndex>
-          <ParameterName>CompaintResolutionCaption</ParameterName>
+          <ParameterName>CompaintReasonCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>43</RowIndex>
-          <ParameterName>ContactNameCaption</ParameterName>
+          <ParameterName>CompaintResolutionCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>44</RowIndex>
-          <ParameterName>ContactPhoneCaption</ParameterName>
+          <ParameterName>ContactNameCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>45</RowIndex>
-          <ParameterName>CreatedByCaption</ParameterName>
+          <ParameterName>ContactPhoneCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>46</RowIndex>
-          <ParameterName>CreatedOnDateTimeCaption</ParameterName>
+          <ParameterName>CreatedByCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>47</RowIndex>
-          <ParameterName>LotNoCaption</ParameterName>
+          <ParameterName>CreatedOnDateTimeCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>48</RowIndex>
-          <ParameterName>ModifiedByCaption</ParameterName>
+          <ParameterName>LotNoCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>49</RowIndex>
-          <ParameterName>ModifiedOnDateTimeCaption</ParameterName>
+          <ParameterName>ModifiedByCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>50</RowIndex>
-          <ParameterName>NameCaption</ParameterName>
+          <ParameterName>ModifiedOnDateTimeCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>51</RowIndex>
-          <ParameterName>NoCaption</ParameterName>
+          <ParameterName>NameCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>52</RowIndex>
-          <ParameterName>ReasonNoCaption</ParameterName>
+          <ParameterName>NoCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>53</RowIndex>
-          <ParameterName>ResolutionNoCaption</ParameterName>
+          <ParameterName>ReasonNoCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>54</RowIndex>
-          <ParameterName>ResolutionNotesCaption</ParameterName>
+          <ParameterName>ResolutionNoCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>55</RowIndex>
-          <ParameterName>ReturnMaterialPCCountCaption</ParameterName>
+          <ParameterName>ResolutionNotesCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>56</RowIndex>
-          <ParameterName>StatusCaption</ParameterName>
+          <ParameterName>ReturnMaterialPCCountCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>57</RowIndex>
+          <ParameterName>StatusCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>58</RowIndex>
           <ParameterName>TypeCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
