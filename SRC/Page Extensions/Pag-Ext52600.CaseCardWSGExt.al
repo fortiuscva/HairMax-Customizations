@@ -156,7 +156,25 @@ pageextension 52600 "HMX CaseCardWSGExt" extends "Case Card WSG"
 
     actions
     {
-        // Add changes to page actions here
+        addlast(Reporting)
+        {
+            action("HMX PrintCaseReport")
+            {
+                Caption = 'Print Case WSG Report';
+                ApplicationArea = All;
+                Image = Print;
+
+                trigger OnAction()
+                var
+                    CaseWSGRec: Record "Case WSG";
+                begin
+                    CaseWSGRec.Reset();
+                    CaseWSGRec.SetRange("No.", Rec."No.");
+
+                    Report.Run(Report::"HMX Case WSG Report", true, true, CaseWSGRec);
+                end;
+            }
+        }
     }
     var
         Justification: Text;
