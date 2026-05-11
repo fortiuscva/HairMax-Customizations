@@ -184,6 +184,7 @@ report 52610 "HMX Case WSG Report"
             }
             column(HMXCaseNotes; CaseNotesVar.ToText())
             { }
+
             dataitem(RelatedRecord; "Related Record WSG")
             {
                 DataItemLink = "Case No." = field("No.");
@@ -198,13 +199,6 @@ report 52610 "HMX Case WSG Report"
                 {
                 }
             }
-            trigger OnPreDataItem()
-            var
-                myInt: Integer;
-            begin
-                IsCaseProcessed := false
-            end;
-
             trigger OnAfterGetRecord()
             var
                 RecordLink: Record "Record Link";
@@ -231,6 +225,9 @@ report 52610 "HMX Case WSG Report"
                             Clear(NoteText);
                             RecordLink.Note.CreateInStream(Stream);
                             NoteText.Read(Stream);
+                            if NoteText.Length > 0 then begin
+                                NoteText.GetSubText(NoteText, 2); // removes first char
+                            end;
                             repeat
                                 NoteText.GetSubText(FirstText, 1, 1);
                                 if FirstText = '' then break;
@@ -241,10 +238,10 @@ report 52610 "HMX Case WSG Report"
                                     break;
                             until false;
                             CaseNotesVar.AppendLine(Format(NoteText));
-
+                            CaseNotesVar.AppendLine(Format(RecordLink.Created) + ' ' + RecordLink."User ID");
+                            CaseNotesVar.AppendLine('______________________________________________________________');
                         end;
                     until RecordLink.Next() = 0;
-
             end;
         }
     }

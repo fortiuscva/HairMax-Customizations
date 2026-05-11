@@ -35,7 +35,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>7.37594in</Height>
+                  <Height>7.39677in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -3425,6 +3425,9 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
                                               </Paragraph>
                                             </Paragraphs>
                                             <rd:DefaultName>Textbox8</rd:DefaultName>
+                                            <Visibility>
+                                              <Hidden>true</Hidden>
+                                            </Visibility>
                                             <Style>
                                               <Border>
                                                 <Style>None</Style>
@@ -3584,7 +3587,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0.09028in</Top>
-            <Height>7.37594in</Height>
+            <Height>7.39677in</Height>
             <Width>7.52067in</Width>
             <Style>
               <Border>
@@ -3593,7 +3596,7 @@ Fields!ModifiedOnDateTime.Value + Chr(177) + Fields!HMXcaseOrigin.Value + Chr(17
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>7.46622in</Height>
+        <Height>7.48705in</Height>
         <Style />
       </Body>
       <Width>7.52067in</Width>
