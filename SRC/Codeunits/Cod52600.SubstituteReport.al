@@ -15,10 +15,26 @@ codeunit 52600 "HMX SubstituteReport"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Release Sales Document", OnBeforeManualReleaseSalesDoc, '', false, false)]
     local procedure "Release Sales Document_OnBeforeManualReleaseSalesDoc"(var SalesHeader: Record "Sales Header"; PreviewMode: Boolean)
+    var
+        SelltoContact: Record Contact;
     begin
-        SalesHeader.TestField("Sell-to Phone No.");
-        SalesHeader.TestField("Sell-to Country/Region Code");
         SalesHeader.TestField("Salesperson Code");
+        SalesHeader.TestField("Sell-to Country/Region Code");
+        case SalesHeader."Document Type" of
+            SalesHeader."Document Type"::Quote,
+            SalesHeader."Document Type"::"Credit Memo",
+             SalesHeader."Document Type"::Invoice,
+            SalesHeader."Document Type"::"Return Order":
+                begin
+                    if SalesHeader."Sell-to Contact No." <> '' then begin
+                        SelltoContact.Get(SalesHeader."Sell-to Contact No.");
+                        SelltoContact.TestField("Phone No.");
+                    end else
+                        SalesHeader.TestField("Sell-to Contact No.");
+                end
+            else
+                SalesHeader.TestField("Sell-to Phone No.");
+        end;
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", OnAfterCopyBuyFromVendorFieldsFromVendor, '', false, false)]
