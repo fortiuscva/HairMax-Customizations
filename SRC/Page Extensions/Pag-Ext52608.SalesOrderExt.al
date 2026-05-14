@@ -9,6 +9,18 @@ pageextension 52608 "HMX SalesOrderExt" extends "Sales Order"
                 ApplicationArea = all;
             }
         }
+        modify("Sell-to Phone No.")
+        {
+            ShowMandatory = true;
+        }
+        modify("Sell-to Country/Region Code")
+        {
+            ShowMandatory = true;
+        }
+        modify("Salesperson Code")
+        {
+            ShowMandatory = true;
+        }
     }
 
     actions
