@@ -44,7 +44,6 @@ codeunit 52600 "HMX SubstituteReport"
     var
         SelltoContact: Record Contact;
     begin
-        SalesHeader.TestField("Salesperson Code");
         SalesHeader.TestField("Sell-to Country/Region Code");
         SalesHeader.ValidateSellToPhoneNo(SalesHeader);
     end;
