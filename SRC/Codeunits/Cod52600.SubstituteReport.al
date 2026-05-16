@@ -22,6 +22,14 @@ codeunit 52600 "HMX SubstituteReport"
         SalesHeader.ValidateSellToPhoneNo(SalesHeader);
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", OnAfterCreateSalesHeader, '', false, false)]
+    local procedure "Shpfy Order Events_OnAfterCreateSalesHeader"(OrderHeader: Record "Shpfy Order Header"; var SalesHeader: Record "Sales Header")
+    begin
+        SalesHeader.Validate("Sell-to Phone No.", '561-314-2430');
+        SalesHeader.Validate("Sell-to Country/Region Code", 'US');
+        SalesHeader.Modify(true);
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", OnAfterCopyBuyFromVendorFieldsFromVendor, '', false, false)]
     local procedure "Purchase Header_OnAfterCopyBuyFromVendorFieldsFromVendor"(var PurchaseHeader: Record "Purchase Header"; Vendor: Record Vendor; xPurchaseHeader: Record "Purchase Header")
     begin
