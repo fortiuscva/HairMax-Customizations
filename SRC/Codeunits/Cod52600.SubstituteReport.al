@@ -50,17 +50,7 @@ codeunit 52600 "HMX SubstituteReport"
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", OnAfterCreateSalesHeader, '', false, false)]
     local procedure "Shpfy Order Events_OnAfterCreateSalesHeader"(OrderHeader: Record "Shpfy Order Header"; var SalesHeader: Record "Sales Header")
-    var
-        ShpfyTag: Record "Shpfy Tag";
-        IsDefaultShpfyTag: Boolean;
-    begin
-        ShpfyTag.SetRange("Parent Id", OrderHeader."Shopify Order Id");
-        ShpfyTag.SetFilter(Tag, '%1|%2', 'SalonCentric', 'Simon SPO');
-
-        if ShpfyTag.FindFirst() then
-            SalesHeader.Validate("Salesperson Code", 'Urban Dynamics')
-        else
-            SalesHeader.Validate("Salesperson Code", 'Shopify');
+     begin
         SalesHeader.Validate("Sell-to Phone No.", '561-314-2430');
         SalesHeader.Validate("Sell-to Country/Region Code", 'US');
         SalesHeader.Modify(true);
