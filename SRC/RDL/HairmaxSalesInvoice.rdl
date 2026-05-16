@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-03-10T13:45:53.5094379Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-08T10:16:29.7138805Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -718,6 +718,9 @@
                                   <TablixMember />
                                   <TablixMember>
                                     <Group Name="Details" />
+                                    <Visibility>
+                                      <Hidden>=IIF(Fields!HideGLLine.Value = TRUE, TRUE, FALSE)</Hidden>
+                                    </Visibility>
                                   </TablixMember>
                                 </TablixMembers>
                               </TablixRowHierarchy>
@@ -3861,6 +3864,9 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
         </Field>
         <Field Name="QuantityFormat">
           <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="HideGLLine">
+          <DataField>HideGLLine</DataField>
         </Field>
         <Field Name="ItemNo">
           <DataField>ItemNo</DataField>
