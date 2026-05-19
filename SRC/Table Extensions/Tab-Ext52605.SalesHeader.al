@@ -29,7 +29,7 @@ tableextension 52605 "HMX Sales Header" extends "Sales Header"
                     else if Rec."Sell-to Phone No." = '' then
                         Rec."Sell-to Phone No." := '561-314-2430';
                 end;
-                Rec.Modify(true);
+                // Rec.Modify(true);
             end;
         }
     }
