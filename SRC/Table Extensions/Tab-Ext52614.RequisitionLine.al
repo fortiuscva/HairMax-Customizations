@@ -36,49 +36,47 @@ tableextension 52614 "HMX Requisition Line" extends "Requisition Line"
         {
             trigger OnAfterValidate()
             begin
-                CalculateValues();
+                UpdateValues(Rec);
             end;
         }
     }
-    procedure CalculateValues()
+
+    procedure UpdateValues(var ReqLine: Record "Requisition Line")
     var
+        Item: Record Item;
         ProdForecastEntry: Record "Production Forecast Entry";
-        ItemRec: Record Item;
+        ForecastQty: Decimal;
+        OnHandQty: Decimal;
+        RecommendedSupply: Decimal;
+        QuickOrderCalc: Decimal;
         StartDate: Date;
         EndDate: Date;
     begin
-        // Forecast Quantity
+        ForecastQty := 0;
 
         if Rec."Due Date" <> 0D then begin
             StartDate := DMY2Date(1, Date2DMY(Rec."Due Date", 2), Date2DMY(Rec."Due Date", 3));
-            EndDate := CalcDate('<1M-1D>', StartDate); // End of month
+            EndDate := CalcDate('<1M-1D>', StartDate);
         end;
 
-        Rec."HMX Forecast Quantity" := 0;
         ProdForecastEntry.Reset();
-        ProdForecastEntry.SetRange("Item No.", Rec."No.");
+        ProdForecastEntry.SetRange("Item No.", ReqLine."No.");
         ProdForecastEntry.SetRange("Forecast Date", StartDate, EndDate);
-
         if ProdForecastEntry.FindSet() then
             repeat
-                Rec."HMX Forecast Quantity" += ProdForecastEntry."Forecast Quantity";
+                ReqLine."HMX Forecast Quantity" += ProdForecastEntry."Forecast Quantity";
             until ProdForecastEntry.Next() = 0;
 
-        // On-hand Quantity
-        ItemRec.Get(Rec."No.");
-        ItemRec.CalcFields("Qty. on Purch. Order", Inventory);
-        Rec."HMX On-hand Quantity" := ItemRec.Inventory;
+        if Item.Get(ReqLine."No.") then begin
+            Item.CalcFields(Inventory, "Qty. on Purch. Order");
+            OnHandQty := Item.Inventory;
+            ReqLine."HMX On-hand Quantity" := OnHandQty;
+            ReqLine."HMX Recommended Supply" := Item."Qty. on Purch. Order" + Rec."HMX Forecast Quantity";
+        end;
 
-
-        // Recommended Supply
-        Rec."HMX Recommended Supply" := ItemRec."Qty. on Purch. Order" + Rec."HMX Forecast Quantity";
-
-        // Quick Order
-        Rec."HMX Quick Order Calc" := Rec."HMX Recommended Supply" - Rec."HMX On-hand Quantity";
-
-        if Rec."HMX Quick Order Calc" < 0 then
-            Rec."HMX Quick Order Calc" := 0;
-
+        QuickOrderCalc := ReqLine."HMX Recommended Supply" - ReqLine."HMX On-hand Quantity";
+        if QuickOrderCalc < 0 then
+            QuickOrderCalc := 0;
+        ReqLine."HMX Quick Order Calc" := QuickOrderCalc;
     end;
-
 }
