@@ -20,7 +20,8 @@ tableextension 52613 "HMX Sales Line" extends "Sales Line"
 
                 if not ItemRec.Get(Rec."No.") then
                     exit;
-
+                if not ItemRec."HMX Signature" then
+                    exit;
                 DShipOptions.Reset();
                 DShipOptions.SetRange("Entry Type", DShipOptions."Entry Type"::Document);
                 DShipOptions.SetRange("Document Type", DShipOptions."Document Type"::"Sales Order");
@@ -30,13 +31,12 @@ tableextension 52613 "HMX Sales Line" extends "Sales Line"
                     if DShipOptions."Delivery Confirmation" <> DShipOptions."Delivery Confirmation"::Signature then begin
 
                         DShipOptions."Delivery Confirmation" := DShipOptions."Delivery Confirmation"::Signature;
-
-                        DShipOptions.Modify();
                     end else begin
                         DShipOptions."Delivery Confirmation" := DShipOptions."Delivery Confirmation"::" ";
-                        DShipOptions.Modify();
                     end;
+                    DShipOptions.Modify();
                 end;
+
             end;
         }
     }
