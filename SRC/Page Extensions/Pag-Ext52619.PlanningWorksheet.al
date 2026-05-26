@@ -38,4 +38,29 @@ pageextension 52619 "HMX Planning Worksheet" extends "Planning Worksheet"
             }
         }
     }
+    actions
+    {
+        modify(CalculateRegenerativePlan)
+        {
+            trigger OnAfterAction()
+            var
+                ReqLine: Record "Requisition Line";
+            begin
+                ReqLine.Reset();
+                ReqLine.SetRange("Worksheet Template Name", Rec."Worksheet Template Name");
+                ReqLine.SetRange("Journal Batch Name", Rec."Journal Batch Name");
+                ReqLine.SetRange(Type, ReqLine.Type::Item);
+
+                if ReqLine.FindSet() then
+                    repeat
+                        if ReqLine."No." <> '' then begin
+                            ReqLine.UpdateValues(ReqLine);
+                            ReqLine.Modify();
+                        end;
+                    until ReqLine.Next() = 0;
+
+                CurrPage.Update(false);
+            end;
+        }
+    }
 }
