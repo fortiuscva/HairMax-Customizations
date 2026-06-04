@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-06-01T17:47:14.6077003Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-04T12:51:43.6799985Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -136,12 +136,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>27.39516cm</Width>
+                  <Width>19.77516cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>11.43706cm</Height>
+                  <Height>17.018cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -567,8 +567,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                                   <Value>=System.Convert.FromBase64String(System.Convert.ToBase64String(Fields!Package_Carrier_Label.Value))</Value>
                                   <MIMEType>image/bmp</MIMEType>
                                   <Sizing>Fit</Sizing>
-                                  <Height>4.00278in</Height>
-                                  <Width>3.4875in</Width>
+                                  <Height>6in</Height>
+                                  <Width>4in</Width>
                                   <Visibility>
                                     <Hidden>=Isnothing(Fields!Package_Carrier_Label.Value)</Hidden>
                                   </Visibility>
@@ -580,10 +580,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                                 </Image>
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
-                              <Top>1.11125cm</Top>
+                              <Top>1.4605cm</Top>
                               <Left>4.88441cm</Left>
-                              <Height>10.16706cm</Height>
-                              <Width>8.85825cm</Width>
+                              <Height>15.5575cm</Height>
+                              <Width>10.16cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -628,10 +628,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>0.03528cm</Top>
-            <Left>0.03529cm</Left>
-            <Height>11.43706cm</Height>
-            <Width>27.39516cm</Width>
+            <Top>0.19403cm</Top>
+            <Left>0.35279cm</Left>
+            <Height>17.018cm</Height>
+            <Width>19.77516cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -639,13 +639,13 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>11.47234cm</Height>
+        <Height>17.21203cm</Height>
         <Style />
       </Body>
-      <Width>27.43045cm</Width>
+      <Width>20.65712cm</Width>
       <Page>
         <PageHeader>
-          <Height>6.3116cm</Height>
+          <Height>8.28702cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -656,6 +656,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <Value>hairmaxiconblack</Value>
                   <MIMEType>image/jpeg</MIMEType>
                   <Sizing>FitProportional</Sizing>
+                  <Top>0.075in</Top>
                   <Left>0.03528cm</Left>
                   <Height>2.43133cm</Height>
                   <Width>5.79683cm</Width>
@@ -666,6 +667,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   </Style>
                 </Image>
                 <Textbox Name="Textbox2">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -682,10 +684,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox2</rd:DefaultName>
-                  <Top>2.76437cm</Top>
+                  <Top>2.66912cm</Top>
                   <Left>0.03528cm</Left>
-                  <Height>0.53758cm</Height>
-                  <Width>11.5cm</Width>
+                  <Height>0.6cm</Height>
+                  <Width>5.785cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
@@ -694,6 +696,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   </Style>
                 </Textbox>
                 <Textbox Name="Textbox3">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -710,10 +713,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox3</rd:DefaultName>
-                  <Top>3.31145cm</Top>
+                  <Top>3.3432cm</Top>
                   <Left>0.03528cm</Left>
-                  <Height>0.30475cm</Height>
-                  <Width>11.5cm</Width>
+                  <Height>0.6cm</Height>
+                  <Width>5.785cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -722,6 +725,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   </Style>
                 </Textbox>
                 <Textbox Name="Textbox4">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -738,9 +742,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox4</rd:DefaultName>
-                  <Top>3.66098cm</Top>
-                  <Height>0.26825cm</Height>
-                  <Width>11.5cm</Width>
+                  <Top>4.01023cm</Top>
+                  <Height>0.6cm</Height>
+                  <Width>5.785cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -749,6 +753,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   </Style>
                 </Textbox>
                 <Textbox Name="Textbox5">
+                  <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -765,10 +770,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>3.9717cm</Top>
+                  <Top>4.6067cm</Top>
                   <Left>0.03528cm</Left>
-                  <Height>0.26825cm</Height>
-                  <Width>11.5cm</Width>
+                  <Height>0.6cm</Height>
+                  <Width>5.785cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -778,8 +783,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Height>4.2717cm</Height>
-              <Width>11.53528cm</Width>
+              <Left>0.125in</Left>
+              <Height>5.23845cm</Height>
+              <Width>10.17128cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -797,7 +803,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                           <Value>=Parameters!PackingSlipLable.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>16pt</FontSize>
+                            <FontSize>18pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -806,8 +812,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox7</rd:DefaultName>
+                  <Top>0.0375in</Top>
                   <Left>0.01045cm</Left>
-                  <Height>1.47883cm</Height>
+                  <Height>2.11383cm</Height>
                   <Width>9cm</Width>
                   <Style>
                     <Border>
@@ -838,9 +845,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox8</rd:DefaultName>
-                  <Top>2.79103cm</Top>
+                  <Top>3.77528cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -867,9 +874,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>2.79103cm</Top>
+                  <Top>3.77528cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -897,9 +904,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox10</rd:DefaultName>
-                  <Top>3.10528cm</Top>
+                  <Top>4.43878cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -926,9 +933,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox11</rd:DefaultName>
-                  <Top>3.10528cm</Top>
+                  <Top>4.43878cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -956,9 +963,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox30</rd:DefaultName>
-                  <Top>2.47678cm</Top>
+                  <Top>3.11178cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
@@ -985,9 +992,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox31</rd:DefaultName>
-                  <Top>2.47678cm</Top>
+                  <Top>3.11178cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
@@ -1015,9 +1022,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox12</rd:DefaultName>
-                  <Top>3.75248cm</Top>
+                  <Top>5.75273cm</Top>
                   <Left>0cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
@@ -1044,9 +1051,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox13</rd:DefaultName>
-                  <Top>3.75248cm</Top>
+                  <Top>5.75273cm</Top>
                   <Left>3.47895cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
@@ -1074,8 +1081,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox10</rd:DefaultName>
-                  <Top>3.41216cm</Top>
-                  <Height>0.3cm</Height>
+                  <Top>5.06316cm</Top>
+                  <Height>0.6cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
@@ -1102,9 +1109,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox11</rd:DefaultName>
-                  <Top>3.41216cm</Top>
+                  <Top>5.06316cm</Top>
                   <Left>3.49483cm</Left>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
@@ -1115,10 +1122,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.03175cm</Top>
-              <Left>17.23983cm</Left>
-              <Height>4.05248cm</Height>
-              <Width>9.04762cm</Width>
+              <Top>0cm</Top>
+              <Left>11.14383cm</Left>
+              <Height>6.41623cm</Height>
+              <Width>9.01045cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1147,7 +1154,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox20</rd:DefaultName>
-                  <Height>0.3cm</Height>
+                  <Height>0.6cm</Height>
                   <Width>4.7583cm</Width>
                   <Style>
                     <Border>
@@ -1173,8 +1180,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
-                  <Top>0.346cm</Top>
-                  <Height>0.3cm</Height>
+                  <Top>0.6cm</Top>
+                  <Height>0.6cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -1201,8 +1208,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox22</rd:DefaultName>
-                  <Top>0.692cm</Top>
-                  <Height>0.3cm</Height>
+                  <Top>1.2635cm</Top>
+                  <Height>0.6cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -1229,8 +1236,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox23</rd:DefaultName>
-                  <Top>1.04153cm</Top>
-                  <Height>0.3cm</Height>
+                  <Top>1.93053cm</Top>
+                  <Height>0.6cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -1241,9 +1248,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>4.34199cm</Top>
-              <Left>0.01992cm</Left>
-              <Height>1.34153cm</Height>
+              <Top>5.42149cm</Top>
+              <Left>0.33742cm</Left>
+              <Height>2.57978cm</Height>
               <Width>6.63422cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -1292,7 +1299,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
               <Top>0.22873cm</Top>
               <Left>0.49617cm</Left>
               <Height>1.4365cm</Height>
-              <Width>9.55739cm</Width>
+              <Width>6.69989cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1357,9 +1364,9 @@ If you have questions about your order please visit us online at www.hairmax.com
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
               <Top>0.22557cm</Top>
-              <Left>10.30178cm</Left>
+              <Left>7.50778cm</Left>
               <Height>1.72225cm</Height>
-              <Width>17.12867cm</Width>
+              <Width>12.68367cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1378,12 +1385,12 @@ If you have questions about your order please visit us online at www.hairmax.com
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>21.59cm</PageHeight>
-        <PageWidth>27.94cm</PageWidth>
-        <LeftMargin>0.5cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0.3cm</RightMargin>
         <TopMargin>0cm</TopMargin>
-        <BottomMargin>0.3cm</BottomMargin>
+        <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
