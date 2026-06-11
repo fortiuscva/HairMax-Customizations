@@ -1,6 +1,6 @@
-report 52609 "HMX Shopify Marketplace Sales"
+report 52609 "HMX Urban Dynamics Sales"
 {
-    Caption = 'Shopify Marketplace Sales';
+    Caption = 'Urban Dynamics Sales Report';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
 
@@ -30,44 +30,60 @@ report 52609 "HMX Shopify Marketplace Sales"
                 SalesInvHeader: Record "Sales Invoice Header";
                 OrderIdLocal: BigInteger;
             begin
+                Clear(IsShopifyMatch);
+                Clear(IsCustomerMatch);
+
                 if not SalesInvHeader.Get("Document No.") then
                     CurrReport.Skip();
 
+                // Customer-based retailer
+                if SalesInvHeader."Sell-to Customer No." = CustomerFilter then begin
+
+                    if Customer.Get(CustomerFilter) then
+                        Retailer := Customer.Name;
+
+                    DateOfSale := SalesInvHeader."Posting Date";
+
+                    IsCustomerMatch := true;
+                end;
+
                 OrderIdLocal := SalesInvHeader."Shpfy Order Id";
-                if OrderIdLocal = 0 then
-                    CurrReport.Skip();
+                if OrderIdLocal <> 0 then begin
+                    if (ShopifyOrderFilter <> 0) and (OrderIdLocal <> ShopifyOrderFilter) then
+                        CurrReport.Skip();
 
-                if (ShopifyOrderFilter <> 0) and (OrderIdLocal <> ShopifyOrderFilter) then
-                    CurrReport.Skip();
+                    if not ShopifyBuffer.Get(OrderIdLocal) then
+                        CurrReport.Skip();
 
-                if not ShopifyBuffer.Get(OrderIdLocal) then
-                    CurrReport.Skip();
+                    ShopifyTag := ShopifyBuffer."Tags";
+                    DateOfSale := ShopifyBuffer."Created At";
 
-                ShopifyTag := ShopifyBuffer."Tags";
-                DateOfSale := ShopifyBuffer."Created At";
+                    Retailer := GetRetailer(ShopifyTag);
+                    if Retailer = '' then
+                        CurrReport.Skip();
 
-                Retailer := GetRetailer(ShopifyTag);
-                if Retailer = '' then
-                    CurrReport.Skip();
+                    if (DateFilterFrom <> 0D) and (DateOfSale < DateFilterFrom) then
+                        CurrReport.Skip();
 
-                if (DateFilterFrom <> 0D) and (DateOfSale < DateFilterFrom) then
-                    CurrReport.Skip();
+                    if (DateFilterTo <> 0D) and (DateOfSale > DateFilterTo) then
+                        CurrReport.Skip();
 
-                if (DateFilterTo <> 0D) and (DateOfSale > DateFilterTo) then
-                    CurrReport.Skip();
+                    case RetailerFilter of
+                        RetailerFilter::SalonCentric:
+                            if Retailer = 'SC' then
+                                IsShopifyMatch := true;
 
-                case RetailerFilter of
-                    RetailerFilter::SalonCentric:
-                        if Retailer <> 'SC' then
-                            CurrReport.Skip();
+                        RetailerFilter::ShopSimon:
+                            if Retailer = 'SS' then
+                                IsShopifyMatch := true;
 
-                    RetailerFilter::ShopSimon:
-                        if Retailer <> 'SS' then
-                            CurrReport.Skip();
-
-                    RetailerFilter::Both:
-                        if (Retailer <> 'SC') and (Retailer <> 'SS') then
-                            CurrReport.Skip();
+                        RetailerFilter::Both:
+                            if (Retailer = 'SC') and (Retailer = 'SS') then
+                                IsShopifyMatch := true;
+                        RetailerFilter::None:
+                            if (Retailer = 'SC') or (Retailer = 'SS') then
+                                IsShopifyMatch := false;
+                    end;
                 end;
 
                 SalesOrderNo := SalesInvHeader."Order No.";
@@ -82,6 +98,9 @@ report 52609 "HMX Shopify Marketplace Sales"
                 end;
 
                 ShipDate := LastShipDate;
+
+                if not (IsShopifyMatch or IsCustomerMatch) then
+                    CurrReport.Skip();
             end;
         }
     }
@@ -110,6 +129,12 @@ report 52609 "HMX Shopify Marketplace Sales"
                     {
                         Caption = 'Retailer';
                         ApplicationArea = All;
+                    }
+                    field(CustomerFilter; CustomerFilter)
+                    {
+                        Caption = 'Retailer Customer';
+                        ApplicationArea = All;
+                        TableRelation = Customer."No." WHERE("HMX New Retailer" = CONST(true));
                     }
 
                     field(ShopifyOrderFilter; ShopifyOrderFilter)
@@ -161,14 +186,15 @@ report 52609 "HMX Shopify Marketplace Sales"
         ShopifyBuffer: Record "HMX Shopify Order Buffer" temporary;
 
         ShopifyTag: Text;
-        Retailer: Code[10];
+        Retailer: Text;
         DateOfSale: Date;
         ShipDate: Date;
 
         DateFilterFrom: Date;
         DateFilterTo: Date;
 
-        RetailerFilter: Option Both,SalonCentric,ShopSimon;
+        RetailerFilter: Option Both,SalonCentric,ShopSimon,None;
+        CustomerFilter: Code[20];
         ShopifyOrderFilter: BigInteger;
 
         SalesOrderNo: Code[20];
@@ -177,6 +203,9 @@ report 52609 "HMX Shopify Marketplace Sales"
 
         LastOrderNo: Code[20];
         LastShipDate: Date;
+        IsShopifyMatch: Boolean;
+        IsCustomerMatch: Boolean;
+        Customer: Record Customer;
 
     local procedure GetRetailer(Tag: Text): Code[10]
     begin
