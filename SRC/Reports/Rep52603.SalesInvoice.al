@@ -138,7 +138,7 @@ report 52603 "HMX Sales Invoice"
             {
 
             }
-            column(Invoice_Discount_Value; "Invoice Discount Value")
+            column(Invoice_Discount_Value; InvoiceDiscountAmount)
             { }
             dataitem("Sales Line"; "Sales Invoice Line")
             {
@@ -149,6 +149,9 @@ report 52603 "HMX Sales Invoice"
                 column(Quantity; Quantity)
                 {
 
+                }
+                column(HideGLLine; HideGLLine)
+                {
                 }
                 column(ItemNo; "No.")
                 {
@@ -175,7 +178,7 @@ report 52603 "HMX Sales Invoice"
                 {
 
                 }
-                column(TotalAmount_Grec; this.TotalAmount_Grec - Sales_Header."Invoice Discount Value")
+                column(TotalAmount_Grec; this.TotalAmount_Grec - InvoiceDiscountAmount)
                 {
 
                 }
@@ -207,11 +210,14 @@ report 52603 "HMX Sales Invoice"
                     Clear(this.Serial_LotNo_GRec);
 
                     Clear(this.PrintLine);
+                    Clear(HideGLLine);
                     // if "Sales Line".Type = "Sales Line".Type::Item then begin
                     this.Rate_GRec := ("Sales Line"."Unit Price" - ("Sales Line"."Unit Price" * "Sales Line"."Line Discount %") / 100);
                     this.Amount_GRec := this.Rate_GRec * "Sales Line".Quantity;
                     if not (("Sales Line".Type = "Sales Line".Type::"G/L Account") and ("Sales Line"."No." = '40391')) then
-                        this.SubTotalAmount_GRec += this.Amount_GRec;
+                        this.SubTotalAmount_GRec += this.Amount_GRec
+                    else
+                        HideGLLine := true;
                     this.PrintLine := true;
                     this.ItemLedEntry_GRec.Reset();
                     this.ItemLedEntry_GRec.SetRange("Document No.", "Sales Line"."Document No.");
@@ -288,6 +294,11 @@ report 52603 "HMX Sales Invoice"
                 BarcodeString := "No.";
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 this.EncodeTextCode39 := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                Sales_Header.CalcFields("Invoice Discount Amount");
+                if Sales_Header."Invoice Discount Value" <> 0 then
+                    InvoiceDiscountAmount := Sales_Header."Invoice Discount Value"
+                else
+                    InvoiceDiscountAmount := Sales_Header."Invoice Discount Amount";
             end;
 
 
@@ -391,7 +402,8 @@ report 52603 "HMX Sales Invoice"
 
         BarcodeSymbology: Enum "Barcode Symbology";
         ItemVariant: Record "Item Variant";
-
+        InvoiceDiscountAmount: Decimal;
+        HideGLLine: Boolean;
 
 
 }

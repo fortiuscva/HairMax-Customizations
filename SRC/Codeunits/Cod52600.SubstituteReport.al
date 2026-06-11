@@ -19,7 +19,7 @@ codeunit 52600 "HMX SubstituteReport"
         PurchaseHeader."HMX Shipping Agent Code" := Vendor."Shipping Agent Code";
         PurchaseHeader.Modify();
     end;
-    
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"DSHIP Event Publisher", OnAfterGetLabel, '', false, false)]
     local procedure OnAfterGetLabel(docType: Enum "DSHIP Document Type"; docNo: Code[50])
     var
@@ -44,8 +44,44 @@ codeunit 52600 "HMX SubstituteReport"
     var
         SelltoContact: Record Contact;
     begin
-        SalesHeader.TestField("Salesperson Code");
         SalesHeader.TestField("Sell-to Country/Region Code");
         SalesHeader.ValidateSellToPhoneNo(SalesHeader);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", OnAfterCreateSalesHeader, '', false, false)]
+    local procedure "Shpfy Order Events_OnAfterCreateSalesHeader"(OrderHeader: Record "Shpfy Order Header"; var SalesHeader: Record "Sales Header")
+    begin
+        If OrderHeader."Phone No." = '' then
+            SalesHeader.Validate("Sell-to Phone No.", '561-314-2430');
+        If OrderHeader."Sell-to Country/Region Code" = '' then
+            SalesHeader.Validate("Sell-to Country/Region Code", 'US');
+        SalesHeader.Modify(true);
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Shpfy Order Events", OnAfterCreateItemSalesLine, '', false, false)]
+    local procedure "Shpfy Order Events_OnAfterCreateItemSalesLine"(ShopifyOrderHeader: Record "Shpfy Order Header"; ShopifyOrderLine: Record "Shpfy Order Line"; SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
+    var
+        ItemRec: Record Item;
+        DShipOptions: Record "DSHIP Package Options";
+    begin
+        if SalesLine.Type <> SalesLine.Type::Item then
+            exit;
+
+        if not ItemRec.Get(SalesLine."No.") then
+            exit;
+
+        DShipOptions.Reset();
+        DShipOptions.SetRange("Entry Type", DShipOptions."Entry Type"::Document);
+        DShipOptions.SetRange("Document Type", DShipOptions."Document Type"::"Sales Order");
+        DShipOptions.SetRange("Document No.", SalesLine."Document No.");
+
+        if DShipOptions.FindFirst() then begin
+            if DShipOptions."Delivery Confirmation" <> DShipOptions."Delivery Confirmation"::Signature then
+                DShipOptions."Delivery Confirmation" := DShipOptions."Delivery Confirmation"::Signature
+            else
+                DShipOptions."Delivery Confirmation" := DShipOptions."Delivery Confirmation"::" ";
+
+            DShipOptions.Modify();
+        end;
     end;
 }
