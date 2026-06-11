@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-06-04T12:51:43.6799985Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-05T13:11:00.8589636Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,112 +22,6 @@
       <rd:DataSourceID>dac5b8e5-0752-4104-b549-57e19ca992ee</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_State">
-          <DataField>CompanyInfo_State</DataField>
-        </Field>
-        <Field Name="CompanyInfo_ZipCode">
-          <DataField>CompanyInfo_ZipCode</DataField>
-        </Field>
-        <Field Name="LocalCurrencySymbol">
-          <DataField>LocalCurrencySymbol</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Ship_to_City">
-          <DataField>Ship_to_City</DataField>
-        </Field>
-        <Field Name="Ship_to_County">
-          <DataField>Ship_to_County</DataField>
-        </Field>
-        <Field Name="Ship_to_Post_Code">
-          <DataField>Ship_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_Country_Region_Code">
-          <DataField>Ship_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="ShippingMthDesc">
-          <DataField>ShippingMthDesc</DataField>
-        </Field>
-        <Field Name="EncodeTextCode39">
-          <DataField>EncodeTextCode39</DataField>
-        </Field>
-        <Field Name="Due_Date">
-          <DataField>Due_Date</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="Package_Tracking_No_">
-          <DataField>Package_Tracking_No_</DataField>
-        </Field>
-        <Field Name="Package_Carrier_Label">
-          <DataField>Package_Carrier_Label</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="ItemNoBarcode">
-          <DataField>ItemNoBarcode</DataField>
-        </Field>
-        <Field Name="Serial_LotNo_GRec">
-          <DataField>Serial_LotNo_GRec</DataField>
-        </Field>
-        <Field Name="OrderQty">
-          <DataField>OrderQty</DataField>
-        </Field>
-        <Field Name="OrderQtyFormat">
-          <DataField>OrderQtyFormat</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -157,10 +51,13 @@
                                     <Width>7.10521cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.70821cm</Width>
+                                    <Width>4.41704cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
                                     <Width>1.59225cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.5cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -277,6 +174,42 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="Textbox38">
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Parameters!ShippedLbl.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI Black</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                      <Color>White</Color>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox38</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <BackgroundColor>Silver</BackgroundColor>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox14">
+                                            <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
@@ -421,6 +354,42 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
+                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0;(#,0)</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Right</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Quantity1</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="BinCode">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
                                                     <Value>=Fields!BinCode.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -457,6 +426,7 @@
                                   <TablixMember />
                                   <TablixMember />
                                   <TablixMember />
+                                  <TablixMember />
                                 </TablixMembers>
                               </TablixColumnHierarchy>
                               <TablixRowHierarchy>
@@ -474,7 +444,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0cm</Top>
                               <Height>1.07968cm</Height>
-                              <Width>18.48345cm</Width>
+                              <Width>19.69228cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -714,7 +684,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox3</rd:DefaultName>
                   <Top>3.3432cm</Top>
                   <Left>0.03528cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.785cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -741,8 +711,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox4</rd:DefaultName>
-                  <Top>4.01023cm</Top>
-                  <Height>0.6cm</Height>
+                  <Top>3.75623cm</Top>
+                  <Height>0.4cm</Height>
                   <Width>5.785cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -769,9 +739,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>4.6067cm</Top>
-                  <Left>0.03528cm</Left>
-                  <Height>0.6cm</Height>
+                  <Top>4.19395cm</Top>
+                  <Left>0.00353cm</Left>
+                  <Height>0.4cm</Height>
                   <Width>5.785cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -783,7 +753,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Left>0.125in</Left>
-              <Height>5.23845cm</Height>
+              <Height>4.60345cm</Height>
               <Width>10.17128cm</Width>
               <Style>
                 <Border>
@@ -819,6 +789,10 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     <Border>
                       <Style>None</Style>
                     </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
                 <Textbox Name="Textbox8">
@@ -840,7 +814,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox8</rd:DefaultName>
-                  <Top>3.77528cm</Top>
+                  <Top>3.55303cm</Top>
                   <Left>0.01045cm</Left>
                   <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
@@ -869,7 +843,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>3.77528cm</Top>
+                  <Top>3.55303cm</Top>
                   <Left>3.50528cm</Left>
                   <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
@@ -899,9 +873,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox10</rd:DefaultName>
-                  <Top>4.43878cm</Top>
+                  <Top>4.02603cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -928,9 +902,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox11</rd:DefaultName>
-                  <Top>4.43878cm</Top>
+                  <Top>4.02603cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -960,7 +934,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox30</rd:DefaultName>
                   <Top>3.11178cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
@@ -989,7 +963,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox31</rd:DefaultName>
                   <Top>3.11178cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
@@ -1017,9 +991,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox12</rd:DefaultName>
-                  <Top>5.75273cm</Top>
+                  <Top>4.92723cm</Top>
                   <Left>0cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>7</ZIndex>
                   <Style>
@@ -1046,9 +1020,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox13</rd:DefaultName>
-                  <Top>5.75273cm</Top>
+                  <Top>4.92723cm</Top>
                   <Left>3.47895cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
@@ -1076,8 +1050,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox10</rd:DefaultName>
-                  <Top>5.06316cm</Top>
-                  <Height>0.6cm</Height>
+                  <Top>4.49166cm</Top>
+                  <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
@@ -1104,7 +1078,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox11</rd:DefaultName>
-                  <Top>5.06316cm</Top>
+                  <Top>4.49166cm</Top>
                   <Left>3.49483cm</Left>
                   <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
@@ -1119,7 +1093,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
               <KeepTogether>true</KeepTogether>
               <Top>0cm</Top>
               <Left>11.14383cm</Left>
-              <Height>6.41623cm</Height>
+              <Height>5.32723cm</Height>
               <Width>9.01045cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -1203,8 +1177,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox22</rd:DefaultName>
-                  <Top>1.2635cm</Top>
-                  <Height>0.6cm</Height>
+                  <Top>1.073cm</Top>
+                  <Height>0.4cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -1231,8 +1205,8 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox23</rd:DefaultName>
-                  <Top>1.93053cm</Top>
-                  <Height>0.6cm</Height>
+                  <Top>1.51778cm</Top>
+                  <Height>0.4cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
@@ -1243,9 +1217,9 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>5.42149cm</Top>
+              <Top>5.07224cm</Top>
               <Left>0.33742cm</Left>
-              <Height>2.57978cm</Height>
+              <Height>1.91778cm</Height>
               <Width>6.63422cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -1744,4 +1718,113 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="ShippingMthDesc">
+          <DataField>ShippingMthDesc</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Due_Date">
+          <DataField>Due_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="Package_Tracking_No_">
+          <DataField>Package_Tracking_No_</DataField>
+        </Field>
+        <Field Name="Package_Carrier_Label">
+          <DataField>Package_Carrier_Label</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="ItemNoBarcode">
+          <DataField>ItemNoBarcode</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+        </Field>
+        <Field Name="OrderQtyFormat">
+          <DataField>OrderQtyFormat</DataField>
+        </Field>
+        <Field Name="BinCode">
+          <DataField>BinCode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
