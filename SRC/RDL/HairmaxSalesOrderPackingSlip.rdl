@@ -282,7 +282,7 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Parameters!ShippedLbl.Value</Value>
+                                                    <Value>=Parameters!BinCodeLbl.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI Black</FontFamily>
                                                       <FontSize>9pt</FontSize>
@@ -294,7 +294,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox38</rd:DefaultName>
+                                            <rd:DefaultName>Textbox14</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -421,20 +421,19 @@
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Value>=Fields!BinCode.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>9pt</FontSize>
-                                                      <Format>#,0;(#,0)</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
                                                 <Style>
-                                                  <TextAlign>Right</TextAlign>
+                                                  <TextAlign>Left</TextAlign>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Quantity1</rd:DefaultName>
+                                            <rd:DefaultName>BinCode</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -820,10 +819,6 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                     <Border>
                       <Style>None</Style>
                     </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
                 <Textbox Name="Textbox8">
@@ -847,7 +842,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox8</rd:DefaultName>
                   <Top>3.77528cm</Top>
                   <Left>0.01045cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>3.49483cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -876,7 +871,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox9</rd:DefaultName>
                   <Top>3.77528cm</Top>
                   <Left>3.50528cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
@@ -1111,7 +1106,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   <rd:DefaultName>Textbox11</rd:DefaultName>
                   <Top>5.06316cm</Top>
                   <Left>3.49483cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>5.50517cm</Width>
                   <ZIndex>10</ZIndex>
                   <Style>
@@ -1181,7 +1176,7 @@ Cstr(Fields!ShippingMthDesc.Value) + Chr(177)  + Cstr(Fields!No_.Value), 1 )</Hi
                   </Paragraphs>
                   <rd:DefaultName>Textbox21</rd:DefaultName>
                   <Top>0.6cm</Top>
-                  <Height>0.6cm</Height>
+                  <Height>0.4cm</Height>
                   <Width>6.63422cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -1559,11 +1554,20 @@ If you have questions about your order please visit us online at www.hairmax.com
       </DefaultValue>
       <Prompt>ItemBarcodeLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="BinCodeLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BinCodeLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BinCodeLbl</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>18</NumberOfRows>
+      <NumberOfRows>19</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -1654,6 +1658,11 @@ If you have questions about your order please visit us online at www.hairmax.com
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>17</RowIndex>
           <ParameterName>ItemBarcodeLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>18</RowIndex>
+          <ParameterName>BinCodeLbl</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

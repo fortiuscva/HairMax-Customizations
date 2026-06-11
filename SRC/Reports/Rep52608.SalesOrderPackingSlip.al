@@ -110,6 +110,7 @@ report 52608 "HMX Sales Order Packing Slip"
             { }
 
 
+
             dataitem("Sales Line"; "Sales Line")
             {
                 DataItemLinkReference = "Sales_Header";
@@ -142,7 +143,8 @@ report 52608 "HMX Sales Order Packing Slip"
                 {
 
                 }
-
+                column(BinCode; "Bin Code")
+                { }
 
 
 
@@ -265,6 +267,7 @@ report 52608 "HMX Sales Order Packing Slip"
         BackOrderedLabel = 'Back Ordered';
         SerialLotNoLabel = 'Serial/ Lot Numbers';
         ItemBarcodeLbl = 'Item Barcode';
+        BinCodeLbl = 'Bin Code';
 
     }
     trigger OnPreReport()
