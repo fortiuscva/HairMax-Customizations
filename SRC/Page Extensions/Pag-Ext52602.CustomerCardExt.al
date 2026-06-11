@@ -70,12 +70,14 @@ pageextension 52602 "HMX CustomerCardExt" extends "Customer Card"
                     ApplicationArea = all;
                 }
             }
+        }
+        addlast(General)
+        {
             field("HMX New Retailer"; Rec."HMX New Retailer")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the New Retailer field.', Comment = '%';
             }
-
         }
     }
 
