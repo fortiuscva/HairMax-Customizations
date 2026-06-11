@@ -161,6 +161,11 @@ tableextension 52603 "HMX CustomerExt" extends Customer
             DataClassification = CustomerContent;
             ToolTip = 'Specifies the entry no for interaction log entry';
         }
+        field(50015; "HMX New Retailer"; Boolean)
+        {
+            Caption = 'New Retailer';
+            DataClassification = CustomerContent;
+        }
 
     }
 
