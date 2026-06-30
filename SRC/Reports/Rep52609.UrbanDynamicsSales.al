@@ -78,7 +78,7 @@ report 52609 "HMX Urban Dynamics Sales"
                                 IsShopifyMatch := true;
 
                         RetailerFilter::Both:
-                            if (Retailer = 'SC') and (Retailer = 'SS') then
+                            if (Retailer = 'SC') or (Retailer = 'SS') then
                                 IsShopifyMatch := true;
                         RetailerFilter::None:
                             if (Retailer = 'SC') or (Retailer = 'SS') then
