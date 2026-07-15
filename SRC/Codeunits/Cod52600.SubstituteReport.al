@@ -53,7 +53,7 @@ codeunit 52600 "HMX SubstituteReport"
                 if IWXLPHeader."Has Carrier Label" then begin
                     SalesHeader.SetRange("No.", docNo);
                     if SalesHeader.FindFirst() then
-                        Report.RunModal(Report::"HMX Sales Order Packing Slip", true, true, SalesHeader);
+                        Report.RunModal(Report::"HMX Sales Order Packing Slip", false, true, SalesHeader);
                 end;
         end;
     end;
