@@ -84,4 +84,11 @@ codeunit 52600 "HMX SubstituteReport"
             DShipOptions.Modify();
         end;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"IWX OFW Order Mgmt.", 'OnBeforeInsertSalesLine', '', true, true)]
+
+    local procedure HandleOnBeforeInsertSalesLine(precSalesLine: Record "Sales Line"; var precOutboundLineBuffer: Record "IWX OFW Outbound Line Buffer")
+    begin
+        precOutboundLineBuffer."HMX Bin Code" := precSalesLine."Bin Code";
+    end;
 }
