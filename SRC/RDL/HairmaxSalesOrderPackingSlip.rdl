@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
@@ -24,115 +24,6 @@
       <rd:DataSourceID>dac5b8e5-0752-4104-b549-57e19ca992ee</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_State">
-          <DataField>CompanyInfo_State</DataField>
-        </Field>
-        <Field Name="CompanyInfo_ZipCode">
-          <DataField>CompanyInfo_ZipCode</DataField>
-        </Field>
-        <Field Name="LocalCurrencySymbol">
-          <DataField>LocalCurrencySymbol</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="External_Document_No_">
-          <DataField>External_Document_No_</DataField>
-        </Field>
-        <Field Name="Ship_to_Name">
-          <DataField>Ship_to_Name</DataField>
-        </Field>
-        <Field Name="Ship_to_Address">
-          <DataField>Ship_to_Address</DataField>
-        </Field>
-        <Field Name="Ship_to_Address_2">
-          <DataField>Ship_to_Address_2</DataField>
-        </Field>
-        <Field Name="Ship_to_City">
-          <DataField>Ship_to_City</DataField>
-        </Field>
-        <Field Name="Ship_to_County">
-          <DataField>Ship_to_County</DataField>
-        </Field>
-        <Field Name="Ship_to_Post_Code">
-          <DataField>Ship_to_Post_Code</DataField>
-        </Field>
-        <Field Name="Ship_to_Country_Region_Code">
-          <DataField>Ship_to_Country_Region_Code</DataField>
-        </Field>
-        <Field Name="ShippingMthDesc">
-          <DataField>ShippingMthDesc</DataField>
-        </Field>
-        <Field Name="EncodeTextCode39">
-          <DataField>EncodeTextCode39</DataField>
-        </Field>
-        <Field Name="Due_Date">
-          <DataField>Due_Date</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-        <Field Name="Package_Tracking_No_">
-          <DataField>Package_Tracking_No_</DataField>
-        </Field>
-        <Field Name="Package_Carrier_Label">
-          <DataField>Package_Carrier_Label</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="ItemNo">
-          <DataField>ItemNo</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="ItemNoBarcode">
-          <DataField>ItemNoBarcode</DataField>
-        </Field>
-        <Field Name="Serial_LotNo_GRec">
-          <DataField>Serial_LotNo_GRec</DataField>
-        </Field>
-        <Field Name="OrderQty">
-          <DataField>OrderQty</DataField>
-        </Field>
-        <Field Name="OrderQtyFormat">
-          <DataField>OrderQtyFormat</DataField>
-        </Field>
-        <Field Name="BinCode">
-          <DataField>BinCode</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1843,4 +1734,113 @@ Xufvt0ftfZngOxr3P326P2vszwHY17n77dH7X2Z4Dsa9z99uj9r7M8B2Ne5++3R+19meA7Gvc/fbo/a+
   </EmbeddedImages>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_State">
+          <DataField>CompanyInfo_State</DataField>
+        </Field>
+        <Field Name="CompanyInfo_ZipCode">
+          <DataField>CompanyInfo_ZipCode</DataField>
+        </Field>
+        <Field Name="LocalCurrencySymbol">
+          <DataField>LocalCurrencySymbol</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Ship_to_Name">
+          <DataField>Ship_to_Name</DataField>
+        </Field>
+        <Field Name="Ship_to_Address">
+          <DataField>Ship_to_Address</DataField>
+        </Field>
+        <Field Name="Ship_to_Address_2">
+          <DataField>Ship_to_Address_2</DataField>
+        </Field>
+        <Field Name="Ship_to_City">
+          <DataField>Ship_to_City</DataField>
+        </Field>
+        <Field Name="Ship_to_County">
+          <DataField>Ship_to_County</DataField>
+        </Field>
+        <Field Name="Ship_to_Post_Code">
+          <DataField>Ship_to_Post_Code</DataField>
+        </Field>
+        <Field Name="Ship_to_Country_Region_Code">
+          <DataField>Ship_to_Country_Region_Code</DataField>
+        </Field>
+        <Field Name="ShippingMthDesc">
+          <DataField>ShippingMthDesc</DataField>
+        </Field>
+        <Field Name="EncodeTextCode39">
+          <DataField>EncodeTextCode39</DataField>
+        </Field>
+        <Field Name="Due_Date">
+          <DataField>Due_Date</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+        <Field Name="Package_Tracking_No_">
+          <DataField>Package_Tracking_No_</DataField>
+        </Field>
+        <Field Name="Package_Carrier_Label">
+          <DataField>Package_Carrier_Label</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="ItemNoBarcode">
+          <DataField>ItemNoBarcode</DataField>
+        </Field>
+        <Field Name="Serial_LotNo_GRec">
+          <DataField>Serial_LotNo_GRec</DataField>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+        </Field>
+        <Field Name="OrderQtyFormat">
+          <DataField>OrderQtyFormat</DataField>
+        </Field>
+        <Field Name="BinCode">
+          <DataField>BinCode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

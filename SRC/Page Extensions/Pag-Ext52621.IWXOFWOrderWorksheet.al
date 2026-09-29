@@ -2,6 +2,10 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
 {
     actions
     {
+        /* modify(IWKM_BatchPack)
+        {
+            Visible = false;
+        } */
         addlast(Processing)
         {
             action("HMX HairmaxChangeShippingAgent")
@@ -43,6 +47,30 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
                     Message('Shipping Agent and Shipping Agent Service have been updated for Sales Order %1.', SalesHeader."No.");
                 end;
             }
+            action("HMX HMXBatchPackAndShip")
+            {
+                Caption = 'TEST Batch Pack & Ship';
+                ApplicationArea = All;
+                Image = Post;
+                ToolTip = 'Batch Pack, Ship and automatically post Sales Shipments.';
+
+                trigger OnAction()
+                var
+                    SalesHeader: Record "Sales Header";
+                    BatchShip: Codeunit "IW HI Batch Ship";
+                    BatchNo: Code[35];
+                begin
+                    BuildSalesHeaderFilter(SalesHeader);
+
+                    BatchShip.BatchPackShip(SalesHeader, BatchNo);
+
+                    if BatchNo <> '' then begin
+                        PostBatchSalesShipments(BatchNo);
+
+                        Message('Batch %1 created and all Sales Shipments have been posted.', BatchNo);
+                    end;
+                end;
+            }
         }
 
         addlast(Promoted)
@@ -52,4 +80,62 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
             }
         }
     }
+    local procedure BuildSalesHeaderFilter(var SalesHeader: Record "Sales Header")
+    var
+        OutboundBuffer: Record "IWX OFW Outbound Header Buffer" temporary;
+        SalesOrderFilter: Text;
+    begin
+        OutboundBuffer.Copy(Rec, true);
+        CurrPage.SetSelectionFilter(OutboundBuffer);
+
+        if OutboundBuffer.FindSet() then
+            repeat
+                if OutboundBuffer."Document Type" <> OutboundBuffer."Document Type"::"Sales Order" then
+                    Error('Only Sales Orders can be processed.');
+
+                if SalesOrderFilter <> '' then
+                    SalesOrderFilter += '|';
+
+                SalesOrderFilter += OutboundBuffer."Document No.";
+            until OutboundBuffer.Next() = 0;
+
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        SalesHeader.SetFilter("No.", SalesOrderFilter);
+    end;
+
+    local procedure PostBatchSalesShipments(BatchNo: Code[35])
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        SalesHeader.SetRange("IW HI Batch No", BatchNo);
+        if SalesHeader.FindSet() then
+            repeat
+                PostSalesShipment(SalesHeader);
+            /* IWXLPHeader.Reset();
+            IWXLPHeader.SetRange("Source Document", IWXLPHeader."Source Document"::"Sales Order");
+            IWXLPHeader.SetRange("Source No.", docNo);
+            If IWXLPHeader.FindSet() then begin
+                if IWXLPHeader.Count = 1 then
+                    if IWXLPHeader."Has Carrier Label" then begin
+                        SalesHeader.SetRange("No.", docNo);
+                        if SalesHeader.FindFirst() then
+                            Report.RunModal(Report::"HMX Sales Order Packing Slip", false, true, SalesHeader);
+                    end; 
+            end;*/
+            until SalesHeader.Next() = 0;
+    end;
+
+    local procedure PostSalesShipment(var SalesHeader: Record "Sales Header")
+    begin
+        SalesHeader.CalcFields("Completely Shipped");
+
+        if SalesHeader."Completely Shipped" then
+            exit;
+
+        SalesHeader.Ship := true;
+        SalesHeader.Invoice := false;
+
+        Codeunit.Run(Codeunit::"Sales-Post", SalesHeader);
+    end;
 }

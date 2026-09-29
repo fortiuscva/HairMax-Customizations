@@ -2,7 +2,7 @@
   "id": "303d6ffb-a381-49e6-a79d-2abd08eda32e",
   "name": "HairMax Customizations",
   "publisher": "Adcirrus ERP",
-  "version": "26.0.0.38",
+  "version": "26.0.0.45",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -10,15 +10,13 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [
-    
-      {
-"id": "c1fa90e6-b104-4f49-8c79-e74e63c14409",
-"name": "RealCase Management",
-"publisher": "Wolcott Systems Group",
-"version": "4.300.304.0"
-},
-
+  "dependencies": [    
+    {
+      "id": "c1fa90e6-b104-4f49-8c79-e74e63c14409",
+      "name": "RealCase Management",
+      "publisher": "Wolcott Systems Group",
+      "version": "4.300.304.0"
+    },
 {
 "id": "9c55319d-f3b9-441b-9956-0a0a04decd4b",
 "name": "Dynamic Ship: Integrated Shipping",
@@ -36,6 +34,18 @@
 "name": "IWorks Common",
 "publisher": "Insight Works",
 "version": "2.18.9389.1"
+},
+{
+"id": "f4938bf6-4995-4143-bcb6-08bd55b7cf91",
+"name": "Order Fulfillment Worksheet",
+"publisher": "Insight Works",
+"version": "1.6.9568.1"
+},
+{
+"id": "0d783748-1784-470d-8df5-9070f87117cf",
+"name": "Dynamic Ship: Hairmax International Bulk Shipping",
+"publisher": "Insight Works",
+"version": "1.1.260831.0"
 }
 
     
