@@ -91,4 +91,19 @@ codeunit 52600 "HMX SubstituteReport"
     begin
         precOutboundLineBuffer."HMX Bin Code" := precSalesLine."Bin Code";
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", OnAfterSelltoCustomerNoOnAfterValidate, '', false, false)]
+    local procedure "Sales Header_OnAfterSelltoCustomerNoOnAfterValidate"(var SalesHeader: Record "Sales Header"; var xSalesHeader: Record "Sales Header")
+    begin
+        if SalesHeader."Document Type" <> SalesHeader."Document Type"::Order then
+            exit;
+
+        if SalesHeader."Sell-to Customer No." = '' then
+            exit;
+
+        HairmaxFunctions.UpdatePackingGroupComments(SalesHeader);
+    end;
+
+    var
+        HairmaxFunctions: Codeunit "HMX Hairmax Functions";
 }
