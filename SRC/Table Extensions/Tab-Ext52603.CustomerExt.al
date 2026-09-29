@@ -166,6 +166,12 @@ tableextension 52603 "HMX CustomerExt" extends Customer
             Caption = 'New Retailer';
             DataClassification = CustomerContent;
         }
+        field(50016; "HMX Cust. Packing Group Code"; Code[20])
+        {
+            Caption = 'Customer Packing Group Code';
+            TableRelation = "HMX Customer Packing Group".Code;
+            DataClassification = CustomerContent;
+        }
 
     }
 
