@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-09-29T15:37:18.1482042Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-10-01T13:01:50.9505494Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1453,9 +1453,9 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.81927in</Top>
-              <Left>5.93879in</Left>
+              <Left>4.92767in</Left>
               <Height>0.16654in</Height>
-              <Width>1.89509in</Width>
+              <Width>2.90621in</Width>
               <ZIndex>3</ZIndex>
               <DataElementOutput>NoOutput</DataElementOutput>
               <Style>
