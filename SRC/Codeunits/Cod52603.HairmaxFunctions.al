@@ -85,6 +85,52 @@ codeunit 52603 "HMX Hairmax Functions"
         end;
     end;
 
+    procedure UpdatePackingGroupCommentField(var SalesHeader: Record "Sales Header")
+    var
+        SalesCommentLine: Record "Sales Comment Line";
+        AllComments: Text;
+        CommentText: Text;
+        NewLine: Text[2];
+    begin
+        SalesHeader."HMX Customer Packing Comments" := '';
+
+        if SalesHeader."No." = '' then
+            exit;
+
+        NewLine := ' ';
+
+        SalesCommentLine.Reset();
+        SalesCommentLine.SetRange(
+            "Document Type",
+            SalesHeader."Document Type");
+
+        SalesCommentLine.SetRange(
+            "No.",
+            SalesHeader."No.");
+
+        SalesCommentLine.SetRange(
+            "Document Line No.",
+            0);
+
+        if not SalesCommentLine.FindSet() then
+            exit;
+
+        repeat
+            CommentText := SalesCommentLine.Comment;
+
+            if CommentText <> '' then begin
+
+                if AllComments <> '' then
+                    AllComments += NewLine;
+
+                AllComments += CommentText;
+            end;
+
+        until SalesCommentLine.Next() = 0;
+
+        SalesHeader."HMX Customer Packing Comments" := CopyStr(AllComments, 1, MaxStrLen(SalesHeader."HMX Customer Packing Comments"));
+    end;
+
     var
         SelltoContact: Record Contact;
 }
