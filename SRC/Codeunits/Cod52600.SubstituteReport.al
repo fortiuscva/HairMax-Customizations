@@ -55,6 +55,13 @@ codeunit 52600 "HMX SubstituteReport"
             SalesHeader.Validate("Sell-to Phone No.", '561-314-2430');
         If OrderHeader."Sell-to Country/Region Code" = '' then
             SalesHeader.Validate("Sell-to Country/Region Code", 'US');
+        if SalesHeader."Document Type" <> SalesHeader."Document Type"::Order then
+            exit;
+
+        if SalesHeader."Sell-to Customer No." = '' then
+            exit;
+        HairmaxFunctions.UpdatePackingGroupComments(SalesHeader);
+        HairmaxFunctions.UpdatePackingGroupCommentField(SalesHeader);
         SalesHeader.Modify(true);
     end;
 
@@ -102,6 +109,22 @@ codeunit 52600 "HMX SubstituteReport"
             exit;
 
         HairmaxFunctions.UpdatePackingGroupComments(SalesHeader);
+        HairmaxFunctions.UpdatePackingGroupCommentField(SalesHeader);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterModifyEvent', '', false, false)]
+    local procedure SalesHeader_OnAfterModifyEvent(var Rec: Record "Sales Header"; var xRec: Record "Sales Header"; RunTrigger: Boolean)
+    begin
+        if Rec."Document Type" <> Rec."Document Type"::Order then
+            exit;
+
+        if Rec."Sell-to Customer No." = '' then
+            exit;
+
+        if Rec."Sell-to Customer No." = xRec."Sell-to Customer No." then
+            exit;
+        HairmaxFunctions.UpdatePackingGroupComments(Rec);
+        HairmaxFunctions.UpdatePackingGroupCommentField(Rec);
     end;
 
     var

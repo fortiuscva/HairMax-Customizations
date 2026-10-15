@@ -32,6 +32,11 @@ tableextension 52605 "HMX Sales Header" extends "Sales Header"
                 // Rec.Modify(true);
             end;
         }
+        field(52600; "HMX Customer Packing Comments"; Text[2048])
+        {
+            Caption = 'Comments';
+        }
+
     }
 
     procedure ValidateSellToPhoneNo(var SalesHeader: Record "Sales Header")

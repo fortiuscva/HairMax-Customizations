@@ -78,6 +78,11 @@ pageextension 52602 "HMX CustomerCardExt" extends "Customer Card"
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the New Retailer field.', Comment = '%';
             }
+            field("HMX Cust. Packing Group Code"; Rec."HMX Cust. Packing Group Code")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Customer Packing Group Code field.', Comment = '%';
+            }
         }
     }
 
