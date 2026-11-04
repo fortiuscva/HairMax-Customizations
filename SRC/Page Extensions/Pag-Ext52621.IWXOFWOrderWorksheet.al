@@ -49,7 +49,7 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
             }
             action("HMX HMXBatchPackAndShip")
             {
-                Caption = 'TEST Batch Pack & Ship';
+                Caption = 'Batch Pack & Post Ship Invoice';
                 ApplicationArea = All;
                 Image = Post;
                 ToolTip = 'Batch Pack, Ship and automatically post Sales Shipments.';
@@ -67,7 +67,7 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
                     if BatchNo <> '' then begin
                         PostBatchSalesShipments(BatchNo);
 
-                        Message('Batch %1 created and all Sales Shipments have been posted.', BatchNo);
+                        Message('Batch %1 created and all Sales Shipments and Invoice have been posted.', BatchNo);
                     end;
                 end;
             }
@@ -135,7 +135,7 @@ pageextension 52621 "HMX IWX OFW Order Worksheet" extends "IWX OFW Order Workshe
             exit;
 
         SalesHeader.Ship := true;
-        SalesHeader.Invoice := false;
+        SalesHeader.Invoice := true;
 
         Codeunit.Run(Codeunit::"Sales-Post", SalesHeader);
     end;
